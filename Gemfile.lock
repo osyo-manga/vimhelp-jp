@@ -43,6 +43,7 @@ GEM
     rb-fsevent (0.9.4)
     rb-inotify (0.9.4)
       ffi (>= 0.5.0)
+    rdiscount (2.1.7.1)
     sinatra (1.4.5)
       rack (~> 1.4)
       rack-protection (~> 1.4)
@@ -66,5 +67,6 @@ DEPENDENCIES
   guard
   guard-livereload
   haml
+  rdiscount
   sinatra
   sinatra-contrib

@@ -9,6 +9,11 @@ require 'open-uri'
 require "cgi"
 require "haml"
 require 'sinatra/reloader' if development?
+require 'rdiscount'
+
+
+# set :markdown, :layout_engine => :haml, :layout => :pos
+
 
 load "vimhelp.rb"
 

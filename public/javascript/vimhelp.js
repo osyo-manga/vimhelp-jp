@@ -44,7 +44,7 @@ var hist = new history();
 
 function modal_open(keyword){
 	$("#myModal").modal("show");
-	$.post("http://vim-help-jp.herokuapp.com/search", { in:keyword}, function(ret){
+	$.post("./search", { in:keyword}, function(ret){
 		$(".modal-title").text(":help " + keyword);
 		$(".modal-title").attr("href", "./?query=" + encodeURIComponent(keyword));
 		vimdoc_url = "http://vim-help-jp.herokuapp.com/vimdoc/?query=" + encodeURIComponent(keyword)
@@ -118,7 +118,7 @@ $(document).ready(function() {
 
 $(function() {
 	var tags = []
-	$.get("http://vim-help-jp.herokuapp.com/api/tags/json", function(data){
+	$.get("./api/tags/json", function(data){
 		var tags = data;
 		$("#input_text").autocomplete({
 			source: function (request, response){
