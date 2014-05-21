@@ -1,3 +1,4 @@
 /.foreman
 /Procfile.development
 /Guardfile
+/test_vimhelp
