@@ -1,0 +1,18 @@
+#footer
+  .clearfix
+  %ul.sns-icon.list-inline
+    %li
+      %i.fa.fa-twitter.fa-2x
+        %a.twitter-share-button{"data-count" => "none", "data-url" => "http://vim-help-jp.herokuapp.com/", :href => "https://twitter.com/share"} Tweet
+    %li
+      %i.fa.fa-facebook.fa-2x
+  / /sns-icon
+  .copy
+    %span
+      Create by
+      %a{:href => "http://osyo-manga.github.io/about/" } osyo-manga
+  / /copy
+/ /footer
+:javascript
+    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+

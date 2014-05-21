@@ -1,0 +1,21 @@
+[submodule "plugins/vimdoc-ja"]
+	path = plugins/vimdoc-ja
+	url = https://github.com/vim-jp/vimdoc-ja
+[submodule "plugins/neobundle.vim"]
+	path = plugins/neobundle.vim
+	url = https://github.com/Shougo/neobundle.vim
+[submodule "plugins/vim-quickrun"]
+	path = plugins/vim-quickrun
+	url = https://github.com/thinca/vim-quickrun
+[submodule "plugins/unite.vim"]
+	path = plugins/unite.vim
+	url = https://github.com/Shougo/unite.vim
+[submodule "plugins/vimshell.vim"]
+	path = plugins/vimshell.vim
+	url = https://github.com/Shougo/vimshell.vim
+[submodule "plugins/vital.vim"]
+	path = plugins/vital.vim
+	url = https://github.com/vim-jp/vital.vim
+[submodule "plugins/alignta"]
+	path = plugins/alignta
+	url = https://github.com/h1mesuke/vim-alignta

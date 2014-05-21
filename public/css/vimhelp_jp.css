@@ -1,0 +1,104 @@
+/* ------------------------------------- */
+/*	  Header
+/* ------------------------------------- */
+
+#header{
+  background-color: #404040;
+}
+
+#title{
+  margin-top: -20px;
+}
+
+#header h1 a:link, #header h1 a:visited{
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 140%;
+}
+
+#header h3 {
+  color: #BEBEBE;
+}
+
+
+html,
+body {
+  height: 100%;
+  /* The html and body elements cannot have any padding or margin. */
+}
+
+/* Wrapper for page content to push down footer */
+#wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  padding: 0 0 100px;
+  margin: 0 auto -100px;
+}
+
+
+body .container p{
+	padding: 5px;
+}
+
+
+/* ------------------------------------- */
+/*	  Footer
+/* ------------------------------------- */
+#push,
+#footer{
+	height: 100px;
+	text-align: center;
+	padding: 20px 0;
+	background-color: #BEBEBE;
+}
+
+/*  copy
+/*--------------------------------- */
+.copy{
+	margin-top: 10px;
+}
+
+.copy span{
+	color: #333;
+}
+
+/* Lastly, apply responsive CSS fixes as necessary */
+/*------------------------------------------------ */
+@media (max-width: 767px) {
+  #footer {
+    margin-left: -20px;
+    margin-right: -20px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+
+/* ------------------------------------- */
+/*	  autocomplete
+/* ------------------------------------- */
+.ui-autocomplete {
+    max-height: 400px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 20px;
+}
+
+#jquery-ui-autocomplete label {
+    float: left;
+    margin-right: 0.5em;
+    color: black;
+    font-size: 15px;
+}
+
+
+/* ------------------------------------- */
+/*	  modal
+/* ------------------------------------- */
+
+#myModal .modal-title {
+	font-size: 140%;
+}
+
+
