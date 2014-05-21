@@ -22,9 +22,13 @@ vimhelp = VimHelp.new(root, tagfiles)
 
 
 get '/' do
-	haml :index
+	""
+# 	haml :index
 end
 
+get '/dev' do
+	haml :index
+end
 
 get '/about' do
 	haml :about
