@@ -15,7 +15,11 @@ end
 
 
 def vim_escape(word)
-	word.gsub(/"/, "quote").gsub(/\*/, "star").gsub(/\|/, "bar")
+	word.gsub(/"/, "quote").gsub(/\*/, "star").gsub(/\|/, "bar").gsub(/\\/, '\\\\\\').gsub(/\//, "\\/")
+end
+
+def vim_unescape(word)
+	word.gsub(/\\\//, "/").gsub(/\\\\/, "\\")
 end
 
 
@@ -41,7 +45,8 @@ class VimHelp
 	end
 	
 	def search(query, default = "")
-		result = self.search_tag(Regexp.escape(vim_escape(query)))
+		result = self.search_tag(vim_escape(query))
+		puts result
 		if result.empty?
 			return { :vimdoc_url => "", :text => default }
 		end
@@ -50,10 +55,10 @@ class VimHelp
 		vimdoc = "http://vim-jp.org/vimdoc-ja/#{file[/^.*\/(.*)\..*$/, 1]}.html##{ ERB::Util.url_encode tag }"
 		word = word[/\/(.+)\n/, 1]
 		f = self.load_help_file(@root, file)
-		
-		first = f.index{ |item| /#{Regexp.escape(word).gsub(/\\\\/, '\\')}/ =~ item }
+
+		first = f.index{ |item| /#{Regexp.escape(vim_unescape(word))}/ =~ item }
 		if !first
-			return default
+			return { :vimdoc_url => "", :text => default }
 		end
 		last = next_tag(f, first)
 
@@ -61,13 +66,20 @@ class VimHelp
 	end
 
 	def search_tag(query)
+		puts "query : #{query}"
+		query = Regexp.escape(query)
+		puts query
 		result = @tagfile.grep(/\/\*#{query}\*$/).fetch(0, "")
 		if result.empty?
-			result = @tagfile.grep(/\/\*#{query}/).fetch(0, "")
+			result = @tagfile.grep(/\/\*#{query}.*\*$/).fetch(0, "")
 			if result.empty?
-				result = @tagfile.grep(/#{query}/i).fetch(0, "")
+				result = @tagfile.grep(/\*([":]|\\\/)#{query}.*\*$/).fetch(0, "")
 				if result.empty?
-					return ""
+					puts query
+					result = @tagfile.grep(/\*.*#{query}.*\*$/i).fetch(0, "")
+					if result.empty?
+						return ""
+					end
 				end
 			end
 		end
