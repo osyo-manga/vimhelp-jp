@@ -13,8 +13,10 @@
         .col-lg-6
           .input-group.input-group-lg
             %span.input-group-btn
-              %button.btn.btn-info{"data-target" => "#myModal", "data-toggle" => "modal"} :help
+              %button.btn.btn-info{ "data-toggle" => "search" } :help
             %input#input_text.form-control{:type => "text"}/
+
+-#               %button.btn.btn-info{"data-target" => "#myModal", "data-toggle" => "modal"} :help
 
 
 #myModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
@@ -24,11 +26,16 @@
         %a.modal-title{ :href => "./", "data-placement" => "right", "data-toggle" => "tooltip", :title => "test",  } help
         %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} x
       .modal-body#result-body
-        searching...
       .modal-footer
-        %a.btn.btn-info.test{ :href => "", "data-placement" => "right", "data-toggle" => "tooltip", :title => "test", :type => "button"} vimdoc-ja
         %a.btn.btn-info.vimdoc{ :href => "", :type => "button"} vimdoc-ja
         %button.btn.btn-default.prev{ :type => "button"} <
         %button.btn.btn-default.next{ :type => "button"} >
         %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Close
+-#     #loading
+-#       %img{:src => "image/loading.gif"}/
+
+#loading
+  %img{:src => "image/loading.gif"}/
+
+
 

@@ -41,27 +41,54 @@ function history(){
 }
 var hist = new history();
 
+// function modal_open(keyword){
+// 	$("#myModal").modal("show");
+// 	$("#loading").fadeIn();
+// 	$.post("./search", { in:keyword}, function(ret){
+// 		$("#loading").fadeOut();
+// // 		$("#result-body").html("Searching...");
+// 		$(".modal-title").text(":help " + keyword);
+// 		$(".modal-title").attr("href", "./?query=" + encodeURIComponent(keyword));
+// 		vimdoc_url = "http://vim-help-jp.herokuapp.com/vimdoc/?query=" + encodeURIComponent(keyword)
+// 		$(".btn.btn-default.vimdoc").attr("href", vimdoc_url);
+// 		$("#result-body").html(ret);
+//
+// // 		$('.tag_keyword').attr("data-placement", "bottom")
+// // 		$('.tag_keyword').attr("data-toggle", "tooltip")
+// // 		$('.tag_keyword').attr("title", "新しく開く")
+// 		$('.tag_keyword').click(function(e) {
+// 			keyword = $(this).attr("data-keyword");
+// 			hist.add(keyword);
+// 			modal_open(keyword);
+// 		});
+// // 		$('[data-toggle=tooltip]').tooltip();
+// 	});
+// };
 
-function modal_open(keyword){
+
+function modal_open(keyword, body){
 	$("#myModal").modal("show");
-	$.post("./search", { in:keyword}, function(ret){
-		$(".modal-title").text(":help " + keyword);
-		$(".modal-title").attr("href", "./?query=" + encodeURIComponent(keyword));
-		vimdoc_url = "http://vim-help-jp.herokuapp.com/vimdoc/?query=" + encodeURIComponent(keyword)
-		$(".btn.btn-default.vimdoc").attr("href", vimdoc_url);
-		$("#result-body").html(ret);
-
-// 		$('.tag_keyword').attr("data-placement", "bottom")
-// 		$('.tag_keyword').attr("data-toggle", "tooltip")
-// 		$('.tag_keyword').attr("title", "新しく開く")
-		$('.tag_keyword').click(function(e) {
-			keyword = $(this).attr("data-keyword");
-			hist.add(keyword);
-			modal_open(keyword);
-		});
-// 		$('[data-toggle=tooltip]').tooltip();
+	$(".modal-title").text(":help " + keyword);
+	$(".modal-title").attr("href", "./?query=" + encodeURIComponent(keyword));
+	vimdoc_url = "http://vim-help-jp.herokuapp.com/vimdoc/?query=" + encodeURIComponent(keyword)
+	$(".btn.btn-default.vimdoc").attr("href", vimdoc_url);
+	$("#result-body").html(body);
+	$('.tag_keyword').click(function(e) {
+		keyword = $(this).attr("data-keyword");
+		search(keyword);
 	});
+	console.log(hist);
+	hist.add(keyword);
 };
+
+function search(keyword){
+// 	$("#loading").fadeIn();
+	$.post("./search", { in:keyword}, function(ret){
+// 		$("#loading").fadeOut();
+		modal_open(keyword, ret)
+	});
+}
+
 
 function get_param(key) {
 	var url = location.search;
@@ -78,13 +105,11 @@ function get_param(key) {
 	}
 	return paramsArray[key];
 }
-
 $(document).ready(function() {
 	$('[data-toggle="modal"]').click(function(e) {
 		hist.reset();
 		keyword = $("#input_text").val();
-		hist.add(keyword);
-		$("#result-body").html("searching...");
+		$("#result-body").html("Searching...");
 		modal_open(keyword);
 	});
 
@@ -92,8 +117,7 @@ $(document).ready(function() {
 	if( query != "" ){
 		keyword = decodeURIComponent(query);
 		$("#input_text").val(keyword);
-		hist.add(keyword);
-		modal_open(decodeURIComponent(query));
+		search(decodeURIComponent(query));
 	}
 
 	$('.btn.btn-default.prev').click(function(e) {
@@ -101,19 +125,29 @@ $(document).ready(function() {
 		if( keyword == "" ){
 			return;
 		}
-		modal_open(keyword);
+		search(keyword);
 	});
 	$('.btn.btn-default.next').click(function(e) {
 		keyword = hist.next();
 		if( keyword == "" ){
 			return;
 		}
-		modal_open(keyword);
+		search(keyword);
 	});
 
 	$(function() {
 		$('[data-toggle=tooltip]').tooltip();
 	});
+
+	$('[data-toggle="search"]').click(function(e) {
+		search($("#input_text").val());
+	});
+
+	$("#myModal").on("hidden.bs.modal", function (){
+		console.log("reset");
+		hist.reset();
+	});
+
 });
 
 $(function() {
@@ -139,3 +173,8 @@ $(function() {
 		})
 	}, "json");
 });
+
+$(function() {
+	$("#loading").fadeOut();
+});
+
