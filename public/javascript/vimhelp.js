@@ -82,9 +82,9 @@ function modal_open(keyword, body){
 };
 
 function search(keyword){
-// 	$("#loading").fadeIn();
+	$("#loading").fadeIn();
 	$.post("./search", { in:keyword}, function(ret){
-// 		$("#loading").fadeOut();
+		$("#loading").fadeOut();
 		modal_open(keyword, ret)
 	});
 }
