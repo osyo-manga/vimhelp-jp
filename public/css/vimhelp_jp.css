@@ -7,8 +7,8 @@
 }
 
 #title{
-  margin-top: -20px;
-  padding-bottom: 10px;
+  margin-top: -30px;
+  padding-bottom: 5px;
 }
 
 #header h1 a:link, #header h1 a:visited{
@@ -18,7 +18,7 @@
 }
 
 #header h3 {
-  font-size: 200%;
+  font-size: 170%;
   color: #BEBEBE;
 }
 
@@ -100,7 +100,7 @@ body .container p{
 /* ------------------------------------- */
 
 #myModal .modal-title {
-	font-size: 140%;
+	font-size: 160%;
 }
 
 
