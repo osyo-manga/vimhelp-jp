@@ -55,7 +55,7 @@ var hist = new history();
 // // 		$("#result-body").html("Searching...");
 // 		$(".modal-title").text(":help " + keyword);
 // 		$(".modal-title").attr("href", "./?query=" + encodeURIComponent(keyword));
-// 		vimdoc_url = "http://vim-help-jp.herokuapp.com/vimdoc/?query=" + encodeURIComponent(keyword)
+// 		vimdoc_url = "http://vim-help-jp.herokuapp.com/vimdoco 85 + 85?query=" + encodeURIComponent(keyword)
 // 		$(".btn.btn-default.vimdoc").attr("href", vimdoc_url);
 // 		$("#result-body").html(ret);
 //
@@ -85,20 +85,18 @@ function modal_open(keyword, body){
 	});
 	hist.add(keyword);
 
-	console.log(hist);
-
 	if( hist.is_top() ){
-		$(".btn.btn-default.next").attr("disabled", "")
+		$(".btn.btn-default.next").attr("disabled", "disabled");
 	}
 	else{
-		$(".btn.btn-default.next").removeAttr("disabled")
+		$(".btn.btn-default.next").removeAttr("disabled");
 	}
 
 	if( hist.is_last() ){
-		$(".btn.btn-default.prev").attr("disabled", "")
+		$(".btn.btn-default.prev").attr("disabled", "disabled");
 	}
 	else{
-		$(".btn.btn-default.prev").removeAttr("disabled")
+		$(".btn.btn-default.prev").removeAttr("disabled");
 	}
 
 };

@@ -23,13 +23,15 @@
   .modal-dialog
     .modal-content
       .modal-header
-        %a.modal-title{ :href => "./", "data-placement" => "right", "data-toggle" => "tooltip", :title => "test",  } help
+        %button.btn.btn-default.prev{ :type => "button", :disabled => "disabled"} <
+        %button.btn.btn-default.next{ :type => "button", :disabled => "disabled"} >
         %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} x
+        %br
+        %br
+        %a.modal-title{ :href => "./", "data-placement" => "right", "data-toggle" => "tooltip", :title => "",  } help
       .modal-body#result-body
       .modal-footer
         %a.btn.btn-info.vimdoc{ :href => "", :type => "button"} vimdoc-ja
-        %button.btn.btn-default.prev{ :type => "button"} <
-        %button.btn.btn-default.next{ :type => "button"} >
         %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Close
 -#     #loading
 -#       %img{:src => "image/loading.gif"}/
