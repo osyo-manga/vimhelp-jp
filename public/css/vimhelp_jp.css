@@ -14,10 +14,11 @@
 #header h1 a:link, #header h1 a:visited{
   color: #ffffff;
   text-decoration: none;
-  font-size: 150%;
+  font-size: 160%;
 }
 
 #header h3 {
+  font-size: 200%;
   color: #BEBEBE;
 }
 
