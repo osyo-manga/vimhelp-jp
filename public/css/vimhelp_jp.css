@@ -7,13 +7,14 @@
 }
 
 #title{
-  margin-top: -30px;
+  margin-top: -20px;
+  padding-bottom: 10px;
 }
 
 #header h1 a:link, #header h1 a:visited{
   color: #ffffff;
   text-decoration: none;
-  font-size: 140%;
+  font-size: 150%;
 }
 
 #header h3 {
@@ -115,4 +116,23 @@ body .container p{
 }
 
 
+
+/* ------------------------------------- */
+/*	  markdown
+/* ------------------------------------- */
+
+#markdown {
+	font-size: 120%;
+}
+
+#markdown h2 {
+  font-weight: normal;
+  background-color: #f7f7f7;
+  padding: 10px;
+  border-left: 5px solid #008000;
+}
+
+#markdown li {
+	padding: 2px;
+}
 
