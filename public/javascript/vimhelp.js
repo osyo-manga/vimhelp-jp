@@ -38,6 +38,12 @@ function history(){
 				this.data = [];
 				this.index = 0;
 		}
+		this.is_last = function (){
+			return this.index == 0;
+		}
+		this.is_top = function (){
+			return this.index == this.data.length - 1;
+		}
 }
 var hist = new history();
 
@@ -77,12 +83,29 @@ function modal_open(keyword, body){
 		keyword = $(this).attr("data-keyword");
 		search(keyword);
 	});
-	console.log(hist);
 	hist.add(keyword);
+
+	console.log(hist);
+
+	if( hist.is_top() ){
+		$(".btn.btn-default.next").attr("disabled", "")
+	}
+	else{
+		$(".btn.btn-default.next").removeAttr("disabled")
+	}
+
+	if( hist.is_last() ){
+		$(".btn.btn-default.prev").attr("disabled", "")
+	}
+	else{
+		$(".btn.btn-default.prev").removeAttr("disabled")
+	}
+
 };
 
 function search(keyword){
 	$("#loading").fadeIn();
+
 	$.post("./search", { in:keyword}, function(ret){
 		$("#loading").fadeOut();
 		modal_open(keyword, ret)
@@ -144,8 +167,9 @@ $(document).ready(function() {
 	});
 
 	$("#myModal").on("hidden.bs.modal", function (){
-		console.log("reset");
 		hist.reset();
+		$(".btn.btn-default.next").attr("disabled", "")
+		$(".btn.btn-default.prev").attr("disabled", "")
 	});
 
 });
