@@ -23,3 +23,8 @@
 * __[kana/vim-operator-replace](https://github.com/kana/vim-operator-replace)__
 * __[thinca/vim-ref](https://github.com/thinca/vim-ref)__
 
+## 不具合報告
+
+不具合や要望などありましたら [github の Issues](https://github.com/osyo-manga/vimhelp-jp/issues) までお知らせください。
+
+
