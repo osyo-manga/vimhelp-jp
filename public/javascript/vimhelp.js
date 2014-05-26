@@ -71,6 +71,16 @@ var hist = new history();
 // 	});
 // };
 
+function disable_button(class_){
+	$(class_).attr("disabled", "disabled");
+	$(class_).attr("color", "#c0c0c0");
+}
+
+function enable_button(class_){
+	$(class_).removeAttr("disabled");
+	$(class_).attr("color", "#0066ff");
+}
+
 
 function modal_open(keyword, body){
 	$("#myModal").modal("show");
@@ -86,17 +96,17 @@ function modal_open(keyword, body){
 	hist.add(keyword);
 
 	if( hist.is_top() ){
-		$(".btn.btn-default.next").attr("disabled", "disabled");
+		disable_button(".btn.btn-default.next");
 	}
 	else{
-		$(".btn.btn-default.next").removeAttr("disabled");
+		enable_button(".btn.btn-default.next");
 	}
 
 	if( hist.is_last() ){
-		$(".btn.btn-default.prev").attr("disabled", "disabled");
+		disable_button(".btn.btn-default.prev");
 	}
 	else{
-		$(".btn.btn-default.prev").removeAttr("disabled");
+		enable_button(".btn.btn-default.prev");
 	}
 
 };
