@@ -83,12 +83,20 @@ function enable_button(class_){
 
 
 function modal_open(keyword, body){
+	vimdoc_url = body["vimdoc_url"];
+	text = body["text"];
+
 	$("#myModal").modal("show");
 	$(".modal-title").text(":help " + keyword);
 	$(".modal-title").attr("href", "#" + keyword);
-	vimdoc_url = "./api/redirect_vimdoc_ja/?query=" + encodeURIComponent(keyword)
+	if( vimdoc_url == "" ){
+		disable_button(".btn.btn-info.vimdoc");
+	}
+	else{
+		enable_button(".btn.btn-info.vimdoc");
+	}
 	$(".btn.btn-info.vimdoc").attr("href", vimdoc_url);
-	$("#result-body").html(body);
+	$("#result-body").html(text);
 
 	$('.tag_keyword').click(function(e) {
 		keyword = $(this).attr("data-keyword");

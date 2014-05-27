@@ -40,13 +40,13 @@ end
 
 
 post '/search' do
+	content_type :json
 	response.headers['Access-Control-Allow-Origin'] = '*'
 	query = params[:in]
 	if !query || query == ""
 		return "Not found."
 	end
 	result = vimhelp.search(query, "Not found.")
-	vimdoc_url = result[:vimdoc_url]
 	text = result[:text]
 	text = CGI.escapeHTML(text)
 	# tag link
@@ -58,7 +58,8 @@ post '/search' do
 		"<a class=\"tag_keyword\" data-keyword=\"#{ CGI.unescapeHTML $1 }\">#{ CGI.unescapeHTML $1 }</a>"
 	}
 	text = text.gsub(/\n/, "<br>")
-	text
+# 	text
+	{ :vimdoc_url => result[:vimdoc_url], :text => text }.to_json
 end
 
 
