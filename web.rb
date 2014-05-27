@@ -64,7 +64,7 @@ end
 
 # ?query={}
 get '/api/search/json/' do
-	content_type :text
+	content_type :json
 	query  = params[:query]
 	if !query
 		return ""
@@ -102,7 +102,8 @@ end
 # -------------------- lingr-bot --------------------
 def post_lingr_help(room, query, vimhelp)
 	Thread.start do
-		url = "http://vim-help-jp.herokuapp.com/?query=#{ERB::Util.url_encode query}"
+		url = "http://vim-help-jp.herokuapp.com/##{query}"
+# 		url = "http://vim-help-jp.herokuapp.com/?query=#{ERB::Util.url_encode query}"
 		help = vimhelp.search(query, "Not found.")
 		result = (url + "\n" + help[:text].gsub(/^$/, "　")).slice(0, 1000)
 # 		result = (url + "\n" + help[:vimdoc_url] + "\n" + help[:text].gsub(/^$/, "　")).slice(0, 1000)

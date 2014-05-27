@@ -85,14 +85,16 @@ function enable_button(class_){
 function modal_open(keyword, body){
 	$("#myModal").modal("show");
 	$(".modal-title").text(":help " + keyword);
-	$(".modal-title").attr("href", "./?query=" + encodeURIComponent(keyword));
+	$(".modal-title").attr("href", "#" + keyword);
 	vimdoc_url = "http://vim-help-jp.herokuapp.com/vimdoc/?query=" + encodeURIComponent(keyword)
 	$(".btn.btn-info.vimdoc").attr("href", vimdoc_url);
 	$("#result-body").html(body);
+
 	$('.tag_keyword').click(function(e) {
 		keyword = $(this).attr("data-keyword");
-		search(keyword);
+		open(keyword);
 	});
+
 	hist.add(keyword);
 
 	if( hist.is_top() ){
@@ -120,6 +122,9 @@ function search(keyword){
 	});
 }
 
+function open(query){
+	location.replace("#" + query);
+}
 
 function get_param(key) {
 	var url = location.search;
@@ -136,6 +141,8 @@ function get_param(key) {
 	}
 	return paramsArray[key];
 }
+
+
 $(document).ready(function() {
 	$('[data-toggle="modal"]').click(function(e) {
 		hist.reset();
@@ -156,14 +163,14 @@ $(document).ready(function() {
 		if( keyword == "" ){
 			return;
 		}
-		search(keyword);
+		open(keyword);
 	});
 	$('.btn.btn-default.next').click(function(e) {
 		keyword = hist.next();
 		if( keyword == "" ){
 			return;
 		}
-		search(keyword);
+		open(keyword);
 	});
 
 	$(function() {
@@ -171,15 +178,25 @@ $(document).ready(function() {
 	});
 
 	$('[data-toggle="search"]').click(function(e) {
-		search($("#input_text").val());
+		open($("#input_text").val());
 	});
 
 	$("#myModal").on("hidden.bs.modal", function (){
 		hist.reset();
+		open("")
 		$(".btn.btn-default.next").attr("disabled", "")
 		$(".btn.btn-default.prev").attr("disabled", "")
 	});
 
+	$(window).bind("hashchange", function (){
+		if( location.hash == ""){
+			return
+		}
+		search(location.hash.slice(1));
+	});
+	if( location.hash != ""){
+		search(location.hash.slice(1));
+	}
 });
 
 $(function() {
