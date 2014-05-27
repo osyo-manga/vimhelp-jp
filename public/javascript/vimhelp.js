@@ -86,7 +86,7 @@ function modal_open(keyword, body){
 	$("#myModal").modal("show");
 	$(".modal-title").text(":help " + keyword);
 	$(".modal-title").attr("href", "#" + keyword);
-	vimdoc_url = "http://vim-help-jp.herokuapp.com/vimdoc/?query=" + encodeURIComponent(keyword)
+	vimdoc_url = "./api/redirect_vimdoc_ja/?query=" + encodeURIComponent(keyword)
 	$(".btn.btn-info.vimdoc").attr("href", vimdoc_url);
 	$("#result-body").html(body);
 

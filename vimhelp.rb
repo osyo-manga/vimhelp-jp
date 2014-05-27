@@ -52,7 +52,10 @@ class VimHelp
 		end
 		tag, file, word = result.split(/	/)
 
-		vimdoc = "http://vim-jp.org/vimdoc-ja/#{file[/^.*\/(.*)\..*$/, 1]}.html##{ ERB::Util.url_encode tag }"
+		vimdoc = ""
+		if file =~ /^vimdoc-ja\/doc/
+			vimdoc = "http://vim-jp.org/vimdoc-ja/#{file[/^.*\/(.*)\..*$/, 1]}.html##{ ERB::Util.url_encode tag }"
+		end
 		word = word[/\/(.+)\n/, 1]
 		f = self.load_help_file(@root, file)
 

@@ -74,15 +74,14 @@ end
 
 
 # ?query={}
-get '/api/redirect_vimdoc/' do
+get '/api/redirect_vimdoc_ja/' do
 	url = "http://vim-jp.org/vimdoc-ja/"
 	query  = params[:query]
-	p query
 	if query && !query.empty?
 		result = vimhelp.search(query, "")
-		p result
 		url = result[:vimdoc_url] unless result[:vimdoc_url].empty?
 	end
+	puts url
 	redirect url
 end
 
@@ -149,7 +148,12 @@ end
 # ?query={}
 get '/vimdoc/' do
 	query  = params[:query]
-	redirect "./api/redirect_vimdoc/?query=" + query
+	redirect "./api/redirect_vimdoc_ja/?query=" + query
+end
+
+get '/api/redirect_vimdoc/' do
+	query  = params[:query]
+	redirect "./api/redirect_vimdoc_ja/?query=" + query
 end
 
 
