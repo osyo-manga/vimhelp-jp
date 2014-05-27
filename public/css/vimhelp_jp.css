@@ -103,6 +103,9 @@ body .container p{
 	font-size: 160%;
 }
 
+#myModal .tag_keyword {
+	cursor: pointer;
+}
 
 
 /* #container{display:none;} */
