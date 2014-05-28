@@ -69,16 +69,13 @@ class VimHelp
 	end
 
 	def search_tag(query)
-		puts "query : #{query}"
 		query = Regexp.escape(query)
-		puts query
 		result = @tagfile.grep(/\/\*#{query}\*$/).fetch(0, "")
 		if result.empty?
 			result = @tagfile.grep(/\/\*#{query}.*\*$/).fetch(0, "")
 			if result.empty?
 				result = @tagfile.grep(/\*([":]|\\\/)#{query}.*\*$/).fetch(0, "")
 				if result.empty?
-					puts query
 					result = @tagfile.grep(/\*.*#{query}.*\*$/i).fetch(0, "")
 					if result.empty?
 						return ""
