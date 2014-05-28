@@ -103,6 +103,17 @@ function modal_open(keyword, body){
 		open(keyword);
 	});
 
+// 	$('.tag_keyword').mouseover(function(e) {
+// 		console.log("test");
+// // 		$('.tag_keyword').attr("title", "homu")
+// 	});
+
+// 	$('.tag_keyword').attr("title", "test")
+	$('.tag_keyword').attr("data-toggle", "tooltip")
+	$('.tag_keyword').attr("data-placement", "bottom")
+	$('[data-toggle=tooltip]').tooltip();
+
+
 	hist.add(keyword);
 
 	if( hist.is_top() ){

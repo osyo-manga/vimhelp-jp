@@ -49,13 +49,14 @@ post '/search' do
 	result = vimhelp.search(query, "Not found.")
 	text = result[:text]
 	text = CGI.escapeHTML(text)
-	# tag link
-	text = text.gsub(/\|(.+?)\|/){ |text|
-		"<a class=\"tag_keyword\" data-keyword=\"#{ CGI.unescapeHTML $1 }\">#{ CGI.unescapeHTML $1 }</a>"
-	}
+
 	# option link
-	text = text.gsub(/(&#39;[[:alpha:]]+?&#39;)/){ |text|
-		"<a class=\"tag_keyword\" data-keyword=\"#{ CGI.unescapeHTML $1 }\">#{ CGI.unescapeHTML $1 }</a>"
+	text = text.gsub(/\|(.+?)\||(&#39;[[:alpha:]]+?&#39;)/){ |text|
+		query = CGI.unescapeHTML($1 ? $1 : $2)
+		title = vimhelp.search(query)[:text].gsub(/　+|\s+|\t+\n/, " ").slice(0, 200)
+# 		title = ""
+		puts title
+		"<a class=\"tag_keyword\" data-keyword=\"#{ query }\" title=\"#{ CGI.escapeHTML title }\">#{ query }</a>"
 	}
 	text = text.gsub(/\n/, "<br>")
 # 	text
@@ -82,7 +83,7 @@ get '/api/redirect_vimdoc_ja/' do
 		result = vimhelp.search(query, "")
 		url = result[:vimdoc_url] unless result[:vimdoc_url].empty?
 	end
-	puts url
+# 	puts url
 	redirect url
 end
 
