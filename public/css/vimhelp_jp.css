@@ -107,6 +107,9 @@ body .container p{
 	cursor: pointer;
 }
 
+#myModal .tooltip.bottom {
+	font-size: 100%;
+}
 
 /* #container{display:none;} */
 
