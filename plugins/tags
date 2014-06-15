@@ -347,6 +347,7 @@ x_<Plug>(neosnippet_start_unite_snippet_target)	neosnippet.vim/doc/neosnippet.tx
 :UniteWithCurrentDir	unite.vim/doc/unite.txt	/*:UniteWithCurrentDir*
 :UniteWithCursorWord	unite.vim/doc/unite.txt	/*:UniteWithCursorWord*
 :UniteWithInput	unite.vim/doc/unite.txt	/*:UniteWithInput*
+:UniteWithInputDirectory	unite.vim/doc/unite.txt	/*:UniteWithInputDirectory*
 :UniteWithProjectDir	unite.vim/doc/unite.txt	/*:UniteWithProjectDir*
 :unite-sources-commands	unite.vim/doc/unite.txt	/*:unite-sources-commands*
 <Plug>(unite_all_exit)	unite.vim/doc/unite.txt	/*<Plug>(unite_all_exit)*
@@ -448,6 +449,7 @@ g:unite_update_time	unite.vim/doc/unite.txt	/*g:unite_update_time*
 g:unite_winheight	unite.vim/doc/unite.txt	/*g:unite_winheight*
 g:unite_winwidth	unite.vim/doc/unite.txt	/*g:unite_winwidth*
 i_<Plug>(unite_choose_action)	unite.vim/doc/unite.txt	/*i_<Plug>(unite_choose_action)*
+i_<Plug>(unite_complete)	unite.vim/doc/unite.txt	/*i_<Plug>(unite_complete)*
 i_<Plug>(unite_delete_backward_char)	unite.vim/doc/unite.txt	/*i_<Plug>(unite_delete_backward_char)*
 i_<Plug>(unite_delete_backward_line)	unite.vim/doc/unite.txt	/*i_<Plug>(unite_delete_backward_line)*
 i_<Plug>(unite_delete_backward_path)	unite.vim/doc/unite.txt	/*i_<Plug>(unite_delete_backward_path)*
@@ -533,6 +535,7 @@ unite-action-source-function	unite.vim/doc/unite.txt	/*unite-action-source-funct
 unite-action-source-mapping	unite.vim/doc/unite.txt	/*unite-action-source-mapping*
 unite-action-source-process	unite.vim/doc/unite.txt	/*unite-action-source-process*
 unite-action-source-register	unite.vim/doc/unite.txt	/*unite-action-source-register*
+unite-action-source-window/gui	unite.vim/doc/unite.txt	/*unite-action-source-window\/gui*
 unite-action-tab	unite.vim/doc/unite.txt	/*unite-action-tab*
 unite-action-uri	unite.vim/doc/unite.txt	/*unite-action-uri*
 unite-action-window	unite.vim/doc/unite.txt	/*unite-action-window*
@@ -544,6 +547,7 @@ unite-create-filter	unite.vim/doc/unite.txt	/*unite-create-filter*
 unite-create-kind	unite.vim/doc/unite.txt	/*unite-create-kind*
 unite-create-source	unite.vim/doc/unite.txt	/*unite-create-source*
 unite-default-action	unite.vim/doc/unite.txt	/*unite-default-action*
+unite-deprecated-variables	unite.vim/doc/unite.txt	/*unite-deprecated-variables*
 unite-examples	unite.vim/doc/unite.txt	/*unite-examples*
 unite-external-sources	unite.vim/doc/unite.txt	/*unite-external-sources*
 unite-faq	unite.vim/doc/unite.txt	/*unite-faq*
@@ -614,15 +618,18 @@ unite-notation	unite.vim/doc/unite.txt	/*unite-notation*
 unite-notation-{candidate}	unite.vim/doc/unite.txt	/*unite-notation-{candidate}*
 unite-notation-{context}	unite.vim/doc/unite.txt	/*unite-notation-{context}*
 unite-options	unite.vim/doc/unite.txt	/*unite-options*
+unite-options-abbr-highlight	unite.vim/doc/unite.txt	/*unite-options-abbr-highlight*
 unite-options-auto-highlight	unite.vim/doc/unite.txt	/*unite-options-auto-highlight*
 unite-options-auto-preview	unite.vim/doc/unite.txt	/*unite-options-auto-preview*
 unite-options-auto-quit	unite.vim/doc/unite.txt	/*unite-options-auto-quit*
 unite-options-auto-resize	unite.vim/doc/unite.txt	/*unite-options-auto-resize*
 unite-options-buffer-name	unite.vim/doc/unite.txt	/*unite-options-buffer-name*
+unite-options-candidate-icon	unite.vim/doc/unite.txt	/*unite-options-candidate-icon*
 unite-options-col	unite.vim/doc/unite.txt	/*unite-options-col*
 unite-options-complete	unite.vim/doc/unite.txt	/*unite-options-complete*
 unite-options-create	unite.vim/doc/unite.txt	/*unite-options-create*
 unite-options-cursor-line-highlight	unite.vim/doc/unite.txt	/*unite-options-cursor-line-highlight*
+unite-options-cursor-line-time	unite.vim/doc/unite.txt	/*unite-options-cursor-line-time*
 unite-options-default-action	unite.vim/doc/unite.txt	/*unite-options-default-action*
 unite-options-direction	unite.vim/doc/unite.txt	/*unite-options-direction*
 unite-options-here	unite.vim/doc/unite.txt	/*unite-options-here*
@@ -634,16 +641,19 @@ unite-options-input	unite.vim/doc/unite.txt	/*unite-options-input*
 unite-options-keep-focus	unite.vim/doc/unite.txt	/*unite-options-keep-focus*
 unite-options-log	unite.vim/doc/unite.txt	/*unite-options-log*
 unite-options-long-source-names	unite.vim/doc/unite.txt	/*unite-options-long-source-names*
+unite-options-marked-icon	unite.vim/doc/unite.txt	/*unite-options-marked-icon*
 unite-options-max-multi-lines	unite.vim/doc/unite.txt	/*unite-options-max-multi-lines*
 unite-options-multi-line	unite.vim/doc/unite.txt	/*unite-options-multi-line*
+unite-options-no-	unite.vim/doc/unite.txt	/*unite-options-no-*
 unite-options-no-cursor-line	unite.vim/doc/unite.txt	/*unite-options-no-cursor-line*
 unite-options-no-empty	unite.vim/doc/unite.txt	/*unite-options-no-empty*
 unite-options-no-focus	unite.vim/doc/unite.txt	/*unite-options-no-focus*
 unite-options-no-quit	unite.vim/doc/unite.txt	/*unite-options-no-quit*
 unite-options-no-split	unite.vim/doc/unite.txt	/*unite-options-no-split*
-unite-options-no-start-insert	unite.vim/doc/unite.txt	/*unite-options-no-start-insert*
 unite-options-profile-name	unite.vim/doc/unite.txt	/*unite-options-profile-name*
 unite-options-prompt	unite.vim/doc/unite.txt	/*unite-options-prompt*
+unite-options-prompt-direction	unite.vim/doc/unite.txt	/*unite-options-prompt-direction*
+unite-options-prompt-visible	unite.vim/doc/unite.txt	/*unite-options-prompt-visible*
 unite-options-quick-match	unite.vim/doc/unite.txt	/*unite-options-quick-match*
 unite-options-resume	unite.vim/doc/unite.txt	/*unite-options-resume*
 unite-options-select	unite.vim/doc/unite.txt	/*unite-options-select*
@@ -724,6 +734,7 @@ unite-source-source	unite.vim/doc/unite.txt	/*unite-source-source*
 unite-source-tab	unite.vim/doc/unite.txt	/*unite-source-tab*
 unite-source-vimgrep	unite.vim/doc/unite.txt	/*unite-source-vimgrep*
 unite-source-window	unite.vim/doc/unite.txt	/*unite-source-window*
+unite-source-window/gui	unite.vim/doc/unite.txt	/*unite-source-window\/gui*
 unite-sources	unite.vim/doc/unite.txt	/*unite-sources*
 unite-sources-variables	unite.vim/doc/unite.txt	/*unite-sources-variables*
 unite-usage	unite.vim/doc/unite.txt	/*unite-usage*
@@ -1213,6 +1224,7 @@ g:vimfiler_no_default_key_mappings	vimfiler.vim/doc/vimfiler.txt	/*g:vimfiler_no
 g:vimfiler_preview_action	vimfiler.vim/doc/vimfiler.txt	/*g:vimfiler_preview_action*
 g:vimfiler_quick_look_command	vimfiler.vim/doc/vimfiler.txt	/*g:vimfiler_quick_look_command*
 g:vimfiler_readonly_file_icon	vimfiler.vim/doc/vimfiler.txt	/*g:vimfiler_readonly_file_icon*
+g:vimfiler_restore_alternate_file	vimfiler.vim/doc/vimfiler.txt	/*g:vimfiler_restore_alternate_file*
 g:vimfiler_safe_mode_by_default	vimfiler.vim/doc/vimfiler.txt	/*g:vimfiler_safe_mode_by_default*
 g:vimfiler_sort_type	vimfiler.vim/doc/vimfiler.txt	/*g:vimfiler_sort_type*
 g:vimfiler_split_action	vimfiler.vim/doc/vimfiler.txt	/*g:vimfiler_split_action*
@@ -1665,6 +1677,7 @@ Vital.Data.String.contains_multibyte()	vital.vim/doc/vital-data-string.txt	/*Vit
 Vital.Data.String.diffidx()	vital.vim/doc/vital-data-string.txt	/*Vital.Data.String.diffidx()*
 Vital.Data.String.dstring()	vital.vim/doc/vital-data-string.txt	/*Vital.Data.String.dstring()*
 Vital.Data.String.justify_equal_spacing()	vital.vim/doc/vital-data-string.txt	/*Vital.Data.String.justify_equal_spacing()*
+Vital.Data.String.levenshtein_distance()	vital.vim/doc/vital-data-string.txt	/*Vital.Data.String.levenshtein_distance()*
 Vital.Data.String.lines()	vital.vim/doc/vital-data-string.txt	/*Vital.Data.String.lines()*
 Vital.Data.String.nr2byte()	vital.vim/doc/vital-data-string.txt	/*Vital.Data.String.nr2byte()*
 Vital.Data.String.nr2enc_char()	vital.vim/doc/vital-data-string.txt	/*Vital.Data.String.nr2enc_char()*
@@ -1940,9 +1953,9 @@ Vital.System.File-contents	vital.vim/doc/vital-system-file.txt	/*Vital.System.Fi
 Vital.System.File-functions	vital.vim/doc/vital-system-file.txt	/*Vital.System.File-functions*
 Vital.System.File-interface	vital.vim/doc/vital-system-file.txt	/*Vital.System.File-interface*
 Vital.System.File-introduction	vital.vim/doc/vital-system-file.txt	/*Vital.System.File-introduction*
-Vital.System.File.copy_file()	vital.vim/doc/vital-system-file.txt	/*Vital.System.File.copy_file()*
+Vital.System.File.copy()	vital.vim/doc/vital-system-file.txt	/*Vital.System.File.copy()*
 Vital.System.File.mkdir_nothrow()	vital.vim/doc/vital-system-file.txt	/*Vital.System.File.mkdir_nothrow()*
-Vital.System.File.move_file()	vital.vim/doc/vital-system-file.txt	/*Vital.System.File.move_file()*
+Vital.System.File.move()	vital.vim/doc/vital-system-file.txt	/*Vital.System.File.move()*
 Vital.System.File.open()	vital.vim/doc/vital-system-file.txt	/*Vital.System.File.open()*
 Vital.System.File.rmdir()	vital.vim/doc/vital-system-file.txt	/*Vital.System.File.rmdir()*
 Vital.System.Filepath	vital.vim/doc/vital-system-filepath.txt	/*Vital.System.Filepath*

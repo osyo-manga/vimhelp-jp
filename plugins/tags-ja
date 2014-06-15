@@ -2256,8 +2256,8 @@ $VIMRUNTIME	vimdoc-ja/doc/starting.jax	/*$VIMRUNTIME*
 :cabc	vimdoc-ja/doc/map.jax	/*:cabc*
 :cabclear	vimdoc-ja/doc/map.jax	/*:cabclear*
 :cad	vimdoc-ja/doc/quickfix.jax	/*:cad*
-:caddb	vimdoc-ja/doc/quickfix.jax	/*:caddb*
 :caddbuffer	vimdoc-ja/doc/quickfix.jax	/*:caddbuffer*
+:cadde	vimdoc-ja/doc/quickfix.jax	/*:cadde*
 :caddexpr	vimdoc-ja/doc/quickfix.jax	/*:caddexpr*
 :caddf	vimdoc-ja/doc/quickfix.jax	/*:caddf*
 :caddfile	vimdoc-ja/doc/quickfix.jax	/*:caddfile*
@@ -4696,6 +4696,12 @@ Operator-pending-mode	vimdoc-ja/doc/intro.jax	/*Operator-pending-mode*
 OverTheSpot	vimdoc-ja/doc/mbyte.jax	/*OverTheSpot*
 P	vimdoc-ja/doc/change.jax	/*P*
 PATHEXT	vimdoc-ja/doc/eval.jax	/*PATHEXT*
+PHP_BracesAtCodeLevel	vimdoc-ja/doc/indent.jax	/*PHP_BracesAtCodeLevel*
+PHP_autoformatcomment	vimdoc-ja/doc/indent.jax	/*PHP_autoformatcomment*
+PHP_default_indenting	vimdoc-ja/doc/indent.jax	/*PHP_default_indenting*
+PHP_outdentSLComments	vimdoc-ja/doc/indent.jax	/*PHP_outdentSLComments*
+PHP_removeCRwhenUnix	vimdoc-ja/doc/indent.jax	/*PHP_removeCRwhenUnix*
+PHP_vintage_case_default_indent	vimdoc-ja/doc/indent.jax	/*PHP_vintage_case_default_indent*
 Pattern	vimdoc-ja/doc/pattern.jax	/*Pattern*
 Perl	vimdoc-ja/doc/if_perl.jax	/*Perl*
 Posix	vimdoc-ja/doc/intro.jax	/*Posix*
