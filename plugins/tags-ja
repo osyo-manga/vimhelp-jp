@@ -7292,6 +7292,7 @@ notation	vimdoc-ja/doc/intro.jax	/*notation@ja*
 notepad	vimdoc-ja/doc/gui_w32.jax	/*notepad@ja*
 nr2char()	vimdoc-ja/doc/eval.jax	/*nr2char()@ja*
 nroff.vim	vimdoc-ja/doc/syntax.jax	/*nroff.vim@ja*
+number_relativenumber	vimdoc-ja/doc/options.jax	/*number_relativenumber@ja*
 numbered-function	vimdoc-ja/doc/eval.jax	/*numbered-function@ja*
 o	vimdoc-ja/doc/insert.jax	/*o@ja*
 o_CTRL-V	vimdoc-ja/doc/motion.jax	/*o_CTRL-V@ja*

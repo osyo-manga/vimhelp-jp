@@ -1,3 +1,5 @@
+" $ git submodule foreach git pull origin master
+" $ git add plugins/*
 let s:root = expand("<sfile>:h")
 
 

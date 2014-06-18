@@ -640,7 +640,6 @@ unite-options-immediately	unite.vim/doc/unite.txt	/*unite-options-immediately@en
 unite-options-input	unite.vim/doc/unite.txt	/*unite-options-input@en*
 unite-options-keep-focus	unite.vim/doc/unite.txt	/*unite-options-keep-focus@en*
 unite-options-log	unite.vim/doc/unite.txt	/*unite-options-log@en*
-unite-options-long-source-names	unite.vim/doc/unite.txt	/*unite-options-long-source-names@en*
 unite-options-marked-icon	unite.vim/doc/unite.txt	/*unite-options-marked-icon@en*
 unite-options-max-multi-lines	unite.vim/doc/unite.txt	/*unite-options-max-multi-lines@en*
 unite-options-multi-line	unite.vim/doc/unite.txt	/*unite-options-multi-line@en*
@@ -3268,8 +3267,11 @@ $VIMRUNTIME	vim/doc/starting.txt	/*$VIMRUNTIME@en*
 :noautocmd	vim/doc/autocmd.txt	/*:noautocmd@en*
 :noh	vim/doc/pattern.txt	/*:noh@en*
 :nohlsearch	vim/doc/pattern.txt	/*:nohlsearch@en*
+:nor	vim/doc/map.txt	/*:nor@en*
+:nore	vim/doc/map.txt	/*:nore@en*
 :norea	vim/doc/map.txt	/*:norea@en*
 :noreabbrev	vim/doc/map.txt	/*:noreabbrev@en*
+:norem	vim/doc/map.txt	/*:norem@en*
 :noremap	vim/doc/map.txt	/*:noremap@en*
 :noremap!	vim/doc/map.txt	/*:noremap!@en*
 :noreme	vim/doc/gui.txt	/*:noreme@en*
@@ -7569,6 +7571,7 @@ match()	vim/doc/eval.txt	/*match()@en*
 match-highlight	vim/doc/pattern.txt	/*match-highlight@en*
 match-parens	vim/doc/tips.txt	/*match-parens@en*
 matchadd()	vim/doc/eval.txt	/*matchadd()@en*
+matchaddpos()	vim/doc/eval.txt	/*matchaddpos()@en*
 matcharg()	vim/doc/eval.txt	/*matcharg()@en*
 matchdelete()	vim/doc/eval.txt	/*matchdelete()@en*
 matchend()	vim/doc/eval.txt	/*matchend()@en*
