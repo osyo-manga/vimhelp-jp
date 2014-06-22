@@ -105,7 +105,7 @@ end
 # -------------------- lingr-bot --------------------
 def post_lingr_help(room, query, vimhelp)
 	Thread.start do
-		url = "http://vim-help-jp.herokuapp.com/##{query}"
+		url = "http://vim-help-jp.herokuapp.com/##{ERB::Util.url_encode query}"
 # 		url = "http://vim-help-jp.herokuapp.com/?query=#{ERB::Util.url_encode query}"
 		help = vimhelp.search(query, "Not found.")
 		result = (url + "\n" + help[:text].gsub(/^$/, "　")).slice(0, 1000)
