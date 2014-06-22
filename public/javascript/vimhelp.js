@@ -88,7 +88,7 @@ function modal_open(keyword, body){
 
 	$("#myModal").modal("show");
 	$(".modal-title").text(":help " + keyword);
-	$(".modal-title").attr("href", "#" + keyword);
+	$(".modal-title").attr("href", "#" + encodeURIComponent(keyword));
 	if( vimdoc_url == "" ){
 		disable_button(".btn.btn-info.vimdoc");
 	}
