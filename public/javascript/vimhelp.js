@@ -137,12 +137,13 @@ function search(keyword){
 
 	$.post("./search", { in:keyword}, function(ret){
 		$("#loading").fadeOut();
+		console.log(ret);
 		modal_open(keyword, ret)
 	});
 }
 
 function open(query){
-	location.replace("#" + query);
+	location.replace("#" + encodeURIComponent(query));
 }
 
 function get_param(key) {
@@ -211,10 +212,12 @@ $(document).ready(function() {
 		if( location.hash == ""){
 			return
 		}
-		search(location.hash.slice(1));
+		query = decodeURIComponent(location.hash.slice(1))
+		search(query);
 	});
 	if( location.hash != ""){
-		search(location.hash.slice(1));
+		query = decodeURIComponent(location.hash.slice(1))
+		search(query);
 	}
 });
 
