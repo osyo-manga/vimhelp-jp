@@ -51,14 +51,14 @@ post '/search' do
 	text = CGI.escapeHTML(text)
 
 	# option link
-	text = text.gsub(/\|(.+?)\||(&#39;[[:alpha:]]+?&#39;)/){ |text|
-		query = CGI.unescapeHTML($1 ? $1 : $2)
+	text = text.gsub(/\|(.+?)\||(&#39;[[:alpha:]]+?&#39;)|(&lt;[[:alpha:]]+?&gt;)/){ |text|
+		query = CGI.unescapeHTML($1 ? $1 : $2 ? $2 : $3)
 		title = vimhelp.search(query)[:text].sub(/^.*\n/, "").gsub(/　+|\s+|\t+\n/, " ").slice(0, 200)
 # 		title = result[:text].gsub(/　+|\s+|\t+\n/, " ").slice(0, 200)
 		if title.empty?
 			query
 		else
-			"<a class=\"tag_keyword\" data-keyword=\"#{ query }\" title=\"#{ CGI.escapeHTML title }\">#{ query }</a>"
+			"<a class=\"tag_keyword\" data-keyword=\"#{ CGI.escapeHTML query }\" title=\"#{ CGI.escapeHTML title }\">#{ CGI.escapeHTML query }</a>"
 		end
 	}
 	text = text.gsub(/\n/, "<br>")
