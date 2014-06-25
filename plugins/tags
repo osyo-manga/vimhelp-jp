@@ -57,6 +57,7 @@ neobundle#get()	neobundle.vim/doc/neobundle.txt	/*neobundle#get()@en*
 neobundle#get_hooks()	neobundle.vim/doc/neobundle.txt	/*neobundle#get_hooks()@en*
 neobundle#get_not_installed_bundle_names()	neobundle.vim/doc/neobundle.txt	/*neobundle#get_not_installed_bundle_names()@en*
 neobundle#has_cache()	neobundle.vim/doc/neobundle.txt	/*neobundle#has_cache()@en*
+neobundle#has_fresh_cache()	neobundle.vim/doc/neobundle.txt	/*neobundle#has_fresh_cache()@en*
 neobundle#hooks	neobundle.vim/doc/neobundle.txt	/*neobundle#hooks@en*
 neobundle#is_installed()	neobundle.vim/doc/neobundle.txt	/*neobundle#is_installed()@en*
 neobundle#is_sourced()	neobundle.vim/doc/neobundle.txt	/*neobundle#is_sourced()@en*
@@ -76,6 +77,7 @@ neobundle-hooks-on_source	neobundle.vim/doc/neobundle.txt	/*neobundle-hooks-on_s
 neobundle-install	neobundle.vim/doc/neobundle.txt	/*neobundle-install@en*
 neobundle-interface	neobundle.vim/doc/neobundle.txt	/*neobundle-interface@en*
 neobundle-introduction	neobundle.vim/doc/neobundle.txt	/*neobundle-introduction@en*
+neobundle-migrate-from-pathogen	neobundle.vim/doc/neobundle.txt	/*neobundle-migrate-from-pathogen@en*
 neobundle-options	neobundle.vim/doc/neobundle.txt	/*neobundle-options@en*
 neobundle-options-augroup	neobundle.vim/doc/neobundle.txt	/*neobundle-options-augroup@en*
 neobundle-options-autoload	neobundle.vim/doc/neobundle.txt	/*neobundle-options-autoload@en*
@@ -83,6 +85,7 @@ neobundle-options-base_path	neobundle.vim/doc/neobundle.txt	/*neobundle-options-
 neobundle-options-build	neobundle.vim/doc/neobundle.txt	/*neobundle-options-build@en*
 neobundle-options-default	neobundle.vim/doc/neobundle.txt	/*neobundle-options-default@en*
 neobundle-options-depends	neobundle.vim/doc/neobundle.txt	/*neobundle-options-depends@en*
+neobundle-options-directory	neobundle.vim/doc/neobundle.txt	/*neobundle-options-directory@en*
 neobundle-options-disabled	neobundle.vim/doc/neobundle.txt	/*neobundle-options-disabled@en*
 neobundle-options-external_commands	neobundle.vim/doc/neobundle.txt	/*neobundle-options-external_commands@en*
 neobundle-options-focus	neobundle.vim/doc/neobundle.txt	/*neobundle-options-focus@en*
@@ -496,9 +499,9 @@ unite#define_filter()	unite.vim/doc/unite.txt	/*unite#define_filter()@en*
 unite#define_kind()	unite.vim/doc/unite.txt	/*unite#define_kind()@en*
 unite#define_source()	unite.vim/doc/unite.txt	/*unite#define_source()@en*
 unite#do_action()	unite.vim/doc/unite.txt	/*unite#do_action()@en*
-unite#filters#converter_default#use(()	unite.vim/doc/unite.txt	/*unite#filters#converter_default#use(()@en*
-unite#filters#matcher_default#use(()	unite.vim/doc/unite.txt	/*unite#filters#matcher_default#use(()@en*
-unite#filters#sorter_default#use(()	unite.vim/doc/unite.txt	/*unite#filters#sorter_default#use(()@en*
+unite#filters#converter_default#use()	unite.vim/doc/unite.txt	/*unite#filters#converter_default#use()@en*
+unite#filters#matcher_default#use()	unite.vim/doc/unite.txt	/*unite#filters#matcher_default#use()@en*
+unite#filters#sorter_default#use()	unite.vim/doc/unite.txt	/*unite#filters#sorter_default#use()@en*
 unite#force_redraw()	unite.vim/doc/unite.txt	/*unite#force_redraw()@en*
 unite#get_candidates()	unite.vim/doc/unite.txt	/*unite#get_candidates()@en*
 unite#get_context()	unite.vim/doc/unite.txt	/*unite#get_context()@en*
@@ -835,6 +838,10 @@ $VIMRUNTIME	vim/doc/starting.txt	/*$VIMRUNTIME@en*
 'bl'	vim/doc/options.txt	/*'bl'@en*
 'bomb'	vim/doc/options.txt	/*'bomb'@en*
 'breakat'	vim/doc/options.txt	/*'breakat'@en*
+'breakindent'	vim/doc/options.txt	/*'breakindent'@en*
+'breakindentopt'	vim/doc/options.txt	/*'breakindentopt'@en*
+'bri'	vim/doc/options.txt	/*'bri'@en*
+'briopt'	vim/doc/options.txt	/*'briopt'@en*
 'brk'	vim/doc/options.txt	/*'brk'@en*
 'browsedir'	vim/doc/options.txt	/*'browsedir'@en*
 'bs'	vim/doc/options.txt	/*'bs'@en*
@@ -10026,6 +10033,7 @@ textobj-user-changelog-0.5.0	vim-textobj-user/doc/textobj-user.txt	/*textobj-use
 textobj-user-changelog-0.6.0	vim-textobj-user/doc/textobj-user.txt	/*textobj-user-changelog-0.6.0@en*
 textobj-user-changelog-0.6.1	vim-textobj-user/doc/textobj-user.txt	/*textobj-user-changelog-0.6.1@en*
 textobj-user-changelog-0.6.2	vim-textobj-user/doc/textobj-user.txt	/*textobj-user-changelog-0.6.2@en*
+textobj-user-changelog-0.6.3	vim-textobj-user/doc/textobj-user.txt	/*textobj-user-changelog-0.6.3@en*
 textobj-user-contents	vim-textobj-user/doc/textobj-user.txt	/*textobj-user-contents@en*
 textobj-user-example-between	vim-textobj-user/doc/textobj-user.txt	/*textobj-user-example-between@en*
 textobj-user-example-complex	vim-textobj-user/doc/textobj-user.txt	/*textobj-user-example-complex@en*
