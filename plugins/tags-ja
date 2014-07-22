@@ -2713,6 +2713,7 @@ $VIMRUNTIME	vimdoc-ja/doc/starting.jax	/*$VIMRUNTIME@ja*
 :map!	vimdoc-ja/doc/map.jax	/*:map!@ja*
 :map-<buffer>	vimdoc-ja/doc/map.jax	/*:map-<buffer>@ja*
 :map-<expr>	vimdoc-ja/doc/map.jax	/*:map-<expr>@ja*
+:map-<nowait>	vimdoc-ja/doc/map.jax	/*:map-<nowait>@ja*
 :map-<script>	vimdoc-ja/doc/map.jax	/*:map-<script>@ja*
 :map-<silent>	vimdoc-ja/doc/map.jax	/*:map-<silent>@ja*
 :map-<special>	vimdoc-ja/doc/map.jax	/*:map-<special>@ja*
@@ -2723,6 +2724,7 @@ $VIMRUNTIME	vimdoc-ja/doc/starting.jax	/*$VIMRUNTIME@ja*
 :map-expression	vimdoc-ja/doc/map.jax	/*:map-expression@ja*
 :map-local	vimdoc-ja/doc/map.jax	/*:map-local@ja*
 :map-modes	vimdoc-ja/doc/map.jax	/*:map-modes@ja*
+:map-nowait	vimdoc-ja/doc/map.jax	/*:map-nowait@ja*
 :map-operator	vimdoc-ja/doc/map.jax	/*:map-operator@ja*
 :map-script	vimdoc-ja/doc/map.jax	/*:map-script@ja*
 :map-silent	vimdoc-ja/doc/map.jax	/*:map-silent@ja*
@@ -2799,8 +2801,11 @@ $VIMRUNTIME	vimdoc-ja/doc/starting.jax	/*$VIMRUNTIME@ja*
 :noautocmd	vimdoc-ja/doc/autocmd.jax	/*:noautocmd@ja*
 :noh	vimdoc-ja/doc/pattern.jax	/*:noh@ja*
 :nohlsearch	vimdoc-ja/doc/pattern.jax	/*:nohlsearch@ja*
+:nor	vimdoc-ja/doc/map.jax	/*:nor@ja*
+:nore	vimdoc-ja/doc/map.jax	/*:nore@ja*
 :norea	vimdoc-ja/doc/map.jax	/*:norea@ja*
 :noreabbrev	vimdoc-ja/doc/map.jax	/*:noreabbrev@ja*
+:norem	vimdoc-ja/doc/map.jax	/*:norem@ja*
 :noremap	vimdoc-ja/doc/map.jax	/*:noremap@ja*
 :noremap!	vimdoc-ja/doc/map.jax	/*:noremap!@ja*
 :noreme	vimdoc-ja/doc/gui.jax	/*:noreme@ja*
@@ -6920,6 +6925,7 @@ map-listing	vimdoc-ja/doc/map.jax	/*map-listing@ja*
 map-modes	vimdoc-ja/doc/map.jax	/*map-modes@ja*
 map-multibyte	vimdoc-ja/doc/map.jax	/*map-multibyte@ja*
 map-overview	vimdoc-ja/doc/map.jax	/*map-overview@ja*
+map-precedence	vimdoc-ja/doc/map.jax	/*map-precedence@ja*
 map-self-destroy	vimdoc-ja/doc/tips.jax	/*map-self-destroy@ja*
 map-typing	vimdoc-ja/doc/map.jax	/*map-typing@ja*
 map-which-keys	vimdoc-ja/doc/map.jax	/*map-which-keys@ja*

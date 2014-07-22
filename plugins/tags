@@ -83,6 +83,7 @@ neobundle-options-augroup	neobundle.vim/doc/neobundle.txt	/*neobundle-options-au
 neobundle-options-autoload	neobundle.vim/doc/neobundle.txt	/*neobundle-options-autoload@en*
 neobundle-options-base_path	neobundle.vim/doc/neobundle.txt	/*neobundle-options-base_path@en*
 neobundle-options-build	neobundle.vim/doc/neobundle.txt	/*neobundle-options-build@en*
+neobundle-options-build_commands	neobundle.vim/doc/neobundle.txt	/*neobundle-options-build_commands@en*
 neobundle-options-default	neobundle.vim/doc/neobundle.txt	/*neobundle-options-default@en*
 neobundle-options-depends	neobundle.vim/doc/neobundle.txt	/*neobundle-options-depends@en*
 neobundle-options-directory	neobundle.vim/doc/neobundle.txt	/*neobundle-options-directory@en*
@@ -370,7 +371,6 @@ x_<Plug>(neosnippet_start_unite_snippet_target)	neosnippet.vim/doc/neosnippet.tx
 <Plug>(unite_loop_cursor_up)	unite.vim/doc/unite.txt	/*<Plug>(unite_loop_cursor_up)@en*
 <Plug>(unite_narrowing_dot)	unite.vim/doc/unite.txt	/*<Plug>(unite_narrowing_dot)@en*
 <Plug>(unite_narrowing_input_history)	unite.vim/doc/unite.txt	/*<Plug>(unite_narrowing_input_history)@en*
-<Plug>(unite_narrowing_path)	unite.vim/doc/unite.txt	/*<Plug>(unite_narrowing_path)@en*
 <Plug>(unite_new_candidate)	unite.vim/doc/unite.txt	/*<Plug>(unite_new_candidate)@en*
 <Plug>(unite_print_candidate)	unite.vim/doc/unite.txt	/*<Plug>(unite_print_candidate)@en*
 <Plug>(unite_print_message_log)	unite.vim/doc/unite.txt	/*<Plug>(unite_print_message_log)@en*
@@ -415,6 +415,7 @@ g:unite_quick_match_table	unite.vim/doc/unite.txt	/*g:unite_quick_match_table@en
 g:unite_source_alias_aliases	unite.vim/doc/unite.txt	/*g:unite_source_alias_aliases@en*
 g:unite_source_bookmark_directory	unite.vim/doc/unite.txt	/*g:unite_source_bookmark_directory@en*
 g:unite_source_buffer_time_format	unite.vim/doc/unite.txt	/*g:unite_source_buffer_time_format@en*
+g:unite_source_file_async_command	unite.vim/doc/unite.txt	/*g:unite_source_file_async_command@en*
 g:unite_source_file_ignore_pattern	unite.vim/doc/unite.txt	/*g:unite_source_file_ignore_pattern@en*
 g:unite_source_file_rec_async_command	unite.vim/doc/unite.txt	/*g:unite_source_file_rec_async_command@en*
 g:unite_source_file_rec_ignore_pattern	unite.vim/doc/unite.txt	/*g:unite_source_file_rec_ignore_pattern@en*
@@ -651,7 +652,9 @@ unite-options-no-cursor-line	unite.vim/doc/unite.txt	/*unite-options-no-cursor-l
 unite-options-no-empty	unite.vim/doc/unite.txt	/*unite-options-no-empty@en*
 unite-options-no-focus	unite.vim/doc/unite.txt	/*unite-options-no-focus@en*
 unite-options-no-quit	unite.vim/doc/unite.txt	/*unite-options-no-quit@en*
+unite-options-no-resize	unite.vim/doc/unite.txt	/*unite-options-no-resize@en*
 unite-options-no-split	unite.vim/doc/unite.txt	/*unite-options-no-split@en*
+unite-options-path	unite.vim/doc/unite.txt	/*unite-options-path@en*
 unite-options-profile-name	unite.vim/doc/unite.txt	/*unite-options-profile-name@en*
 unite-options-prompt	unite.vim/doc/unite.txt	/*unite-options-prompt@en*
 unite-options-prompt-direction	unite.vim/doc/unite.txt	/*unite-options-prompt-direction@en*
@@ -712,6 +715,7 @@ unite-source-command	unite.vim/doc/unite.txt	/*unite-source-command@en*
 unite-source-directory	unite.vim/doc/unite.txt	/*unite-source-directory@en*
 unite-source-directory/new	unite.vim/doc/unite.txt	/*unite-source-directory\/new@en*
 unite-source-file	unite.vim/doc/unite.txt	/*unite-source-file@en*
+unite-source-file/async	unite.vim/doc/unite.txt	/*unite-source-file\/async@en*
 unite-source-file/new	unite.vim/doc/unite.txt	/*unite-source-file\/new@en*
 unite-source-file_point	unite.vim/doc/unite.txt	/*unite-source-file_point@en*
 unite-source-file_rec	unite.vim/doc/unite.txt	/*unite-source-file_rec@en*
@@ -10565,6 +10569,7 @@ Vital.Data.List.foldl()	vital.vim/doc/vital-data-list.txt	/*Vital.Data.List.fold
 Vital.Data.List.foldl1()	vital.vim/doc/vital-data-list.txt	/*Vital.Data.List.foldl1()@en*
 Vital.Data.List.foldr()	vital.vim/doc/vital-data-list.txt	/*Vital.Data.List.foldr()@en*
 Vital.Data.List.foldr1()	vital.vim/doc/vital-data-list.txt	/*Vital.Data.List.foldr1()@en*
+Vital.Data.List.group_by	vital.vim/doc/vital-data-list.txt	/*Vital.Data.List.group_by@en*
 Vital.Data.List.has()	vital.vim/doc/vital-data-list.txt	/*Vital.Data.List.has()@en*
 Vital.Data.List.has_common_items()	vital.vim/doc/vital-data-list.txt	/*Vital.Data.List.has_common_items()@en*
 Vital.Data.List.has_index()	vital.vim/doc/vital-data-list.txt	/*Vital.Data.List.has_index()@en*
@@ -11028,12 +11033,16 @@ Vital.Web.HTTP.parseHeader()	vital.vim/doc/vital-web-http.txt	/*Vital.Web.HTTP.p
 Vital.Web.HTTP.post()	vital.vim/doc/vital-web-http.txt	/*Vital.Web.HTTP.post()@en*
 Vital.Web.HTTP.request()	vital.vim/doc/vital-web-http.txt	/*Vital.Web.HTTP.request()@en*
 Vital.Web.JSON	vital.vim/doc/vital-web-json.txt	/*Vital.Web.JSON@en*
+Vital.Web.JSON-consts	vital.vim/doc/vital-web-json.txt	/*Vital.Web.JSON-consts@en*
 Vital.Web.JSON-contents	vital.vim/doc/vital-web-json.txt	/*Vital.Web.JSON-contents@en*
 Vital.Web.JSON-functions	vital.vim/doc/vital-web-json.txt	/*Vital.Web.JSON-functions@en*
 Vital.Web.JSON-interface	vital.vim/doc/vital-web-json.txt	/*Vital.Web.JSON-interface@en*
 Vital.Web.JSON-introduction	vital.vim/doc/vital-web-json.txt	/*Vital.Web.JSON-introduction@en*
 Vital.Web.JSON.decode()	vital.vim/doc/vital-web-json.txt	/*Vital.Web.JSON.decode()@en*
 Vital.Web.JSON.encode()	vital.vim/doc/vital-web-json.txt	/*Vital.Web.JSON.encode()@en*
+Vital.Web.JSON.false	vital.vim/doc/vital-web-json.txt	/*Vital.Web.JSON.false@en*
+Vital.Web.JSON.null	vital.vim/doc/vital-web-json.txt	/*Vital.Web.JSON.null@en*
+Vital.Web.JSON.true	vital.vim/doc/vital-web-json.txt	/*Vital.Web.JSON.true@en*
 Vital.Web.XML	vital.vim/doc/vital-web-xml.txt	/*Vital.Web.XML@en*
 Vital.Web.XML-contents	vital.vim/doc/vital-web-xml.txt	/*Vital.Web.XML-contents@en*
 Vital.Web.XML-functions	vital.vim/doc/vital-web-xml.txt	/*Vital.Web.XML-functions@en*
