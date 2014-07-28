@@ -178,7 +178,6 @@ g:neocomplete#sources#buffer#cache_limit_size	neocomplete.vim/doc/neocomplete.tx
 g:neocomplete#sources#buffer#disabled_pattern	neocomplete.vim/doc/neocomplete.txt	/*g:neocomplete#sources#buffer#disabled_pattern@en*
 g:neocomplete#sources#buffer#max_keyword_width	neocomplete.vim/doc/neocomplete.txt	/*g:neocomplete#sources#buffer#max_keyword_width@en*
 g:neocomplete#sources#dictionary#dictionaries	neocomplete.vim/doc/neocomplete.txt	/*g:neocomplete#sources#dictionary#dictionaries@en*
-g:neocomplete#sources#dictionary#keyword_patterns	neocomplete.vim/doc/neocomplete.txt	/*g:neocomplete#sources#dictionary#keyword_patterns@en*
 g:neocomplete#sources#file_include#delimiters	neocomplete.vim/doc/neocomplete.txt	/*g:neocomplete#sources#file_include#delimiters@en*
 g:neocomplete#sources#file_include#exprs	neocomplete.vim/doc/neocomplete.txt	/*g:neocomplete#sources#file_include#exprs@en*
 g:neocomplete#sources#file_include#exts	neocomplete.vim/doc/neocomplete.txt	/*g:neocomplete#sources#file_include#exts@en*
@@ -608,6 +607,8 @@ unite-kind-common	unite.vim/doc/unite.txt	/*unite-kind-common@en*
 unite-kind-completion	unite.vim/doc/unite.txt	/*unite-kind-completion@en*
 unite-kind-directory	unite.vim/doc/unite.txt	/*unite-kind-directory@en*
 unite-kind-file	unite.vim/doc/unite.txt	/*unite-kind-file@en*
+unite-kind-file_base	unite.vim/doc/unite.txt	/*unite-kind-file_base@en*
+unite-kind-file_vimfiler_base	unite.vim/doc/unite.txt	/*unite-kind-file_vimfiler_base@en*
 unite-kind-guicmd	unite.vim/doc/unite.txt	/*unite-kind-guicmd@en*
 unite-kind-jump_list	unite.vim/doc/unite.txt	/*unite-kind-jump_list@en*
 unite-kind-openable	unite.vim/doc/unite.txt	/*unite-kind-openable@en*
@@ -10361,8 +10362,6 @@ i_<Plug>(vimshell_push_current_line)	vimshell.vim/doc/vimshell.txt	/*i_<Plug>(vi
 i_<Plug>(vimshell_zsh_complete)	vimshell.vim/doc/vimshell.txt	/*i_<Plug>(vimshell_zsh_complete)@en*
 i_vimshell_default_key_mappings	vimshell.vim/doc/vimshell.txt	/*i_vimshell_default_key_mappings@en*
 i_vimshell_int_default_key_mappings	vimshell.vim/doc/vimshell.txt	/*i_vimshell_int_default_key_mappings@en*
-v_<Plug>(vimshell_select_next_prompt)	vimshell.vim/doc/vimshell.txt	/*v_<Plug>(vimshell_select_next_prompt)@en*
-v_<Plug>(vimshell_select_previous_prompt)	vimshell.vim/doc/vimshell.txt	/*v_<Plug>(vimshell_select_previous_prompt)@en*
 v_vimshell_default_key_mappings	vimshell.vim/doc/vimshell.txt	/*v_vimshell_default_key_mappings@en*
 vimshell	vimshell.vim/doc/vimshell.txt	/*vimshell@en*
 vimshell#get_status_string()	vimshell.vim/doc/vimshell.txt	/*vimshell#get_status_string()@en*
@@ -10837,6 +10836,7 @@ Vital.ProcessManager-interface	vital.vim/doc/vital-process_manager.txt	/*Vital.P
 Vital.ProcessManager-introduction	vital.vim/doc/vital-process_manager.txt	/*Vital.ProcessManager-introduction@en*
 Vital.ProcessManager-principle	vital.vim/doc/vital-process_manager.txt	/*Vital.ProcessManager-principle@en*
 Vital.ProcessManager-usage	vital.vim/doc/vital-process_manager.txt	/*Vital.ProcessManager-usage@en*
+Vital.ProcessManager.state()	vital.vim/doc/vital-process_manager.txt	/*Vital.ProcessManager.state()@en*
 Vital.ProcessManager.touch()	vital.vim/doc/vital-process_manager.txt	/*Vital.ProcessManager.touch()@en*
 Vital.Random	vital.vim/doc/vital-random.txt	/*Vital.Random@en*
 Vital.Random-Generator	vital.vim/doc/vital-random.txt	/*Vital.Random-Generator@en*

@@ -2813,6 +2813,8 @@ $VIMRUNTIME	vimdoc-ja/doc/starting.jax	/*$VIMRUNTIME@ja*
 :norm	vimdoc-ja/doc/various.jax	/*:norm@ja*
 :normal	vimdoc-ja/doc/various.jax	/*:normal@ja*
 :normal-range	vimdoc-ja/doc/various.jax	/*:normal-range@ja*
+:nos	vimdoc-ja/doc/recover.jax	/*:nos@ja*
+:noswapfile	vimdoc-ja/doc/recover.jax	/*:noswapfile@ja*
 :nu	vimdoc-ja/doc/various.jax	/*:nu@ja*
 :number	vimdoc-ja/doc/various.jax	/*:number@ja*
 :nun	vimdoc-ja/doc/map.jax	/*:nun@ja*
@@ -3859,6 +3861,7 @@ E201	vimdoc-ja/doc/autocmd.jax	/*E201@ja*
 E202	vimdoc-ja/doc/options.jax	/*E202@ja*
 E203	vimdoc-ja/doc/autocmd.jax	/*E203@ja*
 E204	vimdoc-ja/doc/autocmd.jax	/*E204@ja*
+E205	vimdoc-ja/doc/options.jax	/*E205@ja*
 E206	vimdoc-ja/doc/options.jax	/*E206@ja*
 E207	vimdoc-ja/doc/editing.jax	/*E207@ja*
 E208	vimdoc-ja/doc/message.jax	/*E208@ja*
@@ -3918,6 +3921,8 @@ E259	vimdoc-ja/doc/if_cscop.jax	/*E259@ja*
 E26	vimdoc-ja/doc/rileft.jax	/*E26@ja*
 E261	vimdoc-ja/doc/if_cscop.jax	/*E261@ja*
 E262	vimdoc-ja/doc/if_cscop.jax	/*E262@ja*
+E263	vimdoc-ja/doc/if_pyth.jax	/*E263@ja*
+E264	vimdoc-ja/doc/if_pyth.jax	/*E264@ja*
 E265	vimdoc-ja/doc/if_ruby.jax	/*E265@ja*
 E266	vimdoc-ja/doc/if_ruby.jax	/*E266@ja*
 E267	vimdoc-ja/doc/if_ruby.jax	/*E267@ja*
@@ -4572,6 +4577,7 @@ E879	vimdoc-ja/doc/syntax.jax	/*E879@ja*
 E88	vimdoc-ja/doc/windows.jax	/*E88@ja*
 E881	vimdoc-ja/doc/autocmd.jax	/*E881@ja*
 E885	vimdoc-ja/doc/sign.jax	/*E885@ja*
+E887	vimdoc-ja/doc/if_pyth.jax	/*E887@ja*
 E89	vimdoc-ja/doc/message.jax	/*E89@ja*
 E90	vimdoc-ja/doc/message.jax	/*E90@ja*
 E91	vimdoc-ja/doc/options.jax	/*E91@ja*
