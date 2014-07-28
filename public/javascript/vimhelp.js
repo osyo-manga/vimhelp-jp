@@ -82,13 +82,23 @@ function enable_button(class_){
 }
 
 
+function encode(text){
+	return escape(encodeURIComponent(text));
+}
+
+
+function decode(text){
+	return unescape(decodeURIComponent(text));
+}
+
+
 function modal_open(keyword, body){
 	vimdoc_url = body["vimdoc_url"];
 	text = body["text"];
 
 	$("#myModal").modal("show");
 	$(".modal-title").text(":help " + keyword);
-	$(".modal-title").attr("href", "#" + encodeURIComponent(keyword));
+	$(".modal-title").attr("href", "#" + encode(keyword));
 	if( vimdoc_url == "" ){
 		disable_button(".btn.btn-info.vimdoc");
 	}
@@ -143,7 +153,7 @@ function search(keyword){
 }
 
 function open(query){
-	location.replace("#" + encodeURIComponent(query));
+	location.replace("#" + encode(query));
 }
 
 function get_param(key) {
@@ -173,9 +183,9 @@ $(document).ready(function() {
 
 	query = get_param("query");
 	if( query != "" ){
-		keyword = decodeURIComponent(query);
+		keyword = decode(query);
 		$("#input_text").val(keyword);
-		search(decodeURIComponent(query));
+		search(decode(query));
 	}
 
 	$('.btn.btn-default.prev').click(function(e) {
@@ -212,11 +222,11 @@ $(document).ready(function() {
 		if( location.hash == ""){
 			return
 		}
-		query = decodeURIComponent(location.hash.slice(1))
+		query = decode(location.hash.slice(1))
 		search(query);
 	});
 	if( location.hash != ""){
-		query = decodeURIComponent(location.hash.slice(1))
+		query = decode(location.hash.slice(1))
 		search(query);
 	}
 });
