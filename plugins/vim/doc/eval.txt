@@ -1,4 +1,4 @@
-*eval.txt*	For Vim version 7.4.  Last change: 2014 Jun 25
+*eval.txt*	For Vim version 7.4.  Last change: 2014 Aug 16
 
 
 		  VIM REFERENCE MANUAL	  by Bram Moolenaar
@@ -1807,7 +1807,8 @@ getchar( [expr])		Number	get one character from the user
 getcharmod( )			Number	modifiers for the last typed character
 getcmdline()			String	return the current command-line
 getcmdpos()			Number	return cursor position in command-line
-getcmdtype()			String	return the current command-line type
+getcmdtype()			String	return current command-line type
+getcmdwintype()			String	return current command-line window type
 getcurpos()			List	position of the cursor
 getcwd()			String	the current working directory
 getfontname( [{name}])		String	name of font being used
@@ -2112,8 +2113,8 @@ argidx()	The result is the current index in the argument list.  0 is
 arglistid([{winnr}, [ {tabnr} ]])
 		Return the argument list ID.  This is a number which
 		identifies the argument list being used.  Zero is used for the
-		global argument list.
-		Return zero if the arguments are invalid.
+		global argument list.  See |arglist|.
+		Return -1 if the arguments are invalid.
 
 		Without arguments use the current window.
 		With {winnr} only use this window in the current tab page.
@@ -3349,6 +3350,11 @@ getcmdtype()						*getcmdtype()*
 		Returns an empty string otherwise.
 		Also see |getcmdpos()|, |setcmdpos()| and |getcmdline()|.
 
+getcmdwintype()						*getcmdwintype()*
+		Return the current |command-line-window| type. Possible return
+		values are the same as |getcmdtype()|. Returns an empty string
+		when not in the command-line window.
+
 							*getcurpos()*
 getcurpos()	Get the position of the cursor.  This is like getpos('.'), but
 		includes an extra item in the list:
@@ -3359,7 +3365,7 @@ getcurpos()	Get the position of the cursor.  This is like getpos('.'), but
 			let save_cursor = getcurpos()
 			MoveTheCursorAround
 			call setpos('.', save_cursor)
-
+<
 							*getcwd()*
 getcwd()	The result is a String, which is the name of the current
 		working directory.
@@ -5651,6 +5657,11 @@ sort({list} [, {func} [, {dict}]])			*sort()* *E702*
 		{dict} is for functions with the "dict" attribute.  It will be
 		used to set the local variable "self". |Dictionary-function|
 
+		The sort is stable, items which compare equal (as number or as
+		string) will keep their relative position. E.g., when sorting
+		on numbers, text strings will sort next to each other, in the
+		same order as they were originally.
+
 		Also see |uniq()|.
 
 		Example: >
@@ -6507,7 +6518,7 @@ winsaveview()	Returns a |Dictionary| that contains information to restore
 		buffer and you want to go back to the original view.
 		This does not save fold information.  Use the 'foldenable'
 		option to temporarily switch off folding, so that folds are
-		not opened when moving around.
+		not opened when moving around. This may have side effects.
 		The return value includes:
 			lnum		cursor line number
 			col		cursor column (Note: the first column
@@ -6617,6 +6628,7 @@ dialog_con		Compiled with console dialog support.
 dialog_gui		Compiled with GUI dialog support.
 diff			Compiled with |vimdiff| and 'diff' support.
 digraphs		Compiled with support for digraphs.
+directx			Compiled with support for Direct-X and 'renderoptions'.
 dnd			Compiled with support for the "~ register |quote_~|.
 dos16			16 bits DOS version of Vim.
 dos32			32 bits DOS (DJGPP) version of Vim.

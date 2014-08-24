@@ -304,6 +304,7 @@ $VIMRUNTIME	vimdoc-ja/doc/starting.jax	/*$VIMRUNTIME@ja*
 %	vimdoc-ja/doc/motion.jax	/*%@ja*
 %:.	vimdoc-ja/doc/cmdline.jax	/*%:.@ja*
 %:8	vimdoc-ja/doc/cmdline.jax	/*%:8@ja*
+%:S	vimdoc-ja/doc/cmdline.jax	/*%:S@ja*
 %:e	vimdoc-ja/doc/cmdline.jax	/*%:e@ja*
 %:gs	vimdoc-ja/doc/cmdline.jax	/*%:gs@ja*
 %:h	vimdoc-ja/doc/cmdline.jax	/*%:h@ja*
@@ -1454,6 +1455,7 @@ $VIMRUNTIME	vimdoc-ja/doc/starting.jax	/*$VIMRUNTIME@ja*
 +dialog_gui	vimdoc-ja/doc/various.jax	/*+dialog_gui@ja*
 +diff	vimdoc-ja/doc/various.jax	/*+diff@ja*
 +digraphs	vimdoc-ja/doc/various.jax	/*+digraphs@ja*
++directx	vimdoc-ja/doc/various.jax	/*+directx@ja*
 +dnd	vimdoc-ja/doc/various.jax	/*+dnd@ja*
 +emacs_tags	vimdoc-ja/doc/various.jax	/*+emacs_tags@ja*
 +eval	vimdoc-ja/doc/various.jax	/*+eval@ja*
@@ -1488,6 +1490,7 @@ $VIMRUNTIME	vimdoc-ja/doc/starting.jax	/*$VIMRUNTIME@ja*
 +mouse	vimdoc-ja/doc/various.jax	/*+mouse@ja*
 +mouse_dec	vimdoc-ja/doc/various.jax	/*+mouse_dec@ja*
 +mouse_gpm	vimdoc-ja/doc/various.jax	/*+mouse_gpm@ja*
++mouse_jsbterm	vimdoc-ja/doc/various.jax	/*+mouse_jsbterm@ja*
 +mouse_netterm	vimdoc-ja/doc/various.jax	/*+mouse_netterm@ja*
 +mouse_pterm	vimdoc-ja/doc/various.jax	/*+mouse_pterm@ja*
 +mouse_sgr	vimdoc-ja/doc/various.jax	/*+mouse_sgr@ja*
@@ -1701,6 +1704,7 @@ $VIMRUNTIME	vimdoc-ja/doc/starting.jax	/*$VIMRUNTIME@ja*
 /\%>c	vimdoc-ja/doc/pattern.jax	/*\/\\%>c@ja*
 /\%>l	vimdoc-ja/doc/pattern.jax	/*\/\\%>l@ja*
 /\%>v	vimdoc-ja/doc/pattern.jax	/*\/\\%>v@ja*
+/\%C	vimdoc-ja/doc/pattern.jax	/*\/\\%C@ja*
 /\%U	vimdoc-ja/doc/pattern.jax	/*\/\\%U@ja*
 /\%V	vimdoc-ja/doc/pattern.jax	/*\/\\%V@ja*
 /\%[]	vimdoc-ja/doc/pattern.jax	/*\/\\%[]@ja*
@@ -2075,6 +2079,7 @@ $VIMRUNTIME	vimdoc-ja/doc/starting.jax	/*$VIMRUNTIME@ja*
 :3match	vimdoc-ja/doc/pattern.jax	/*:3match@ja*
 ::.	vimdoc-ja/doc/cmdline.jax	/*::.@ja*
 ::8	vimdoc-ja/doc/cmdline.jax	/*::8@ja*
+::S	vimdoc-ja/doc/cmdline.jax	/*::S@ja*
 ::e	vimdoc-ja/doc/cmdline.jax	/*::e@ja*
 ::gs	vimdoc-ja/doc/cmdline.jax	/*::gs@ja*
 ::h	vimdoc-ja/doc/cmdline.jax	/*::h@ja*
@@ -2412,6 +2417,7 @@ $VIMRUNTIME	vimdoc-ja/doc/starting.jax	/*$VIMRUNTIME@ja*
 :doautoa	vimdoc-ja/doc/autocmd.jax	/*:doautoa@ja*
 :doautoall	vimdoc-ja/doc/autocmd.jax	/*:doautoall@ja*
 :doautocmd	vimdoc-ja/doc/autocmd.jax	/*:doautocmd@ja*
+:dp	vimdoc-ja/doc/change.jax	/*:dp@ja*
 :dr	vimdoc-ja/doc/windows.jax	/*:dr@ja*
 :drop	vimdoc-ja/doc/windows.jax	/*:drop@ja*
 :ds	vimdoc-ja/doc/tagsrch.jax	/*:ds@ja*
@@ -3827,6 +3833,7 @@ E168	vimdoc-ja/doc/repeat.jax	/*E168@ja*
 E169	vimdoc-ja/doc/message.jax	/*E169@ja*
 E17	vimdoc-ja/doc/message.jax	/*E17@ja*
 E170	vimdoc-ja/doc/eval.jax	/*E170@ja*
+E171	vimdoc-ja/doc/eval.jax	/*E171@ja*
 E172	vimdoc-ja/doc/message.jax	/*E172@ja*
 E173	vimdoc-ja/doc/message.jax	/*E173@ja*
 E174	vimdoc-ja/doc/map.jax	/*E174@ja*
@@ -3835,6 +3842,7 @@ E176	vimdoc-ja/doc/map.jax	/*E176@ja*
 E177	vimdoc-ja/doc/map.jax	/*E177@ja*
 E178	vimdoc-ja/doc/map.jax	/*E178@ja*
 E179	vimdoc-ja/doc/map.jax	/*E179@ja*
+E18	vimdoc-ja/doc/eval.jax	/*E18@ja*
 E180	vimdoc-ja/doc/map.jax	/*E180@ja*
 E181	vimdoc-ja/doc/map.jax	/*E181@ja*
 E182	vimdoc-ja/doc/map.jax	/*E182@ja*
@@ -3852,6 +3860,7 @@ E192	vimdoc-ja/doc/message.jax	/*E192@ja*
 E193	vimdoc-ja/doc/eval.jax	/*E193@ja*
 E194	vimdoc-ja/doc/message.jax	/*E194@ja*
 E195	vimdoc-ja/doc/starting.jax	/*E195@ja*
+E196	vimdoc-ja/doc/various.jax	/*E196@ja*
 E197	vimdoc-ja/doc/mlang.jax	/*E197@ja*
 E198	vimdoc-ja/doc/options.jax	/*E198@ja*
 E199	vimdoc-ja/doc/cmdline.jax	/*E199@ja*
@@ -3964,10 +3973,17 @@ E301	vimdoc-ja/doc/message.jax	/*E301@ja*
 E302	vimdoc-ja/doc/message.jax	/*E302@ja*
 E303	vimdoc-ja/doc/message.jax	/*E303@ja*
 E304	vimdoc-ja/doc/message.jax	/*E304@ja*
+E305	vimdoc-ja/doc/recover.jax	/*E305@ja*
+E306	vimdoc-ja/doc/recover.jax	/*E306@ja*
+E307	vimdoc-ja/doc/recover.jax	/*E307@ja*
+E308	vimdoc-ja/doc/recover.jax	/*E308@ja*
 E309	vimdoc-ja/doc/recover.jax	/*E309@ja*
 E31	vimdoc-ja/doc/message.jax	/*E31@ja*
 E310	vimdoc-ja/doc/recover.jax	/*E310@ja*
+E311	vimdoc-ja/doc/recover.jax	/*E311@ja*
 E312	vimdoc-ja/doc/recover.jax	/*E312@ja*
+E313	vimdoc-ja/doc/recover.jax	/*E313@ja*
+E314	vimdoc-ja/doc/recover.jax	/*E314@ja*
 E315	vimdoc-ja/doc/message.jax	/*E315@ja*
 E316	vimdoc-ja/doc/message.jax	/*E316@ja*
 E317	vimdoc-ja/doc/message.jax	/*E317@ja*
@@ -4145,6 +4161,7 @@ E475	vimdoc-ja/doc/message.jax	/*E475@ja*
 E476	vimdoc-ja/doc/pattern.jax	/*E476@ja*
 E477	vimdoc-ja/doc/message.jax	/*E477@ja*
 E478	vimdoc-ja/doc/message.jax	/*E478@ja*
+E479	vimdoc-ja/doc/editing.jax	/*E479@ja*
 E48	vimdoc-ja/doc/eval.jax	/*E48@ja*
 E480	vimdoc-ja/doc/editing.jax	/*E480@ja*
 E481	vimdoc-ja/doc/message.jax	/*E481@ja*
@@ -4251,7 +4268,9 @@ E575	vimdoc-ja/doc/starting.jax	/*E575@ja*
 E576	vimdoc-ja/doc/starting.jax	/*E576@ja*
 E577	vimdoc-ja/doc/starting.jax	/*E577@ja*
 E578	vimdoc-ja/doc/editing.jax	/*E578@ja*
+E579	vimdoc-ja/doc/eval.jax	/*E579@ja*
 E58	vimdoc-ja/doc/pattern.jax	/*E58@ja*
+E580	vimdoc-ja/doc/eval.jax	/*E580@ja*
 E581	vimdoc-ja/doc/eval.jax	/*E581@ja*
 E582	vimdoc-ja/doc/eval.jax	/*E582@ja*
 E583	vimdoc-ja/doc/eval.jax	/*E583@ja*
@@ -4564,6 +4583,7 @@ E866	vimdoc-ja/doc/pattern.jax	/*E866@ja*
 E867	vimdoc-ja/doc/pattern.jax	/*E867@ja*
 E868	vimdoc-ja/doc/pattern.jax	/*E868@ja*
 E869	vimdoc-ja/doc/pattern.jax	/*E869@ja*
+E87	vimdoc-ja/doc/windows.jax	/*E87@ja*
 E870	vimdoc-ja/doc/pattern.jax	/*E870@ja*
 E871	vimdoc-ja/doc/pattern.jax	/*E871@ja*
 E872	vimdoc-ja/doc/pattern.jax	/*E872@ja*
@@ -4575,8 +4595,13 @@ E877	vimdoc-ja/doc/pattern.jax	/*E877@ja*
 E878	vimdoc-ja/doc/pattern.jax	/*E878@ja*
 E879	vimdoc-ja/doc/syntax.jax	/*E879@ja*
 E88	vimdoc-ja/doc/windows.jax	/*E88@ja*
+E880	vimdoc-ja/doc/if_pyth.jax	/*E880@ja*
 E881	vimdoc-ja/doc/autocmd.jax	/*E881@ja*
+E882	vimdoc-ja/doc/eval.jax	/*E882@ja*
+E883	vimdoc-ja/doc/eval.jax	/*E883@ja*
+E884	vimdoc-ja/doc/eval.jax	/*E884@ja*
 E885	vimdoc-ja/doc/sign.jax	/*E885@ja*
+E886	vimdoc-ja/doc/starting.jax	/*E886@ja*
 E887	vimdoc-ja/doc/if_pyth.jax	/*E887@ja*
 E89	vimdoc-ja/doc/message.jax	/*E89@ja*
 E90	vimdoc-ja/doc/message.jax	/*E90@ja*
@@ -4711,6 +4736,7 @@ PHP_BracesAtCodeLevel	vimdoc-ja/doc/indent.jax	/*PHP_BracesAtCodeLevel@ja*
 PHP_autoformatcomment	vimdoc-ja/doc/indent.jax	/*PHP_autoformatcomment@ja*
 PHP_default_indenting	vimdoc-ja/doc/indent.jax	/*PHP_default_indenting@ja*
 PHP_outdentSLComments	vimdoc-ja/doc/indent.jax	/*PHP_outdentSLComments@ja*
+PHP_outdentphpescape	vimdoc-ja/doc/indent.jax	/*PHP_outdentphpescape@ja*
 PHP_removeCRwhenUnix	vimdoc-ja/doc/indent.jax	/*PHP_removeCRwhenUnix@ja*
 PHP_vintage_case_default_indent	vimdoc-ja/doc/indent.jax	/*PHP_vintage_case_default_indent@ja*
 Pattern	vimdoc-ja/doc/pattern.jax	/*Pattern@ja*
@@ -5031,6 +5057,7 @@ argidx()	vimdoc-ja/doc/eval.jax	/*argidx()@ja*
 arglist	vimdoc-ja/doc/editing.jax	/*arglist@ja*
 arglist-position	vimdoc-ja/doc/editing.jax	/*arglist-position@ja*
 arglist-quit	vimdoc-ja/doc/usr_07.jax	/*arglist-quit@ja*
+arglistid()	vimdoc-ja/doc/eval.jax	/*arglistid()@ja*
 argument-list	vimdoc-ja/doc/editing.jax	/*argument-list@ja*
 argv()	vimdoc-ja/doc/eval.jax	/*argv()@ja*
 as	vimdoc-ja/doc/motion.jax	/*as@ja*
@@ -5159,6 +5186,7 @@ builtin_terms	vimdoc-ja/doc/term.jax	/*builtin_terms@ja*
 byte-count	vimdoc-ja/doc/editing.jax	/*byte-count@ja*
 byte2line()	vimdoc-ja/doc/eval.jax	/*byte2line()@ja*
 byteidx()	vimdoc-ja/doc/eval.jax	/*byteidx()@ja*
+byteidxcomp()	vimdoc-ja/doc/eval.jax	/*byteidxcomp()@ja*
 bzip2	vimdoc-ja/doc/pi_gzip.jax	/*bzip2@ja*
 c	vimdoc-ja/doc/change.jax	/*c@ja*
 c.vim	vimdoc-ja/doc/syntax.jax	/*c.vim@ja*
@@ -5726,6 +5754,7 @@ exclusive	vimdoc-ja/doc/motion.jax	/*exclusive@ja*
 exclusive-linewise	vimdoc-ja/doc/motion.jax	/*exclusive-linewise@ja*
 executable()	vimdoc-ja/doc/eval.jax	/*executable()@ja*
 execute-menus	vimdoc-ja/doc/gui.jax	/*execute-menus@ja*
+exepath()	vimdoc-ja/doc/eval.jax	/*exepath()@ja*
 exim	vimdoc-ja/doc/starting.jax	/*exim@ja*
 exists()	vimdoc-ja/doc/eval.jax	/*exists()@ja*
 exp()	vimdoc-ja/doc/eval.jax	/*exp()@ja*
@@ -6296,6 +6325,7 @@ getcharmod()	vimdoc-ja/doc/eval.jax	/*getcharmod()@ja*
 getcmdline()	vimdoc-ja/doc/eval.jax	/*getcmdline()@ja*
 getcmdpos()	vimdoc-ja/doc/eval.jax	/*getcmdpos()@ja*
 getcmdtype()	vimdoc-ja/doc/eval.jax	/*getcmdtype()@ja*
+getcurpos()	vimdoc-ja/doc/eval.jax	/*getcurpos()@ja*
 getcwd()	vimdoc-ja/doc/eval.jax	/*getcwd()@ja*
 getfontname()	vimdoc-ja/doc/eval.jax	/*getfontname()@ja*
 getfperm()	vimdoc-ja/doc/eval.jax	/*getfperm()@ja*
@@ -6969,6 +6999,7 @@ match()	vimdoc-ja/doc/eval.jax	/*match()@ja*
 match-highlight	vimdoc-ja/doc/pattern.jax	/*match-highlight@ja*
 match-parens	vimdoc-ja/doc/tips.jax	/*match-parens@ja*
 matchadd()	vimdoc-ja/doc/eval.jax	/*matchadd()@ja*
+matchaddpos()	vimdoc-ja/doc/eval.jax	/*matchaddpos()@ja*
 matcharg()	vimdoc-ja/doc/eval.jax	/*matcharg()@ja*
 matchdelete()	vimdoc-ja/doc/eval.jax	/*matchdelete()@ja*
 matchend()	vimdoc-ja/doc/eval.jax	/*matchend()@ja*
@@ -7477,6 +7508,7 @@ profile	vimdoc-ja/doc/repeat.jax	/*profile@ja*
 profiling	vimdoc-ja/doc/repeat.jax	/*profiling@ja*
 profiling-variable	vimdoc-ja/doc/eval.jax	/*profiling-variable@ja*
 progname-variable	vimdoc-ja/doc/eval.jax	/*progname-variable@ja*
+progpath-variable	vimdoc-ja/doc/eval.jax	/*progpath-variable@ja*
 progress.vim	vimdoc-ja/doc/syntax.jax	/*progress.vim@ja*
 psql	vimdoc-ja/doc/ft_sql.jax	/*psql@ja*
 ptcap.vim	vimdoc-ja/doc/syntax.jax	/*ptcap.vim@ja*
@@ -7492,10 +7524,13 @@ python-2-and-3	vimdoc-ja/doc/if_pyth.jax	/*python-2-and-3@ja*
 python-Dictionary	vimdoc-ja/doc/if_pyth.jax	/*python-Dictionary@ja*
 python-Function	vimdoc-ja/doc/if_pyth.jax	/*python-Function@ja*
 python-List	vimdoc-ja/doc/if_pyth.jax	/*python-List@ja*
+python-VIM_SPECIAL_PATH	vimdoc-ja/doc/if_pyth.jax	/*python-VIM_SPECIAL_PATH@ja*
+python-_get_paths	vimdoc-ja/doc/if_pyth.jax	/*python-_get_paths@ja*
 python-bindeval	vimdoc-ja/doc/if_pyth.jax	/*python-bindeval@ja*
 python-bindeval-objects	vimdoc-ja/doc/if_pyth.jax	/*python-bindeval-objects@ja*
 python-buffer	vimdoc-ja/doc/if_pyth.jax	/*python-buffer@ja*
 python-buffers	vimdoc-ja/doc/if_pyth.jax	/*python-buffers@ja*
+python-chdir	vimdoc-ja/doc/if_pyth.jax	/*python-chdir@ja*
 python-command	vimdoc-ja/doc/if_pyth.jax	/*python-command@ja*
 python-commands	vimdoc-ja/doc/if_pyth.jax	/*python-commands@ja*
 python-current	vimdoc-ja/doc/if_pyth.jax	/*python-current@ja*
@@ -7503,11 +7538,17 @@ python-dynamic	vimdoc-ja/doc/if_pyth.jax	/*python-dynamic@ja*
 python-error	vimdoc-ja/doc/if_pyth.jax	/*python-error@ja*
 python-eval	vimdoc-ja/doc/if_pyth.jax	/*python-eval@ja*
 python-examples	vimdoc-ja/doc/if_pyth.jax	/*python-examples@ja*
+python-fchdir	vimdoc-ja/doc/if_pyth.jax	/*python-fchdir@ja*
+python-find_module	vimdoc-ja/doc/if_pyth.jax	/*python-find_module@ja*
+python-foreach_rtp	vimdoc-ja/doc/if_pyth.jax	/*python-foreach_rtp@ja*
 python-input	vimdoc-ja/doc/if_pyth.jax	/*python-input@ja*
 python-options	vimdoc-ja/doc/if_pyth.jax	/*python-options@ja*
 python-output	vimdoc-ja/doc/if_pyth.jax	/*python-output@ja*
+python-path_hook	vimdoc-ja/doc/if_pyth.jax	/*python-path_hook@ja*
 python-pyeval	vimdoc-ja/doc/if_pyth.jax	/*python-pyeval@ja*
 python-range	vimdoc-ja/doc/if_pyth.jax	/*python-range@ja*
+python-special-path	vimdoc-ja/doc/if_pyth.jax	/*python-special-path@ja*
+python-strwidth	vimdoc-ja/doc/if_pyth.jax	/*python-strwidth@ja*
 python-tabpage	vimdoc-ja/doc/if_pyth.jax	/*python-tabpage@ja*
 python-tabpages	vimdoc-ja/doc/if_pyth.jax	/*python-tabpages@ja*
 python-vars	vimdoc-ja/doc/if_pyth.jax	/*python-vars@ja*
@@ -7516,7 +7557,10 @@ python-vvars	vimdoc-ja/doc/if_pyth.jax	/*python-vvars@ja*
 python-window	vimdoc-ja/doc/if_pyth.jax	/*python-window@ja*
 python-windows	vimdoc-ja/doc/if_pyth.jax	/*python-windows@ja*
 python.vim	vimdoc-ja/doc/syntax.jax	/*python.vim@ja*
+python2-directory	vimdoc-ja/doc/if_pyth.jax	/*python2-directory@ja*
 python3	vimdoc-ja/doc/if_pyth.jax	/*python3@ja*
+python3-directory	vimdoc-ja/doc/if_pyth.jax	/*python3-directory@ja*
+pythonx-directory	vimdoc-ja/doc/if_pyth.jax	/*pythonx-directory@ja*
 q	vimdoc-ja/doc/repeat.jax	/*q@ja*
 q/	vimdoc-ja/doc/cmdline.jax	/*q\/@ja*
 q:	vimdoc-ja/doc/cmdline.jax	/*q:@ja*
@@ -7686,6 +7730,8 @@ save-file	vimdoc-ja/doc/editing.jax	/*save-file@ja*
 save-settings	vimdoc-ja/doc/starting.jax	/*save-settings@ja*
 scheme.vim	vimdoc-ja/doc/syntax.jax	/*scheme.vim@ja*
 scp	vimdoc-ja/doc/pi_netrw.jax	/*scp@ja*
+screenattr()	vimdoc-ja/doc/eval.jax	/*screenattr()@ja*
+screenchar()	vimdoc-ja/doc/eval.jax	/*screenchar()@ja*
 screencol()	vimdoc-ja/doc/eval.jax	/*screencol()@ja*
 screenrow()	vimdoc-ja/doc/eval.jax	/*screenrow()@ja*
 script	vimdoc-ja/doc/usr_41.jax	/*script@ja*
@@ -8023,6 +8069,7 @@ sysmouse	vimdoc-ja/doc/term.jax	/*sysmouse@ja*
 system()	vimdoc-ja/doc/eval.jax	/*system()@ja*
 system-functions	vimdoc-ja/doc/usr_41.jax	/*system-functions@ja*
 system-vimrc	vimdoc-ja/doc/starting.jax	/*system-vimrc@ja*
+systemlist()	vimdoc-ja/doc/eval.jax	/*systemlist()@ja*
 s~	vimdoc-ja/doc/change.jax	/*s~@ja*
 t	vimdoc-ja/doc/motion.jax	/*t@ja*
 t:	vimdoc-ja/doc/eval.jax	/*t:@ja*
@@ -8361,6 +8408,7 @@ undo_ftplugin	vimdoc-ja/doc/usr_41.jax	/*undo_ftplugin@ja*
 undofile()	vimdoc-ja/doc/eval.jax	/*undofile()@ja*
 undotree()	vimdoc-ja/doc/eval.jax	/*undotree()@ja*
 unicode	vimdoc-ja/doc/mbyte.jax	/*unicode@ja*
+uniq()	vimdoc-ja/doc/eval.jax	/*uniq()@ja*
 unix	vimdoc-ja/doc/os_unix.jax	/*unix@ja*
 unlisted-buffer	vimdoc-ja/doc/windows.jax	/*unlisted-buffer@ja*
 up-down-motions	vimdoc-ja/doc/motion.jax	/*up-down-motions@ja*
@@ -8459,6 +8507,7 @@ v:operator	vimdoc-ja/doc/eval.jax	/*v:operator@ja*
 v:prevcount	vimdoc-ja/doc/eval.jax	/*v:prevcount@ja*
 v:profiling	vimdoc-ja/doc/eval.jax	/*v:profiling@ja*
 v:progname	vimdoc-ja/doc/eval.jax	/*v:progname@ja*
+v:progpath	vimdoc-ja/doc/eval.jax	/*v:progpath@ja*
 v:register	vimdoc-ja/doc/eval.jax	/*v:register@ja*
 v:scrollstart	vimdoc-ja/doc/eval.jax	/*v:scrollstart@ja*
 v:searchforward	vimdoc-ja/doc/eval.jax	/*v:searchforward@ja*
