@@ -381,6 +381,10 @@ $VIMRUNTIME	vimdoc-ja/doc/starting.jax	/*$VIMRUNTIME@ja*
 'bl'	vimdoc-ja/doc/options.jax	/*'bl'@ja*
 'bomb'	vimdoc-ja/doc/options.jax	/*'bomb'@ja*
 'breakat'	vimdoc-ja/doc/options.jax	/*'breakat'@ja*
+'breakindent'	vimdoc-ja/doc/options.jax	/*'breakindent'@ja*
+'breakindentopt'	vimdoc-ja/doc/options.jax	/*'breakindentopt'@ja*
+'bri'	vimdoc-ja/doc/options.jax	/*'bri'@ja*
+'briopt'	vimdoc-ja/doc/options.jax	/*'briopt'@ja*
 'brk'	vimdoc-ja/doc/options.jax	/*'brk'@ja*
 'browsedir'	vimdoc-ja/doc/options.jax	/*'browsedir'@ja*
 'bs'	vimdoc-ja/doc/options.jax	/*'bs'@ja*
@@ -1040,6 +1044,7 @@ $VIMRUNTIME	vimdoc-ja/doc/starting.jax	/*$VIMRUNTIME@ja*
 'regexpengine'	vimdoc-ja/doc/options.jax	/*'regexpengine'@ja*
 'relativenumber'	vimdoc-ja/doc/options.jax	/*'relativenumber'@ja*
 'remap'	vimdoc-ja/doc/options.jax	/*'remap'@ja*
+'renderoptions'	vimdoc-ja/doc/options.jax	/*'renderoptions'@ja*
 'report'	vimdoc-ja/doc/options.jax	/*'report'@ja*
 'restorescreen'	vimdoc-ja/doc/options.jax	/*'restorescreen'@ja*
 'revins'	vimdoc-ja/doc/options.jax	/*'revins'@ja*
@@ -1050,6 +1055,7 @@ $VIMRUNTIME	vimdoc-ja/doc/starting.jax	/*$VIMRUNTIME@ja*
 'rlc'	vimdoc-ja/doc/options.jax	/*'rlc'@ja*
 'rnu'	vimdoc-ja/doc/options.jax	/*'rnu'@ja*
 'ro'	vimdoc-ja/doc/options.jax	/*'ro'@ja*
+'rop'	vimdoc-ja/doc/options.jax	/*'rop'@ja*
 'rs'	vimdoc-ja/doc/options.jax	/*'rs'@ja*
 'rtp'	vimdoc-ja/doc/options.jax	/*'rtp'@ja*
 'ru'	vimdoc-ja/doc/options.jax	/*'ru'@ja*
@@ -2119,6 +2125,7 @@ $VIMRUNTIME	vimdoc-ja/doc/starting.jax	/*$VIMRUNTIME@ja*
 :GnatPretty	vimdoc-ja/doc/ft_ada.jax	/*:GnatPretty@ja*
 :GnatTags	vimdoc-ja/doc/ft_ada.jax	/*:GnatTags@ja*
 :Hexplore	vimdoc-ja/doc/pi_netrw.jax	/*:Hexplore@ja*
+:Lexplore	vimdoc-ja/doc/pi_netrw.jax	/*:Lexplore@ja*
 :Man	vimdoc-ja/doc/filetype.jax	/*:Man@ja*
 :MkVimball	vimdoc-ja/doc/pi_vimball.jax	/*:MkVimball@ja*
 :N	vimdoc-ja/doc/editing.jax	/*:N@ja*
@@ -2130,6 +2137,7 @@ $VIMRUNTIME	vimdoc-ja/doc/starting.jax	/*$VIMRUNTIME@ja*
 :Nread	vimdoc-ja/doc/pi_netrw.jax	/*:Nread@ja*
 :Ns	vimdoc-ja/doc/pi_netrw.jax	/*:Ns@ja*
 :Nsource	vimdoc-ja/doc/pi_netrw.jax	/*:Nsource@ja*
+:Ntree	vimdoc-ja/doc/pi_netrw.jax	/*:Ntree@ja*
 :Nw	vimdoc-ja/doc/pi_netrw.jax	/*:Nw@ja*
 :Nwrite	vimdoc-ja/doc/pi_netrw.jax	/*:Nwrite@ja*
 :P	vimdoc-ja/doc/various.jax	/*:P@ja*
@@ -2787,6 +2795,7 @@ $VIMRUNTIME	vimdoc-ja/doc/starting.jax	/*$VIMRUNTIME@ja*
 :nbkey	vimdoc-ja/doc/netbeans.jax	/*:nbkey@ja*
 :nbstart	vimdoc-ja/doc/netbeans.jax	/*:nbstart@ja*
 :ne	vimdoc-ja/doc/editing.jax	/*:ne@ja*
+:netrw-s-cr	vimdoc-ja/doc/pi_netrw.jax	/*:netrw-s-cr@ja*
 :new	vimdoc-ja/doc/windows.jax	/*:new@ja*
 :next	vimdoc-ja/doc/editing.jax	/*:next@ja*
 :next_f	vimdoc-ja/doc/editing.jax	/*:next_f@ja*
@@ -3730,6 +3739,7 @@ CTRL-^	vimdoc-ja/doc/editing.jax	/*CTRL-^@ja*
 CTRL-{char}	vimdoc-ja/doc/intro.jax	/*CTRL-{char}@ja*
 Chinese	vimdoc-ja/doc/mbyte.jax	/*Chinese@ja*
 Cmd-event	vimdoc-ja/doc/autocmd.jax	/*Cmd-event@ja*
+CmdUndefined	vimdoc-ja/doc/autocmd.jax	/*CmdUndefined@ja*
 Cmdline	vimdoc-ja/doc/cmdline.jax	/*Cmdline@ja*
 Cmdline-mode	vimdoc-ja/doc/cmdline.jax	/*Cmdline-mode@ja*
 CmdwinEnter	vimdoc-ja/doc/autocmd.jax	/*CmdwinEnter@ja*
@@ -4603,6 +4613,7 @@ E884	vimdoc-ja/doc/eval.jax	/*E884@ja*
 E885	vimdoc-ja/doc/sign.jax	/*E885@ja*
 E886	vimdoc-ja/doc/starting.jax	/*E886@ja*
 E887	vimdoc-ja/doc/if_pyth.jax	/*E887@ja*
+E888	vimdoc-ja/doc/pattern.jax	/*E888@ja*
 E89	vimdoc-ja/doc/message.jax	/*E89@ja*
 E90	vimdoc-ja/doc/message.jax	/*E90@ja*
 E91	vimdoc-ja/doc/options.jax	/*E91@ja*
@@ -5152,6 +5163,7 @@ blockwise-operators	vimdoc-ja/doc/visual.jax	/*blockwise-operators@ja*
 blockwise-register	vimdoc-ja/doc/change.jax	/*blockwise-register@ja*
 blockwise-visual	vimdoc-ja/doc/visual.jax	/*blockwise-visual@ja*
 blowfish	vimdoc-ja/doc/options.jax	/*blowfish@ja*
+blowfish2	vimdoc-ja/doc/options.jax	/*blowfish2@ja*
 bold	vimdoc-ja/doc/syntax.jax	/*bold@ja*
 bom-bytes	vimdoc-ja/doc/mbyte.jax	/*bom-bytes@ja*
 book	vimdoc-ja/doc/intro.jax	/*book@ja*
@@ -5720,6 +5732,8 @@ errors	vimdoc-ja/doc/message.jax	/*errors@ja*
 escape	vimdoc-ja/doc/intro.jax	/*escape@ja*
 escape()	vimdoc-ja/doc/eval.jax	/*escape()@ja*
 escape-bar	vimdoc-ja/doc/version4.jax	/*escape-bar@ja*
+euphoria3.vim	vimdoc-ja/doc/syntax.jax	/*euphoria3.vim@ja*
+euphoria4.vim	vimdoc-ja/doc/syntax.jax	/*euphoria4.vim@ja*
 eval	vimdoc-ja/doc/eval.jax	/*eval@ja*
 eval()	vimdoc-ja/doc/eval.jax	/*eval()@ja*
 eval-examples	vimdoc-ja/doc/eval.jax	/*eval-examples@ja*
@@ -5951,6 +5965,7 @@ ft-changelog-plugin	vimdoc-ja/doc/filetype.jax	/*ft-changelog-plugin@ja*
 ft-changelog-syntax	vimdoc-ja/doc/syntax.jax	/*ft-changelog-syntax@ja*
 ft-chill-syntax	vimdoc-ja/doc/syntax.jax	/*ft-chill-syntax@ja*
 ft-clojure-indent	vimdoc-ja/doc/indent.jax	/*ft-clojure-indent@ja*
+ft-clojure-syntax	vimdoc-ja/doc/syntax.jax	/*ft-clojure-syntax@ja*
 ft-cobol-syntax	vimdoc-ja/doc/syntax.jax	/*ft-cobol-syntax@ja*
 ft-coldfusion-syntax	vimdoc-ja/doc/syntax.jax	/*ft-coldfusion-syntax@ja*
 ft-cpp-syntax	vimdoc-ja/doc/syntax.jax	/*ft-cpp-syntax@ja*
@@ -5967,6 +5982,7 @@ ft-dosbatch-syntax	vimdoc-ja/doc/syntax.jax	/*ft-dosbatch-syntax@ja*
 ft-dtd-syntax	vimdoc-ja/doc/syntax.jax	/*ft-dtd-syntax@ja*
 ft-eiffel-syntax	vimdoc-ja/doc/syntax.jax	/*ft-eiffel-syntax@ja*
 ft-erlang-syntax	vimdoc-ja/doc/syntax.jax	/*ft-erlang-syntax@ja*
+ft-euphoria-syntax	vimdoc-ja/doc/syntax.jax	/*ft-euphoria-syntax@ja*
 ft-flexwiki-syntax	vimdoc-ja/doc/syntax.jax	/*ft-flexwiki-syntax@ja*
 ft-form-syntax	vimdoc-ja/doc/syntax.jax	/*ft-form-syntax@ja*
 ft-fortran-indent	vimdoc-ja/doc/indent.jax	/*ft-fortran-indent@ja*
@@ -5977,6 +5993,7 @@ ft-gitcommit-plugin	vimdoc-ja/doc/filetype.jax	/*ft-gitcommit-plugin@ja*
 ft-groff-syntax	vimdoc-ja/doc/syntax.jax	/*ft-groff-syntax@ja*
 ft-gsp-syntax	vimdoc-ja/doc/syntax.jax	/*ft-gsp-syntax@ja*
 ft-haskell-syntax	vimdoc-ja/doc/syntax.jax	/*ft-haskell-syntax@ja*
+ft-html-indent	vimdoc-ja/doc/indent.jax	/*ft-html-indent@ja*
 ft-html-omni	vimdoc-ja/doc/insert.jax	/*ft-html-omni@ja*
 ft-html-syntax	vimdoc-ja/doc/syntax.jax	/*ft-html-syntax@ja*
 ft-htmlos-syntax	vimdoc-ja/doc/syntax.jax	/*ft-htmlos-syntax@ja*
@@ -6116,6 +6133,7 @@ g:ada_standard_types	vimdoc-ja/doc/ft_ada.jax	/*g:ada_standard_types@ja*
 g:ada_with_gnat_project_files	vimdoc-ja/doc/ft_ada.jax	/*g:ada_with_gnat_project_files@ja*
 g:ada_withuse_ordinary	vimdoc-ja/doc/ft_ada.jax	/*g:ada_withuse_ordinary@ja*
 g:clojure_align_multiline_strings	vimdoc-ja/doc/indent.jax	/*g:clojure_align_multiline_strings@ja*
+g:clojure_align_subforms	vimdoc-ja/doc/indent.jax	/*g:clojure_align_subforms@ja*
 g:clojure_fuzzy_indent	vimdoc-ja/doc/indent.jax	/*g:clojure_fuzzy_indent@ja*
 g:clojure_fuzzy_indent_blacklist	vimdoc-ja/doc/indent.jax	/*g:clojure_fuzzy_indent_blacklist@ja*
 g:clojure_fuzzy_indent_patterns	vimdoc-ja/doc/indent.jax	/*g:clojure_fuzzy_indent_patterns@ja*
@@ -6148,8 +6166,10 @@ g:html_encoding_override	vimdoc-ja/doc/syntax.jax	/*g:html_encoding_override@ja*
 g:html_end_line	vimdoc-ja/doc/syntax.jax	/*g:html_end_line@ja*
 g:html_expand_tabs	vimdoc-ja/doc/syntax.jax	/*g:html_expand_tabs@ja*
 g:html_hover_unfold	vimdoc-ja/doc/syntax.jax	/*g:html_hover_unfold@ja*
+g:html_id_expr	vimdoc-ja/doc/syntax.jax	/*g:html_id_expr@ja*
 g:html_ignore_conceal	vimdoc-ja/doc/syntax.jax	/*g:html_ignore_conceal@ja*
 g:html_ignore_folding	vimdoc-ja/doc/syntax.jax	/*g:html_ignore_folding@ja*
+g:html_line_ids	vimdoc-ja/doc/syntax.jax	/*g:html_line_ids@ja*
 g:html_no_foldcolumn	vimdoc-ja/doc/syntax.jax	/*g:html_no_foldcolumn@ja*
 g:html_no_invalid	vimdoc-ja/doc/syntax.jax	/*g:html_no_invalid@ja*
 g:html_no_pre	vimdoc-ja/doc/syntax.jax	/*g:html_no_pre@ja*
@@ -6162,6 +6182,7 @@ g:html_use_css	vimdoc-ja/doc/syntax.jax	/*g:html_use_css@ja*
 g:html_use_encoding	vimdoc-ja/doc/syntax.jax	/*g:html_use_encoding@ja*
 g:html_use_xhtml	vimdoc-ja/doc/syntax.jax	/*g:html_use_xhtml@ja*
 g:html_whole_filler	vimdoc-ja/doc/syntax.jax	/*g:html_whole_filler@ja*
+g:netrw_altfile	vimdoc-ja/doc/pi_netrw.jax	/*g:netrw_altfile@ja*
 g:netrw_alto	vimdoc-ja/doc/pi_netrw.jax	/*g:netrw_alto@ja*
 g:netrw_altv	vimdoc-ja/doc/pi_netrw.jax	/*g:netrw_altv@ja*
 g:netrw_banner	vimdoc-ja/doc/pi_netrw.jax	/*g:netrw_banner@ja*
@@ -6182,6 +6203,7 @@ g:netrw_dynamic_maxfilenamelen	vimdoc-ja/doc/pi_netrw.jax	/*g:netrw_dynamic_maxf
 g:netrw_errorlvl	vimdoc-ja/doc/pi_netrw.jax	/*g:netrw_errorlvl@ja*
 g:netrw_fastbrowse	vimdoc-ja/doc/pi_netrw.jax	/*g:netrw_fastbrowse@ja*
 g:netrw_fetch_cmd	vimdoc-ja/doc/pi_netrw.jax	/*g:netrw_fetch_cmd@ja*
+g:netrw_ffkeep	vimdoc-ja/doc/pi_netrw.jax	/*g:netrw_ffkeep@ja*
 g:netrw_fname_escape	vimdoc-ja/doc/pi_netrw.jax	/*g:netrw_fname_escape@ja*
 g:netrw_ftp	vimdoc-ja/doc/pi_netrw.jax	/*g:netrw_ftp@ja*
 g:netrw_ftp_browse_reject	vimdoc-ja/doc/pi_netrw.jax	/*g:netrw_ftp_browse_reject@ja*
@@ -6196,6 +6218,7 @@ g:netrw_glob_escape	vimdoc-ja/doc/pi_netrw.jax	/*g:netrw_glob_escape@ja*
 g:netrw_hide	vimdoc-ja/doc/pi_netrw.jax	/*g:netrw_hide@ja*
 g:netrw_home	vimdoc-ja/doc/pi_netrw.jax	/*g:netrw_home@ja*
 g:netrw_http_cmd	vimdoc-ja/doc/pi_netrw.jax	/*g:netrw_http_cmd@ja*
+g:netrw_http_put_cmd	vimdoc-ja/doc/pi_netrw.jax	/*g:netrw_http_put_cmd@ja*
 g:netrw_http_xcmd	vimdoc-ja/doc/pi_netrw.jax	/*g:netrw_http_xcmd@ja*
 g:netrw_ignorenetrc	vimdoc-ja/doc/pi_netrw.jax	/*g:netrw_ignorenetrc@ja*
 g:netrw_keepdir	vimdoc-ja/doc/pi_netrw.jax	/*g:netrw_keepdir@ja*
@@ -6262,6 +6285,8 @@ g:tex_isk	vimdoc-ja/doc/syntax.jax	/*g:tex_isk@ja*
 g:tex_no_error	vimdoc-ja/doc/syntax.jax	/*g:tex_no_error@ja*
 g:tex_nospell	vimdoc-ja/doc/syntax.jax	/*g:tex_nospell@ja*
 g:tex_stylish	vimdoc-ja/doc/syntax.jax	/*g:tex_stylish@ja*
+g:tex_subscripts	vimdoc-ja/doc/syntax.jax	/*g:tex_subscripts@ja*
+g:tex_superscripts	vimdoc-ja/doc/syntax.jax	/*g:tex_superscripts@ja*
 g:tex_verbspell	vimdoc-ja/doc/syntax.jax	/*g:tex_verbspell@ja*
 g:var	vimdoc-ja/doc/eval.jax	/*g:var@ja*
 g:vimball_home	vimdoc-ja/doc/pi_vimball.jax	/*g:vimball_home@ja*
@@ -6325,6 +6350,7 @@ getcharmod()	vimdoc-ja/doc/eval.jax	/*getcharmod()@ja*
 getcmdline()	vimdoc-ja/doc/eval.jax	/*getcmdline()@ja*
 getcmdpos()	vimdoc-ja/doc/eval.jax	/*getcmdpos()@ja*
 getcmdtype()	vimdoc-ja/doc/eval.jax	/*getcmdtype()@ja*
+getcmdwintype()	vimdoc-ja/doc/eval.jax	/*getcmdwintype()@ja*
 getcurpos()	vimdoc-ja/doc/eval.jax	/*getcurpos()@ja*
 getcwd()	vimdoc-ja/doc/eval.jax	/*getcwd()@ja*
 getfontname()	vimdoc-ja/doc/eval.jax	/*getfontname()@ja*
@@ -6606,6 +6632,8 @@ howto.txt	vimdoc-ja/doc/howto.jax	/*howto.txt@ja*
 hpterm	vimdoc-ja/doc/term.jax	/*hpterm@ja*
 hpterm-color	vimdoc-ja/doc/syntax.jax	/*hpterm-color@ja*
 html-flavor	vimdoc-ja/doc/insert.jax	/*html-flavor@ja*
+html-indent	vimdoc-ja/doc/indent.jax	/*html-indent@ja*
+html-indenting	vimdoc-ja/doc/indent.jax	/*html-indenting@ja*
 html.vim	vimdoc-ja/doc/syntax.jax	/*html.vim@ja*
 htmlos.vim	vimdoc-ja/doc/syntax.jax	/*htmlos.vim@ja*
 http	vimdoc-ja/doc/pi_netrw.jax	/*http@ja*
@@ -7138,6 +7166,15 @@ netreadfixup	vimdoc-ja/doc/pi_netrw.jax	/*netreadfixup@ja*
 netrw	vimdoc-ja/doc/pi_netrw.jax	/*netrw@ja*
 netrw-%	vimdoc-ja/doc/pi_netrw.jax	/*netrw-%@ja*
 netrw--	vimdoc-ja/doc/pi_netrw.jax	/*netrw--@ja*
+netrw-:Explore	vimdoc-ja/doc/pi_netrw.jax	/*netrw-:Explore@ja*
+netrw-:Hexplore	vimdoc-ja/doc/pi_netrw.jax	/*netrw-:Hexplore@ja*
+netrw-:Lexplore	vimdoc-ja/doc/pi_netrw.jax	/*netrw-:Lexplore@ja*
+netrw-:MF	vimdoc-ja/doc/pi_netrw.jax	/*netrw-:MF@ja*
+netrw-:MT	vimdoc-ja/doc/pi_netrw.jax	/*netrw-:MT@ja*
+netrw-:Rexplore	vimdoc-ja/doc/pi_netrw.jax	/*netrw-:Rexplore@ja*
+netrw-:Sexplore	vimdoc-ja/doc/pi_netrw.jax	/*netrw-:Sexplore@ja*
+netrw-:Texplore	vimdoc-ja/doc/pi_netrw.jax	/*netrw-:Texplore@ja*
+netrw-:Vexplore	vimdoc-ja/doc/pi_netrw.jax	/*netrw-:Vexplore@ja*
 netrw-C	vimdoc-ja/doc/pi_netrw.jax	/*netrw-C@ja*
 netrw-D	vimdoc-ja/doc/pi_netrw.jax	/*netrw-D@ja*
 netrw-O	vimdoc-ja/doc/pi_netrw.jax	/*netrw-O@ja*
@@ -7195,6 +7232,7 @@ netrw-gd	vimdoc-ja/doc/pi_netrw.jax	/*netrw-gd@ja*
 netrw-getftype	vimdoc-ja/doc/pi_netrw.jax	/*netrw-getftype@ja*
 netrw-gf	vimdoc-ja/doc/pi_netrw.jax	/*netrw-gf@ja*
 netrw-gh	vimdoc-ja/doc/pi_netrw.jax	/*netrw-gh@ja*
+netrw-gitignore	vimdoc-ja/doc/pi_netrw.jax	/*netrw-gitignore@ja*
 netrw-gp	vimdoc-ja/doc/pi_netrw.jax	/*netrw-gp@ja*
 netrw-gx	vimdoc-ja/doc/pi_netrw.jax	/*netrw-gx@ja*
 netrw-handler	vimdoc-ja/doc/pi_netrw.jax	/*netrw-handler@ja*
@@ -7209,6 +7247,7 @@ netrw-incompatible	vimdoc-ja/doc/pi_netrw.jax	/*netrw-incompatible@ja*
 netrw-internal-variables	vimdoc-ja/doc/pi_netrw.jax	/*netrw-internal-variables@ja*
 netrw-intro-browse	vimdoc-ja/doc/pi_netrw.jax	/*netrw-intro-browse@ja*
 netrw-leftmouse	vimdoc-ja/doc/pi_netrw.jax	/*netrw-leftmouse@ja*
+netrw-lexplore	vimdoc-ja/doc/pi_netrw.jax	/*netrw-lexplore@ja*
 netrw-list	vimdoc-ja/doc/pi_netrw.jax	/*netrw-list@ja*
 netrw-listbookmark	vimdoc-ja/doc/pi_netrw.jax	/*netrw-listbookmark@ja*
 netrw-listhack	vimdoc-ja/doc/pi_netrw.jax	/*netrw-listhack@ja*
@@ -7239,6 +7278,7 @@ netrw-netrc	vimdoc-ja/doc/pi_netrw.jax	/*netrw-netrc@ja*
 netrw-nexplore	vimdoc-ja/doc/pi_netrw.jax	/*netrw-nexplore@ja*
 netrw-noload	vimdoc-ja/doc/pi_netrw.jax	/*netrw-noload@ja*
 netrw-nread	vimdoc-ja/doc/pi_netrw.jax	/*netrw-nread@ja*
+netrw-ntree	vimdoc-ja/doc/pi_netrw.jax	/*netrw-ntree@ja*
 netrw-nwrite	vimdoc-ja/doc/pi_netrw.jax	/*netrw-nwrite@ja*
 netrw-o	vimdoc-ja/doc/pi_netrw.jax	/*netrw-o@ja*
 netrw-options	vimdoc-ja/doc/pi_netrw.jax	/*netrw-options@ja*
@@ -7250,6 +7290,7 @@ netrw-p12	vimdoc-ja/doc/pi_netrw.jax	/*netrw-p12@ja*
 netrw-p13	vimdoc-ja/doc/pi_netrw.jax	/*netrw-p13@ja*
 netrw-p14	vimdoc-ja/doc/pi_netrw.jax	/*netrw-p14@ja*
 netrw-p15	vimdoc-ja/doc/pi_netrw.jax	/*netrw-p15@ja*
+netrw-p16	vimdoc-ja/doc/pi_netrw.jax	/*netrw-p16@ja*
 netrw-p2	vimdoc-ja/doc/pi_netrw.jax	/*netrw-p2@ja*
 netrw-p3	vimdoc-ja/doc/pi_netrw.jax	/*netrw-p3@ja*
 netrw-p4	vimdoc-ja/doc/pi_netrw.jax	/*netrw-p4@ja*
@@ -7878,6 +7919,7 @@ spell-FLAG	vimdoc-ja/doc/spell.jax	/*spell-FLAG@ja*
 spell-FOL	vimdoc-ja/doc/spell.jax	/*spell-FOL@ja*
 spell-FORBIDDENWORD	vimdoc-ja/doc/spell.jax	/*spell-FORBIDDENWORD@ja*
 spell-HOME	vimdoc-ja/doc/spell.jax	/*spell-HOME@ja*
+spell-IGNOREEXTRA	vimdoc-ja/doc/spell.jax	/*spell-IGNOREEXTRA@ja*
 spell-KEEPCASE	vimdoc-ja/doc/spell.jax	/*spell-KEEPCASE@ja*
 spell-KEY	vimdoc-ja/doc/spell.jax	/*spell-KEY@ja*
 spell-LANG	vimdoc-ja/doc/spell.jax	/*spell-LANG@ja*
@@ -8352,6 +8394,7 @@ tex-runon	vimdoc-ja/doc/syntax.jax	/*tex-runon@ja*
 tex-slow	vimdoc-ja/doc/syntax.jax	/*tex-slow@ja*
 tex-stopzone	vimdoc-ja/doc/syntax.jax	/*tex-stopzone@ja*
 tex-style	vimdoc-ja/doc/syntax.jax	/*tex-style@ja*
+tex-supersub	vimdoc-ja/doc/syntax.jax	/*tex-supersub@ja*
 tex-sync	vimdoc-ja/doc/syntax.jax	/*tex-sync@ja*
 tex-verb	vimdoc-ja/doc/syntax.jax	/*tex-verb@ja*
 tex.vim	vimdoc-ja/doc/syntax.jax	/*tex.vim@ja*
