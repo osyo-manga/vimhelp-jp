@@ -25,6 +25,7 @@
 :NeoBundleUpdate	neobundle.vim/doc/neobundle.txt	/*:NeoBundleUpdate@en*
 :NeoBundleUpdate!	neobundle.vim/doc/neobundle.txt	/*:NeoBundleUpdate!@en*
 :NeoBundleUpdatesLog	neobundle.vim/doc/neobundle.txt	/*:NeoBundleUpdatesLog@en*
+g:neobundle#cache_file	neobundle.vim/doc/neobundle.txt	/*g:neobundle#cache_file@en*
 g:neobundle#default_options	neobundle.vim/doc/neobundle.txt	/*g:neobundle#default_options@en*
 g:neobundle#default_site	neobundle.vim/doc/neobundle.txt	/*g:neobundle#default_site@en*
 g:neobundle#enable_name_conversion	neobundle.vim/doc/neobundle.txt	/*g:neobundle#enable_name_conversion@en*
@@ -62,6 +63,7 @@ neobundle#has_fresh_cache()	neobundle.vim/doc/neobundle.txt	/*neobundle#has_fres
 neobundle#hooks	neobundle.vim/doc/neobundle.txt	/*neobundle#hooks@en*
 neobundle#is_installed()	neobundle.vim/doc/neobundle.txt	/*neobundle#is_installed()@en*
 neobundle#is_sourced()	neobundle.vim/doc/neobundle.txt	/*neobundle#is_sourced()@en*
+neobundle#load_toml()	neobundle.vim/doc/neobundle.txt	/*neobundle#load_toml()@en*
 neobundle#local()	neobundle.vim/doc/neobundle.txt	/*neobundle#local()@en*
 neobundle#rc()	neobundle.vim/doc/neobundle.txt	/*neobundle#rc()@en*
 neobundle#source()	neobundle.vim/doc/neobundle.txt	/*neobundle#source()@en*
@@ -156,12 +158,10 @@ g:neocomplete#enable_cursor_hold_i	neocomplete.vim/doc/neocomplete.txt	/*g:neoco
 g:neocomplete#enable_fuzzy_completion	neocomplete.vim/doc/neocomplete.txt	/*g:neocomplete#enable_fuzzy_completion@en*
 g:neocomplete#enable_ignore_case	neocomplete.vim/doc/neocomplete.txt	/*g:neocomplete#enable_ignore_case@en*
 g:neocomplete#enable_insert_char_pre	neocomplete.vim/doc/neocomplete.txt	/*g:neocomplete#enable_insert_char_pre@en*
-g:neocomplete#enable_prefetch	neocomplete.vim/doc/neocomplete.txt	/*g:neocomplete#enable_prefetch@en*
-g:neocomplete#enable_refresh_always	neocomplete.vim/doc/neocomplete.txt	/*g:neocomplete#enable_refresh_always@en*
+g:neocomplete#enable_multibyte_completion	neocomplete.vim/doc/neocomplete.txt	/*g:neocomplete#enable_multibyte_completion@en*
 g:neocomplete#enable_smart_case	neocomplete.vim/doc/neocomplete.txt	/*g:neocomplete#enable_smart_case@en*
 g:neocomplete#fallback_mappings	neocomplete.vim/doc/neocomplete.txt	/*g:neocomplete#fallback_mappings@en*
 g:neocomplete#force_omni_input_patterns	neocomplete.vim/doc/neocomplete.txt	/*g:neocomplete#force_omni_input_patterns@en*
-g:neocomplete#force_overwrite_completefunc	neocomplete.vim/doc/neocomplete.txt	/*g:neocomplete#force_overwrite_completefunc@en*
 g:neocomplete#ignore_composite_filetypes	neocomplete.vim/doc/neocomplete.txt	/*g:neocomplete#ignore_composite_filetypes@en*
 g:neocomplete#ignore_source_files	neocomplete.vim/doc/neocomplete.txt	/*g:neocomplete#ignore_source_files@en*
 g:neocomplete#keyword_patterns	neocomplete.vim/doc/neocomplete.txt	/*g:neocomplete#keyword_patterns@en*
@@ -224,7 +224,6 @@ neocomplete-filter-attribute-filter	neocomplete.vim/doc/neocomplete.txt	/*neocom
 neocomplete-filter-attribute-name	neocomplete.vim/doc/neocomplete.txt	/*neocomplete-filter-attribute-name@en*
 neocomplete-filter-attributes	neocomplete.vim/doc/neocomplete.txt	/*neocomplete-filter-attributes@en*
 neocomplete-filter-converter_abbr	neocomplete.vim/doc/neocomplete.txt	/*neocomplete-filter-converter_abbr@en*
-neocomplete-filter-converter_case	neocomplete.vim/doc/neocomplete.txt	/*neocomplete-filter-converter_case@en*
 neocomplete-filter-converter_default	neocomplete.vim/doc/neocomplete.txt	/*neocomplete-filter-converter_default@en*
 neocomplete-filter-converter_delimiter	neocomplete.vim/doc/neocomplete.txt	/*neocomplete-filter-converter_delimiter@en*
 neocomplete-filter-converter_disable_abbr	neocomplete.vim/doc/neocomplete.txt	/*neocomplete-filter-converter_disable_abbr@en*
@@ -384,7 +383,6 @@ x_<Plug>(neosnippet_register_oneshot_snippet)	neosnippet.vim/doc/neosnippet.txt	
 <Plug>(unite_toggle_mark_current_candidate_up)	unite.vim/doc/unite.txt	/*<Plug>(unite_toggle_mark_current_candidate_up)@en*
 <Plug>(unite_toggle_transpose_window)	unite.vim/doc/unite.txt	/*<Plug>(unite_toggle_transpose_window)@en*
 g:unite_abbr_highlight	unite.vim/doc/unite.txt	/*g:unite_abbr_highlight@en*
-g:unite_candidate_icon	unite.vim/doc/unite.txt	/*g:unite_candidate_icon@en*
 g:unite_converter_file_directory_width	unite.vim/doc/unite.txt	/*g:unite_converter_file_directory_width@en*
 g:unite_cursor_line_highlight	unite.vim/doc/unite.txt	/*g:unite_cursor_line_highlight@en*
 g:unite_cursor_line_time	unite.vim/doc/unite.txt	/*g:unite_cursor_line_time@en*
@@ -402,10 +400,8 @@ g:unite_kind_jump_list_after_jump_scroll	unite.vim/doc/unite.txt	/*g:unite_kind_
 g:unite_kind_openable_cd_command	unite.vim/doc/unite.txt	/*g:unite_kind_openable_cd_command@en*
 g:unite_kind_openable_lcd_command	unite.vim/doc/unite.txt	/*g:unite_kind_openable_lcd_command@en*
 g:unite_kind_openable_persist_open_blink_time	unite.vim/doc/unite.txt	/*g:unite_kind_openable_persist_open_blink_time@en*
-g:unite_marked_icon	unite.vim/doc/unite.txt	/*g:unite_marked_icon@en*
 g:unite_matcher_fuzzy_max_input_length	unite.vim/doc/unite.txt	/*g:unite_matcher_fuzzy_max_input_length@en*
 g:unite_no_default_keymappings	unite.vim/doc/unite.txt	/*g:unite_no_default_keymappings@en*
-g:unite_prompt	unite.vim/doc/unite.txt	/*g:unite_prompt@en*
 g:unite_quick_match_table	unite.vim/doc/unite.txt	/*g:unite_quick_match_table@en*
 g:unite_redraw_hold_candidates	unite.vim/doc/unite.txt	/*g:unite_redraw_hold_candidates@en*
 g:unite_source_alias_aliases	unite.vim/doc/unite.txt	/*g:unite_source_alias_aliases@en*
@@ -450,6 +446,8 @@ i_<Plug>(unite_exit)	unite.vim/doc/unite.txt	/*i_<Plug>(unite_exit)@en*
 i_<Plug>(unite_input_directory)	unite.vim/doc/unite.txt	/*i_<Plug>(unite_input_directory)@en*
 i_<Plug>(unite_insert_leave)	unite.vim/doc/unite.txt	/*i_<Plug>(unite_insert_leave)@en*
 i_<Plug>(unite_move_head)	unite.vim/doc/unite.txt	/*i_<Plug>(unite_move_head)@en*
+i_<Plug>(unite_move_left)	unite.vim/doc/unite.txt	/*i_<Plug>(unite_move_left)@en*
+i_<Plug>(unite_move_right)	unite.vim/doc/unite.txt	/*i_<Plug>(unite_move_right)@en*
 i_<Plug>(unite_narrowing_input_history)	unite.vim/doc/unite.txt	/*i_<Plug>(unite_narrowing_input_history)@en*
 i_<Plug>(unite_narrowing_path)	unite.vim/doc/unite.txt	/*i_<Plug>(unite_narrowing_path)@en*
 i_<Plug>(unite_new_candidate)	unite.vim/doc/unite.txt	/*i_<Plug>(unite_new_candidate)@en*
@@ -626,9 +624,9 @@ unite-options-cursor-line-time	unite.vim/doc/unite.txt	/*unite-options-cursor-li
 unite-options-default-action	unite.vim/doc/unite.txt	/*unite-options-default-action@en*
 unite-options-direction	unite.vim/doc/unite.txt	/*unite-options-direction@en*
 unite-options-force-immediately	unite.vim/doc/unite.txt	/*unite-options-force-immediately@en*
+unite-options-force-redraw	unite.vim/doc/unite.txt	/*unite-options-force-redraw@en*
 unite-options-here	unite.vim/doc/unite.txt	/*unite-options-here@en*
 unite-options-hide-source-names	unite.vim/doc/unite.txt	/*unite-options-hide-source-names@en*
-unite-options-hide-status-line	unite.vim/doc/unite.txt	/*unite-options-hide-status-line@en*
 unite-options-horizontal	unite.vim/doc/unite.txt	/*unite-options-horizontal@en*
 unite-options-ignorecase	unite.vim/doc/unite.txt	/*unite-options-ignorecase@en*
 unite-options-immediately	unite.vim/doc/unite.txt	/*unite-options-immediately@en*
@@ -642,8 +640,10 @@ unite-options-no-	unite.vim/doc/unite.txt	/*unite-options-no-@en*
 unite-options-no-cursor-line	unite.vim/doc/unite.txt	/*unite-options-no-cursor-line@en*
 unite-options-no-empty	unite.vim/doc/unite.txt	/*unite-options-no-empty@en*
 unite-options-no-focus	unite.vim/doc/unite.txt	/*unite-options-no-focus@en*
+unite-options-no-hide-icon	unite.vim/doc/unite.txt	/*unite-options-no-hide-icon@en*
 unite-options-no-quit	unite.vim/doc/unite.txt	/*unite-options-no-quit@en*
 unite-options-no-resize	unite.vim/doc/unite.txt	/*unite-options-no-resize@en*
+unite-options-no-restore	unite.vim/doc/unite.txt	/*unite-options-no-restore@en*
 unite-options-no-split	unite.vim/doc/unite.txt	/*unite-options-no-split@en*
 unite-options-path	unite.vim/doc/unite.txt	/*unite-options-path@en*
 unite-options-profile-name	unite.vim/doc/unite.txt	/*unite-options-profile-name@en*
@@ -651,7 +651,6 @@ unite-options-prompt	unite.vim/doc/unite.txt	/*unite-options-prompt@en*
 unite-options-prompt-direction	unite.vim/doc/unite.txt	/*unite-options-prompt-direction@en*
 unite-options-prompt-visible	unite.vim/doc/unite.txt	/*unite-options-prompt-visible@en*
 unite-options-quick-match	unite.vim/doc/unite.txt	/*unite-options-quick-match@en*
-unite-options-restore	unite.vim/doc/unite.txt	/*unite-options-restore@en*
 unite-options-resume	unite.vim/doc/unite.txt	/*unite-options-resume@en*
 unite-options-select	unite.vim/doc/unite.txt	/*unite-options-select@en*
 unite-options-short-source-names	unite.vim/doc/unite.txt	/*unite-options-short-source-names@en*
@@ -1138,6 +1137,7 @@ $VIMRUNTIME	vim/doc/starting.txt	/*$VIMRUNTIME@en*
 'kp'	vim/doc/options.txt	/*'kp'@en*
 'langmap'	vim/doc/options.txt	/*'langmap'@en*
 'langmenu'	vim/doc/options.txt	/*'langmenu'@en*
+'langnoremap'	vim/doc/options.txt	/*'langnoremap'@en*
 'laststatus'	vim/doc/options.txt	/*'laststatus'@en*
 'lazyredraw'	vim/doc/options.txt	/*'lazyredraw'@en*
 'lbr'	vim/doc/options.txt	/*'lbr'@en*
@@ -1151,6 +1151,7 @@ $VIMRUNTIME	vim/doc/starting.txt	/*$VIMRUNTIME@en*
 'listchars'	vim/doc/options.txt	/*'listchars'@en*
 'lm'	vim/doc/options.txt	/*'lm'@en*
 'lmap'	vim/doc/options.txt	/*'lmap'@en*
+'lnr'	vim/doc/options.txt	/*'lnr'@en*
 'loadplugins'	vim/doc/options.txt	/*'loadplugins'@en*
 'lpl'	vim/doc/options.txt	/*'lpl'@en*
 'ls'	vim/doc/options.txt	/*'ls'@en*
@@ -2142,6 +2143,8 @@ $VIMRUNTIME	vim/doc/starting.txt	/*$VIMRUNTIME@en*
 .dic	vim/doc/spell.txt	/*.dic@en*
 .exrc	vim/doc/starting.txt	/*.exrc@en*
 .gvimrc	vim/doc/gui.txt	/*.gvimrc@en*
+.netrwbook	vim/doc/pi_netrw.txt	/*.netrwbook@en*
+.netrwhist	vim/doc/pi_netrw.txt	/*.netrwhist@en*
 .vimrc	vim/doc/starting.txt	/*.vimrc@en*
 /	vim/doc/pattern.txt	/*\/@en*
 /$	vim/doc/pattern.txt	/*\/$@en*
@@ -2801,6 +2804,7 @@ $VIMRUNTIME	vim/doc/starting.txt	/*$VIMRUNTIME@en*
 :comc	vim/doc/map.txt	/*:comc@en*
 :comclear	vim/doc/map.txt	/*:comclear@en*
 :command	vim/doc/map.txt	/*:command@en*
+:command-addr	vim/doc/map.txt	/*:command-addr@en*
 :command-bang	vim/doc/map.txt	/*:command-bang@en*
 :command-bar	vim/doc/map.txt	/*:command-bar@en*
 :command-buffer	vim/doc/map.txt	/*:command-buffer@en*
@@ -2994,6 +2998,8 @@ $VIMRUNTIME	vim/doc/starting.txt	/*$VIMRUNTIME@en*
 :ha	vim/doc/print.txt	/*:ha@en*
 :hardcopy	vim/doc/print.txt	/*:hardcopy@en*
 :help	vim/doc/helphelp.txt	/*:help@en*
+:helpc	vim/doc/helphelp.txt	/*:helpc@en*
+:helpclose	vim/doc/helphelp.txt	/*:helpclose@en*
 :helpf	vim/doc/helphelp.txt	/*:helpf@en*
 :helpfind	vim/doc/helphelp.txt	/*:helpfind@en*
 :helpg	vim/doc/helphelp.txt	/*:helpg@en*
@@ -3467,7 +3473,7 @@ $VIMRUNTIME	vim/doc/starting.txt	/*$VIMRUNTIME@en*
 :sbr	vim/doc/windows.txt	/*:sbr@en*
 :sbrewind	vim/doc/windows.txt	/*:sbrewind@en*
 :sbuffer	vim/doc/windows.txt	/*:sbuffer@en*
-:scrip	vim/doc/repeat.txt	/*:scrip@en*
+:scr	vim/doc/repeat.txt	/*:scr@en*
 :scripte	vim/doc/repeat.txt	/*:scripte@en*
 :scriptencoding	vim/doc/repeat.txt	/*:scriptencoding@en*
 :scriptnames	vim/doc/repeat.txt	/*:scriptnames@en*
@@ -3502,7 +3508,6 @@ $VIMRUNTIME	vim/doc/starting.txt	/*$VIMRUNTIME@en*
 :sfirst	vim/doc/windows.txt	/*:sfirst@en*
 :sh	vim/doc/various.txt	/*:sh@en*
 :shell	vim/doc/various.txt	/*:shell@en*
-:si	vim/doc/gui_w32.txt	/*:si@en*
 :sig	vim/doc/sign.txt	/*:sig@en*
 :sign	vim/doc/sign.txt	/*:sign@en*
 :sign-define	vim/doc/sign.txt	/*:sign-define@en*
@@ -3515,6 +3520,7 @@ $VIMRUNTIME	vim/doc/starting.txt	/*$VIMRUNTIME@en*
 :sign-unplace	vim/doc/sign.txt	/*:sign-unplace@en*
 :sil	vim/doc/various.txt	/*:sil@en*
 :silent	vim/doc/various.txt	/*:silent@en*
+:sim	vim/doc/gui_w32.txt	/*:sim@en*
 :simalt	vim/doc/gui_w32.txt	/*:simalt@en*
 :sl	vim/doc/various.txt	/*:sl@en*
 :sla	vim/doc/windows.txt	/*:sla@en*
@@ -3878,6 +3884,7 @@ $VIMRUNTIME	vim/doc/starting.txt	/*$VIMRUNTIME@en*
 <CSI>	vim/doc/intro.txt	/*<CSI>@en*
 <Char->	vim/doc/map.txt	/*<Char->@en*
 <Char>	vim/doc/map.txt	/*<Char>@en*
+<CursorHold>	vim/doc/autocmd.txt	/*<CursorHold>@en*
 <D-	vim/doc/intro.txt	/*<D-@en*
 <Del>	vim/doc/change.txt	/*<Del>@en*
 <Down>	vim/doc/motion.txt	/*<Down>@en*
@@ -5075,6 +5082,8 @@ E884	vim/doc/eval.txt	/*E884@en*
 E885	vim/doc/sign.txt	/*E885@en*
 E886	vim/doc/starting.txt	/*E886@en*
 E887	vim/doc/if_pyth.txt	/*E887@en*
+E888	vim/doc/pattern.txt	/*E888@en*
+E889	vim/doc/map.txt	/*E889@en*
 E89	vim/doc/message.txt	/*E89@en*
 E90	vim/doc/message.txt	/*E90@en*
 E91	vim/doc/options.txt	/*E91@en*
@@ -6153,6 +6162,7 @@ diff-options	vim/doc/diff.txt	/*diff-options@en*
 diff-original-file	vim/doc/diff.txt	/*diff-original-file@en*
 diff-patchexpr	vim/doc/diff.txt	/*diff-patchexpr@en*
 diff.txt	vim/doc/diff.txt	/*diff.txt@en*
+diff.vim	vim/doc/syntax.txt	/*diff.vim@en*
 diff_filler()	vim/doc/eval.txt	/*diff_filler()@en*
 diff_hlID()	vim/doc/eval.txt	/*diff_hlID()@en*
 digraph	vim/doc/digraph.txt	/*digraph@en*
@@ -6215,6 +6225,7 @@ edit-dialogs	vim/doc/editing.txt	/*edit-dialogs@en*
 edit-files	vim/doc/editing.txt	/*edit-files@en*
 edit-intro	vim/doc/editing.txt	/*edit-intro@en*
 edit-no-break	vim/doc/usr_25.txt	/*edit-no-break@en*
+edit-paragraph-join	vim/doc/usr_25.txt	/*edit-paragraph-join@en*
 editing.txt	vim/doc/editing.txt	/*editing.txt@en*
 efm-%>	vim/doc/quickfix.txt	/*efm-%>@en*
 efm-entries	vim/doc/quickfix.txt	/*efm-entries@en*
@@ -6745,6 +6756,7 @@ g:netrw_errorlvl	vim/doc/pi_netrw.txt	/*g:netrw_errorlvl@en*
 g:netrw_fastbrowse	vim/doc/pi_netrw.txt	/*g:netrw_fastbrowse@en*
 g:netrw_fetch_cmd	vim/doc/pi_netrw.txt	/*g:netrw_fetch_cmd@en*
 g:netrw_ffkeep	vim/doc/pi_netrw.txt	/*g:netrw_ffkeep@en*
+g:netrw_file_cmd	vim/doc/pi_netrw.txt	/*g:netrw_file_cmd@en*
 g:netrw_fname_escape	vim/doc/pi_netrw.txt	/*g:netrw_fname_escape@en*
 g:netrw_ftp	vim/doc/pi_netrw.txt	/*g:netrw_ftp@en*
 g:netrw_ftp_browse_reject	vim/doc/pi_netrw.txt	/*g:netrw_ftp_browse_reject@en*
@@ -6756,6 +6768,7 @@ g:netrw_ftp_timelist_cmd	vim/doc/pi_netrw.txt	/*g:netrw_ftp_timelist_cmd@en*
 g:netrw_ftpextracmd	vim/doc/pi_netrw.txt	/*g:netrw_ftpextracmd@en*
 g:netrw_ftpmode	vim/doc/pi_netrw.txt	/*g:netrw_ftpmode@en*
 g:netrw_glob_escape	vim/doc/pi_netrw.txt	/*g:netrw_glob_escape@en*
+g:netrw_gx	vim/doc/pi_netrw.txt	/*g:netrw_gx@en*
 g:netrw_hide	vim/doc/pi_netrw.txt	/*g:netrw_hide@en*
 g:netrw_home	vim/doc/pi_netrw.txt	/*g:netrw_home@en*
 g:netrw_http_cmd	vim/doc/pi_netrw.txt	/*g:netrw_http_cmd@en*
@@ -6763,10 +6776,13 @@ g:netrw_http_put_cmd	vim/doc/pi_netrw.txt	/*g:netrw_http_put_cmd@en*
 g:netrw_http_xcmd	vim/doc/pi_netrw.txt	/*g:netrw_http_xcmd@en*
 g:netrw_ignorenetrc	vim/doc/pi_netrw.txt	/*g:netrw_ignorenetrc@en*
 g:netrw_keepdir	vim/doc/pi_netrw.txt	/*g:netrw_keepdir@en*
+g:netrw_keepj	vim/doc/pi_netrw.txt	/*g:netrw_keepj@en*
 g:netrw_list_cmd	vim/doc/pi_netrw.txt	/*g:netrw_list_cmd@en*
+g:netrw_list_cmd_options	vim/doc/pi_netrw.txt	/*g:netrw_list_cmd_options@en*
 g:netrw_list_hide	vim/doc/pi_netrw.txt	/*g:netrw_list_hide@en*
 g:netrw_liststyle	vim/doc/pi_netrw.txt	/*g:netrw_liststyle@en*
 g:netrw_localcopycmd	vim/doc/pi_netrw.txt	/*g:netrw_localcopycmd@en*
+g:netrw_localcopydircmd	vim/doc/pi_netrw.txt	/*g:netrw_localcopydircmd@en*
 g:netrw_localmkdir	vim/doc/pi_netrw.txt	/*g:netrw_localmkdir@en*
 g:netrw_localmovecmd	vim/doc/pi_netrw.txt	/*g:netrw_localmovecmd@en*
 g:netrw_localrmdir	vim/doc/pi_netrw.txt	/*g:netrw_localrmdir@en*
@@ -6787,6 +6803,7 @@ g:netrw_rsync_cmd	vim/doc/pi_netrw.txt	/*g:netrw_rsync_cmd@en*
 g:netrw_scp_cmd	vim/doc/pi_netrw.txt	/*g:netrw_scp_cmd@en*
 g:netrw_scpport	vim/doc/pi_netrw.txt	/*g:netrw_scpport@en*
 g:netrw_sepchr	vim/doc/pi_netrw.txt	/*g:netrw_sepchr@en*
+g:netrw_servername	vim/doc/pi_netrw.txt	/*g:netrw_servername@en*
 g:netrw_sftp_cmd	vim/doc/pi_netrw.txt	/*g:netrw_sftp_cmd@en*
 g:netrw_silent	vim/doc/pi_netrw.txt	/*g:netrw_silent@en*
 g:netrw_sort_by	vim/doc/pi_netrw.txt	/*g:netrw_sort_by@en*
@@ -6826,6 +6843,8 @@ g:tex_isk	vim/doc/syntax.txt	/*g:tex_isk@en*
 g:tex_no_error	vim/doc/syntax.txt	/*g:tex_no_error@en*
 g:tex_nospell	vim/doc/syntax.txt	/*g:tex_nospell@en*
 g:tex_stylish	vim/doc/syntax.txt	/*g:tex_stylish@en*
+g:tex_subscripts	vim/doc/syntax.txt	/*g:tex_subscripts@en*
+g:tex_superscripts	vim/doc/syntax.txt	/*g:tex_superscripts@en*
 g:tex_verbspell	vim/doc/syntax.txt	/*g:tex_verbspell@en*
 g:var	vim/doc/eval.txt	/*g:var@en*
 g:vimball_home	vim/doc/pi_vimball.txt	/*g:vimball_home@en*
@@ -7732,6 +7751,8 @@ netrw-:Hexplore	vim/doc/pi_netrw.txt	/*netrw-:Hexplore@en*
 netrw-:Lexplore	vim/doc/pi_netrw.txt	/*netrw-:Lexplore@en*
 netrw-:MF	vim/doc/pi_netrw.txt	/*netrw-:MF@en*
 netrw-:MT	vim/doc/pi_netrw.txt	/*netrw-:MT@en*
+netrw-:NetrwC	vim/doc/pi_netrw.txt	/*netrw-:NetrwC@en*
+netrw-:NetrwMB	vim/doc/pi_netrw.txt	/*netrw-:NetrwMB@en*
 netrw-:Rexplore	vim/doc/pi_netrw.txt	/*netrw-:Rexplore@en*
 netrw-:Sexplore	vim/doc/pi_netrw.txt	/*netrw-:Sexplore@en*
 netrw-:Texplore	vim/doc/pi_netrw.txt	/*netrw-:Texplore@en*
@@ -7740,6 +7761,7 @@ netrw-C	vim/doc/pi_netrw.txt	/*netrw-C@en*
 netrw-D	vim/doc/pi_netrw.txt	/*netrw-D@en*
 netrw-O	vim/doc/pi_netrw.txt	/*netrw-O@en*
 netrw-P	vim/doc/pi_netrw.txt	/*netrw-P@en*
+netrw-P18	vim/doc/pi_netrw.txt	/*netrw-P18@en*
 netrw-R	vim/doc/pi_netrw.txt	/*netrw-R@en*
 netrw-S	vim/doc/pi_netrw.txt	/*netrw-S@en*
 netrw-Tb	vim/doc/pi_netrw.txt	/*netrw-Tb@en*
@@ -7769,6 +7791,7 @@ netrw-createfile	vim/doc/pi_netrw.txt	/*netrw-createfile@en*
 netrw-credits	vim/doc/pi_netrw.txt	/*netrw-credits@en*
 netrw-ctrl-h	vim/doc/pi_netrw.txt	/*netrw-ctrl-h@en*
 netrw-ctrl-l	vim/doc/pi_netrw.txt	/*netrw-ctrl-l@en*
+netrw-ctrl-r	vim/doc/pi_netrw.txt	/*netrw-ctrl-r@en*
 netrw-ctrl_l	vim/doc/pi_netrw.txt	/*netrw-ctrl_l@en*
 netrw-curdir	vim/doc/pi_netrw.txt	/*netrw-curdir@en*
 netrw-d	vim/doc/pi_netrw.txt	/*netrw-d@en*
@@ -7795,6 +7818,7 @@ netrw-gf	vim/doc/pi_netrw.txt	/*netrw-gf@en*
 netrw-gh	vim/doc/pi_netrw.txt	/*netrw-gh@en*
 netrw-gitignore	vim/doc/pi_netrw.txt	/*netrw-gitignore@en*
 netrw-gp	vim/doc/pi_netrw.txt	/*netrw-gp@en*
+netrw-grep	vim/doc/pi_netrw.txt	/*netrw-grep@en*
 netrw-gx	vim/doc/pi_netrw.txt	/*netrw-gx@en*
 netrw-handler	vim/doc/pi_netrw.txt	/*netrw-handler@en*
 netrw-help	vim/doc/pi_netrw.txt	/*netrw-help@en*
@@ -7816,6 +7840,7 @@ netrw-login	vim/doc/pi_netrw.txt	/*netrw-login@en*
 netrw-mB	vim/doc/pi_netrw.txt	/*netrw-mB@en*
 netrw-mF	vim/doc/pi_netrw.txt	/*netrw-mF@en*
 netrw-mT	vim/doc/pi_netrw.txt	/*netrw-mT@en*
+netrw-mX	vim/doc/pi_netrw.txt	/*netrw-mX@en*
 netrw-mb	vim/doc/pi_netrw.txt	/*netrw-mb@en*
 netrw-mc	vim/doc/pi_netrw.txt	/*netrw-mc@en*
 netrw-md	vim/doc/pi_netrw.txt	/*netrw-md@en*
@@ -7833,6 +7858,7 @@ netrw-mr	vim/doc/pi_netrw.txt	/*netrw-mr@en*
 netrw-ms	vim/doc/pi_netrw.txt	/*netrw-ms@en*
 netrw-mt	vim/doc/pi_netrw.txt	/*netrw-mt@en*
 netrw-mu	vim/doc/pi_netrw.txt	/*netrw-mu@en*
+netrw-mv	vim/doc/pi_netrw.txt	/*netrw-mv@en*
 netrw-mx	vim/doc/pi_netrw.txt	/*netrw-mx@en*
 netrw-mz	vim/doc/pi_netrw.txt	/*netrw-mz@en*
 netrw-netrc	vim/doc/pi_netrw.txt	/*netrw-netrc@en*
@@ -7852,6 +7878,7 @@ netrw-p13	vim/doc/pi_netrw.txt	/*netrw-p13@en*
 netrw-p14	vim/doc/pi_netrw.txt	/*netrw-p14@en*
 netrw-p15	vim/doc/pi_netrw.txt	/*netrw-p15@en*
 netrw-p16	vim/doc/pi_netrw.txt	/*netrw-p16@en*
+netrw-p17	vim/doc/pi_netrw.txt	/*netrw-p17@en*
 netrw-p2	vim/doc/pi_netrw.txt	/*netrw-p2@en*
 netrw-p3	vim/doc/pi_netrw.txt	/*netrw-p3@en*
 netrw-p4	vim/doc/pi_netrw.txt	/*netrw-p4@en*
@@ -8567,6 +8594,7 @@ spell-FLAG	vim/doc/spell.txt	/*spell-FLAG@en*
 spell-FOL	vim/doc/spell.txt	/*spell-FOL@en*
 spell-FORBIDDENWORD	vim/doc/spell.txt	/*spell-FORBIDDENWORD@en*
 spell-HOME	vim/doc/spell.txt	/*spell-HOME@en*
+spell-IGNOREEXTRA	vim/doc/spell.txt	/*spell-IGNOREEXTRA@en*
 spell-KEEPCASE	vim/doc/spell.txt	/*spell-KEEPCASE@en*
 spell-KEY	vim/doc/spell.txt	/*spell-KEY@en*
 spell-LANG	vim/doc/spell.txt	/*spell-LANG@en*
@@ -9044,6 +9072,7 @@ tex-runon	vim/doc/syntax.txt	/*tex-runon@en*
 tex-slow	vim/doc/syntax.txt	/*tex-slow@en*
 tex-stopzone	vim/doc/syntax.txt	/*tex-stopzone@en*
 tex-style	vim/doc/syntax.txt	/*tex-style@en*
+tex-supersub	vim/doc/syntax.txt	/*tex-supersub@en*
 tex-sync	vim/doc/syntax.txt	/*tex-sync@en*
 tex-verb	vim/doc/syntax.txt	/*tex-verb@en*
 tex.vim	vim/doc/syntax.txt	/*tex.vim@en*
@@ -9519,6 +9548,7 @@ window-variable	vim/doc/eval.txt	/*window-variable@en*
 windowid-variable	vim/doc/eval.txt	/*windowid-variable@en*
 windows	vim/doc/windows.txt	/*windows@en*
 windows-3.1	vim/doc/os_win32.txt	/*windows-3.1@en*
+windows-icon	vim/doc/os_win32.txt	/*windows-icon@en*
 windows-intro	vim/doc/windows.txt	/*windows-intro@en*
 windows-starting	vim/doc/windows.txt	/*windows-starting@en*
 windows.txt	vim/doc/windows.txt	/*windows.txt@en*
@@ -9692,6 +9722,7 @@ operator-replace-changelog-0.0.1	vim-operator-replace/doc/operator-replace.txt	/
 operator-replace-changelog-0.0.2	vim-operator-replace/doc/operator-replace.txt	/*operator-replace-changelog-0.0.2@en*
 operator-replace-changelog-0.0.3	vim-operator-replace/doc/operator-replace.txt	/*operator-replace-changelog-0.0.3@en*
 operator-replace-changelog-0.0.4	vim-operator-replace/doc/operator-replace.txt	/*operator-replace-changelog-0.0.4@en*
+operator-replace-changelog-0.0.5	vim-operator-replace/doc/operator-replace.txt	/*operator-replace-changelog-0.0.5@en*
 operator-replace-contents	vim-operator-replace/doc/operator-replace.txt	/*operator-replace-contents@en*
 operator-replace-examples	vim-operator-replace/doc/operator-replace.txt	/*operator-replace-examples@en*
 operator-replace-interface	vim-operator-replace/doc/operator-replace.txt	/*operator-replace-interface@en*
@@ -9700,6 +9731,7 @@ operator-replace-key-mappings	vim-operator-replace/doc/operator-replace.txt	/*op
 operator-replace.txt	vim-operator-replace/doc/operator-replace.txt	/*operator-replace.txt@en*
 operator#user#define()	vim-operator-user/doc/operator-user.txt	/*operator#user#define()@en*
 operator#user#define_ex_command()	vim-operator-user/doc/operator-user.txt	/*operator#user#define_ex_command()@en*
+operator#user#register()	vim-operator-user/doc/operator-user.txt	/*operator#user#register()@en*
 operator#user#visual_command_from_wise_name()	vim-operator-user/doc/operator-user.txt	/*operator#user#visual_command_from_wise_name()@en*
 operator-user	vim-operator-user/doc/operator-user.txt	/*operator-user@en*
 operator-user-bugs	vim-operator-user/doc/operator-user.txt	/*operator-user-bugs@en*
@@ -9717,6 +9749,7 @@ operator-user-changelog-0.0.6	vim-operator-user/doc/operator-user.txt	/*operator
 operator-user-changelog-0.0.7	vim-operator-user/doc/operator-user.txt	/*operator-user-changelog-0.0.7@en*
 operator-user-changelog-0.0.8	vim-operator-user/doc/operator-user.txt	/*operator-user-changelog-0.0.8@en*
 operator-user-changelog-0.0.9	vim-operator-user/doc/operator-user.txt	/*operator-user-changelog-0.0.9@en*
+operator-user-changelog-0.1.0	vim-operator-user/doc/operator-user.txt	/*operator-user-changelog-0.1.0@en*
 operator-user-contents	vim-operator-user/doc/operator-user.txt	/*operator-user-contents@en*
 operator-user-examples	vim-operator-user/doc/operator-user.txt	/*operator-user-examples@en*
 operator-user-examples-A	vim-operator-user/doc/operator-user.txt	/*operator-user-examples-A@en*
@@ -9727,6 +9760,27 @@ operator-user-functions	vim-operator-user/doc/operator-user.txt	/*operator-user-
 operator-user-interface	vim-operator-user/doc/operator-user.txt	/*operator-user-interface@en*
 operator-user-introduction	vim-operator-user/doc/operator-user.txt	/*operator-user-introduction@en*
 operator-user.txt	vim-operator-user/doc/operator-user.txt	/*operator-user.txt@en*
+:QuickhlCwordDisable	vim-quickhl/doc/quickhl.txt	/*:QuickhlCwordDisable@en*
+:QuickhlCwordEnable	vim-quickhl/doc/quickhl.txt	/*:QuickhlCwordEnable@en*
+:QuickhlCwordToggle	vim-quickhl/doc/quickhl.txt	/*:QuickhlCwordToggle@en*
+:QuickhlManualAdd	vim-quickhl/doc/quickhl.txt	/*:QuickhlManualAdd@en*
+:QuickhlManualAdd!	vim-quickhl/doc/quickhl.txt	/*:QuickhlManualAdd!@en*
+:QuickhlManualColors	vim-quickhl/doc/quickhl.txt	/*:QuickhlManualColors@en*
+:QuickhlManualDelete	vim-quickhl/doc/quickhl.txt	/*:QuickhlManualDelete@en*
+:QuickhlManualDelete!	vim-quickhl/doc/quickhl.txt	/*:QuickhlManualDelete!@en*
+:QuickhlManualDisable	vim-quickhl/doc/quickhl.txt	/*:QuickhlManualDisable@en*
+:QuickhlManualEnable	vim-quickhl/doc/quickhl.txt	/*:QuickhlManualEnable@en*
+:QuickhlManualList	vim-quickhl/doc/quickhl.txt	/*:QuickhlManualList@en*
+:QuickhlManualLock	vim-quickhl/doc/quickhl.txt	/*:QuickhlManualLock@en*
+:QuickhlManualLockToggle	vim-quickhl/doc/quickhl.txt	/*:QuickhlManualLockToggle@en*
+:QuickhlManualLockWindow	vim-quickhl/doc/quickhl.txt	/*:QuickhlManualLockWindow@en*
+:QuickhlManualLockWindowToggle	vim-quickhl/doc/quickhl.txt	/*:QuickhlManualLockWindowToggle@en*
+:QuickhlManualReset	vim-quickhl/doc/quickhl.txt	/*:QuickhlManualReset@en*
+:QuickhlManualUnlock	vim-quickhl/doc/quickhl.txt	/*:QuickhlManualUnlock@en*
+:QuickhlManualUnlockWindow	vim-quickhl/doc/quickhl.txt	/*:QuickhlManualUnlockWindow@en*
+:QuickhlTagDisable	vim-quickhl/doc/quickhl.txt	/*:QuickhlTagDisable@en*
+:QuickhlTagEnable	vim-quickhl/doc/quickhl.txt	/*:QuickhlTagEnable@en*
+:QuickhlTagToggle	vim-quickhl/doc/quickhl.txt	/*:QuickhlTagToggle@en*
 g:quickhl_cword_enable_at_startup	vim-quickhl/doc/quickhl.txt	/*g:quickhl_cword_enable_at_startup@en*
 g:quickhl_cword_hl_command	vim-quickhl/doc/quickhl.txt	/*g:quickhl_cword_hl_command@en*
 g:quickhl_manual_colors	vim-quickhl/doc/quickhl.txt	/*g:quickhl_manual_colors@en*
@@ -10083,7 +10137,6 @@ textobj-user.txt	vim-textobj-user/doc/textobj-user.txt	/*textobj-user.txt@en*
 <Plug>(vimfiler_edit_binary_file)	vimfiler.vim/doc/vimfiler.txt	/*<Plug>(vimfiler_edit_binary_file)@en*
 <Plug>(vimfiler_edit_file)	vimfiler.vim/doc/vimfiler.txt	/*<Plug>(vimfiler_edit_file)@en*
 <Plug>(vimfiler_execute_external_filer)	vimfiler.vim/doc/vimfiler.txt	/*<Plug>(vimfiler_execute_external_filer)@en*
-<Plug>(vimfiler_execute_file)	vimfiler.vim/doc/vimfiler.txt	/*<Plug>(vimfiler_execute_file)@en*
 <Plug>(vimfiler_execute_shell_command)	vimfiler.vim/doc/vimfiler.txt	/*<Plug>(vimfiler_execute_shell_command)@en*
 <Plug>(vimfiler_execute_system_associated)	vimfiler.vim/doc/vimfiler.txt	/*<Plug>(vimfiler_execute_system_associated)@en*
 <Plug>(vimfiler_execute_vimfiler_associated)	vimfiler.vim/doc/vimfiler.txt	/*<Plug>(vimfiler_execute_vimfiler_associated)@en*
@@ -10255,6 +10308,7 @@ vimfiler-usage	vimfiler.vim/doc/vimfiler.txt	/*vimfiler-usage@en*
 vimfiler-variables	vimfiler.vim/doc/vimfiler.txt	/*vimfiler-variables@en*
 vimfiler.txt	vimfiler.vim/doc/vimfiler.txt	/*vimfiler.txt@en*
 :VimProcBang	vimproc.vim/doc/vimproc.txt	/*:VimProcBang@en*
+:VimProcInstall	vimproc.vim/doc/vimproc.txt	/*:VimProcInstall@en*
 :VimProcRead	vimproc.vim/doc/vimproc.txt	/*:VimProcRead@en*
 g:stderrencoding	vimproc.vim/doc/vimproc.txt	/*g:stderrencoding@en*
 g:stdinencoding	vimproc.vim/doc/vimproc.txt	/*g:stdinencoding@en*
@@ -10560,6 +10614,7 @@ Vital-functions	vital.vim/doc/vital.txt	/*Vital-functions@en*
 Vital-interface	vital.vim/doc/vital.txt	/*Vital-interface@en*
 Vital-introduction	vital.vim/doc/vital.txt	/*Vital-introduction@en*
 Vital-links	vital.vim/doc/vital.txt	/*Vital-links@en*
+Vital-modules	vital.vim/doc/vital.txt	/*Vital-modules@en*
 Vital-usage	vital.vim/doc/vital.txt	/*Vital-usage@en*
 Vital-variables	vital.vim/doc/vital.txt	/*Vital-variables@en*
 Vital.Assertion	vital.vim/doc/vital-assertion.txt	/*Vital.Assertion@en*
@@ -10643,7 +10698,6 @@ Vital.Data.Dict.min_by()	vital.vim/doc/vital-data-dict.txt	/*Vital.Data.Dict.min
 Vital.Data.Dict.omit()	vital.vim/doc/vital-data-dict.txt	/*Vital.Data.Dict.omit()@en*
 Vital.Data.Dict.pick()	vital.vim/doc/vital-data-dict.txt	/*Vital.Data.Dict.pick()@en*
 Vital.Data.Dict.swap()	vital.vim/doc/vital-data-dict.txt	/*Vital.Data.Dict.swap()@en*
-Vital.Data.Dict.txt	vital.vim/doc/vital-data-dict.txt	/*Vital.Data.Dict.txt@en*
 Vital.Data.LazyList	vital.vim/doc/vital-data-lazylist.txt	/*Vital.Data.LazyList@en*
 Vital.Data.LazyList-contents	vital.vim/doc/vital-data-lazylist.txt	/*Vital.Data.LazyList-contents@en*
 Vital.Data.LazyList-datastructure	vital.vim/doc/vital-data-lazylist.txt	/*Vital.Data.LazyList-datastructure@en*
@@ -10667,11 +10721,11 @@ Vital.Data.List-introduction	vital.vim/doc/vital-data-list.txt	/*Vital.Data.List
 Vital.Data.List.all()	vital.vim/doc/vital-data-list.txt	/*Vital.Data.List.all()@en*
 Vital.Data.List.and()	vital.vim/doc/vital-data-list.txt	/*Vital.Data.List.and()@en*
 Vital.Data.List.any()	vital.vim/doc/vital-data-list.txt	/*Vital.Data.List.any()@en*
-Vital.Data.List.binary_search	vital.vim/doc/vital-data-list.txt	/*Vital.Data.List.binary_search@en*
+Vital.Data.List.binary_search()	vital.vim/doc/vital-data-list.txt	/*Vital.Data.List.binary_search()@en*
 Vital.Data.List.break()	vital.vim/doc/vital-data-list.txt	/*Vital.Data.List.break()@en*
 Vital.Data.List.char_range()	vital.vim/doc/vital-data-list.txt	/*Vital.Data.List.char_range()@en*
 Vital.Data.List.clear()	vital.vim/doc/vital-data-list.txt	/*Vital.Data.List.clear()@en*
-Vital.Data.List.combinations	vital.vim/doc/vital-data-list.txt	/*Vital.Data.List.combinations@en*
+Vital.Data.List.combinations()	vital.vim/doc/vital-data-list.txt	/*Vital.Data.List.combinations()@en*
 Vital.Data.List.concat()	vital.vim/doc/vital-data-list.txt	/*Vital.Data.List.concat()@en*
 Vital.Data.List.conj()	vital.vim/doc/vital-data-list.txt	/*Vital.Data.List.conj()@en*
 Vital.Data.List.cons()	vital.vim/doc/vital-data-list.txt	/*Vital.Data.List.cons()@en*
@@ -10683,7 +10737,7 @@ Vital.Data.List.foldl()	vital.vim/doc/vital-data-list.txt	/*Vital.Data.List.fold
 Vital.Data.List.foldl1()	vital.vim/doc/vital-data-list.txt	/*Vital.Data.List.foldl1()@en*
 Vital.Data.List.foldr()	vital.vim/doc/vital-data-list.txt	/*Vital.Data.List.foldr()@en*
 Vital.Data.List.foldr1()	vital.vim/doc/vital-data-list.txt	/*Vital.Data.List.foldr1()@en*
-Vital.Data.List.group_by	vital.vim/doc/vital-data-list.txt	/*Vital.Data.List.group_by@en*
+Vital.Data.List.group_by()	vital.vim/doc/vital-data-list.txt	/*Vital.Data.List.group_by()@en*
 Vital.Data.List.has()	vital.vim/doc/vital-data-list.txt	/*Vital.Data.List.has()@en*
 Vital.Data.List.has_common_items()	vital.vim/doc/vital-data-list.txt	/*Vital.Data.List.has_common_items()@en*
 Vital.Data.List.has_index()	vital.vim/doc/vital-data-list.txt	/*Vital.Data.List.has_index()@en*
@@ -10692,9 +10746,9 @@ Vital.Data.List.max_by()	vital.vim/doc/vital-data-list.txt	/*Vital.Data.List.max
 Vital.Data.List.min_by()	vital.vim/doc/vital-data-list.txt	/*Vital.Data.List.min_by()@en*
 Vital.Data.List.or()	vital.vim/doc/vital-data-list.txt	/*Vital.Data.List.or()@en*
 Vital.Data.List.partition()	vital.vim/doc/vital-data-list.txt	/*Vital.Data.List.partition()@en*
-Vital.Data.List.permutations	vital.vim/doc/vital-data-list.txt	/*Vital.Data.List.permutations@en*
+Vital.Data.List.permutations()	vital.vim/doc/vital-data-list.txt	/*Vital.Data.List.permutations()@en*
 Vital.Data.List.pop()	vital.vim/doc/vital-data-list.txt	/*Vital.Data.List.pop()@en*
-Vital.Data.List.product	vital.vim/doc/vital-data-list.txt	/*Vital.Data.List.product@en*
+Vital.Data.List.product()	vital.vim/doc/vital-data-list.txt	/*Vital.Data.List.product()@en*
 Vital.Data.List.push()	vital.vim/doc/vital-data-list.txt	/*Vital.Data.List.push()@en*
 Vital.Data.List.shift()	vital.vim/doc/vital-data-list.txt	/*Vital.Data.List.shift()@en*
 Vital.Data.List.sort()	vital.vim/doc/vital-data-list.txt	/*Vital.Data.List.sort()@en*
@@ -10732,6 +10786,7 @@ Vital.Data.String.common_head()	vital.vim/doc/vital-data-string.txt	/*Vital.Data
 Vital.Data.String.contains_multibyte()	vital.vim/doc/vital-data-string.txt	/*Vital.Data.String.contains_multibyte()@en*
 Vital.Data.String.diffidx()	vital.vim/doc/vital-data-string.txt	/*Vital.Data.String.diffidx()@en*
 Vital.Data.String.dstring()	vital.vim/doc/vital-data-string.txt	/*Vital.Data.String.dstring()@en*
+Vital.Data.String.hash()	vital.vim/doc/vital-data-string.txt	/*Vital.Data.String.hash()@en*
 Vital.Data.String.justify_equal_spacing()	vital.vim/doc/vital-data-string.txt	/*Vital.Data.String.justify_equal_spacing()@en*
 Vital.Data.String.levenshtein_distance()	vital.vim/doc/vital-data-string.txt	/*Vital.Data.String.levenshtein_distance()@en*
 Vital.Data.String.lines()	vital.vim/doc/vital-data-string.txt	/*Vital.Data.String.lines()@en*
@@ -10888,6 +10943,7 @@ Vital.Math.fib()	vital.vim/doc/vital-math.txt	/*Vital.Math.fib()@en*
 Vital.Math.gcd()	vital.vim/doc/vital-math.txt	/*Vital.Math.gcd()@en*
 Vital.Math.lcm()	vital.vim/doc/vital-math.txt	/*Vital.Math.lcm()@en*
 Vital.Math.modulo()	vital.vim/doc/vital-math.txt	/*Vital.Math.modulo()@en*
+Vital.Math.sum()	vital.vim/doc/vital-math.txt	/*Vital.Math.sum()@en*
 Vital.OptionParser	vital.vim/doc/vital-option_parser.txt	/*Vital.OptionParser@en*
 Vital.OptionParser-Parser	vital.vim/doc/vital-option_parser.txt	/*Vital.OptionParser-Parser@en*
 Vital.OptionParser-Parser.complete()	vital.vim/doc/vital-option_parser.txt	/*Vital.OptionParser-Parser.complete()@en*
@@ -11062,6 +11118,15 @@ Vital.Text.CSV.dump_record()	vital.vim/doc/vital-text-csv.txt	/*Vital.Text.CSV.d
 Vital.Text.CSV.parse()	vital.vim/doc/vital-text-csv.txt	/*Vital.Text.CSV.parse()@en*
 Vital.Text.CSV.parse_file()	vital.vim/doc/vital-text-csv.txt	/*Vital.Text.CSV.parse_file()@en*
 Vital.Text.CSV.parse_record()	vital.vim/doc/vital-text-csv.txt	/*Vital.Text.CSV.parse_record()@en*
+Vital.Text.INI	vital.vim/doc/vital-text-ini.txt	/*Vital.Text.INI@en*
+Vital.Text.INI-contents	vital.vim/doc/vital-text-ini.txt	/*Vital.Text.INI-contents@en*
+Vital.Text.INI-functions	vital.vim/doc/vital-text-ini.txt	/*Vital.Text.INI-functions@en*
+Vital.Text.INI-interface	vital.vim/doc/vital-text-ini.txt	/*Vital.Text.INI-interface@en*
+Vital.Text.INI-introduction	vital.vim/doc/vital-text-ini.txt	/*Vital.Text.INI-introduction@en*
+Vital.Text.INI-record	vital.vim/doc/vital-text-ini.txt	/*Vital.Text.INI-record@en*
+Vital.Text.INI.parse()	vital.vim/doc/vital-text-ini.txt	/*Vital.Text.INI.parse()@en*
+Vital.Text.INI.parse_file()	vital.vim/doc/vital-text-ini.txt	/*Vital.Text.INI.parse_file()@en*
+Vital.Text.INI.parse_record()	vital.vim/doc/vital-text-ini.txt	/*Vital.Text.INI.parse_record()@en*
 Vital.Text.LTSV	vital.vim/doc/vital-text-ltsv.txt	/*Vital.Text.LTSV@en*
 Vital.Text.LTSV-contents	vital.vim/doc/vital-text-ltsv.txt	/*Vital.Text.LTSV-contents@en*
 Vital.Text.LTSV-functions	vital.vim/doc/vital-text-ltsv.txt	/*Vital.Text.LTSV-functions@en*
@@ -11099,6 +11164,13 @@ Vital.Text.Parser-interface	vital.vim/doc/vital-text-parser.txt	/*Vital.Text.Par
 Vital.Text.Parser-introduction	vital.vim/doc/vital-text-parser.txt	/*Vital.Text.Parser-introduction@en*
 Vital.Text.Parser-objects	vital.vim/doc/vital-text-parser.txt	/*Vital.Text.Parser-objects@en*
 Vital.Text.Parser.parser()	vital.vim/doc/vital-text-parser.txt	/*Vital.Text.Parser.parser()@en*
+Vital.Text.TOML	vital.vim/doc/vital-text-toml.txt	/*Vital.Text.TOML@en*
+Vital.Text.TOML-contents	vital.vim/doc/vital-text-toml.txt	/*Vital.Text.TOML-contents@en*
+Vital.Text.TOML-functions	vital.vim/doc/vital-text-toml.txt	/*Vital.Text.TOML-functions@en*
+Vital.Text.TOML-interface	vital.vim/doc/vital-text-toml.txt	/*Vital.Text.TOML-interface@en*
+Vital.Text.TOML-introduction	vital.vim/doc/vital-text-toml.txt	/*Vital.Text.TOML-introduction@en*
+Vital.Text.TOML.parse()	vital.vim/doc/vital-text-toml.txt	/*Vital.Text.TOML.parse()@en*
+Vital.Text.TOML.parse_file()	vital.vim/doc/vital-text-toml.txt	/*Vital.Text.TOML.parse_file()@en*
 Vital.Text.Table	vital.vim/doc/vital-text-table.txt	/*Vital.Text.Table@en*
 Vital.Text.Table-BorderStyle	vital.vim/doc/vital-text-table.txt	/*Vital.Text.Table-BorderStyle@en*
 Vital.Text.Table-BorderStyle.border	vital.vim/doc/vital-text-table.txt	/*Vital.Text.Table-BorderStyle.border@en*
@@ -11175,6 +11247,13 @@ Vital.Vim.Message.echomsg()	vital.vim/doc/vital-vim-message.txt	/*Vital.Vim.Mess
 Vital.Vim.Message.error()	vital.vim/doc/vital-vim-message.txt	/*Vital.Vim.Message.error()@en*
 Vital.Vim.Message.get_hit_enter_max_length()	vital.vim/doc/vital-vim-message.txt	/*Vital.Vim.Message.get_hit_enter_max_length()@en*
 Vital.Vim.Message.warn()	vital.vim/doc/vital-vim-message.txt	/*Vital.Vim.Message.warn()@en*
+Vital.Vim.Search	vital.vim/doc/vital-vim-search.txt	/*Vital.Vim.Search@en*
+Vital.Vim.Search-contents	vital.vim/doc/vital-vim-search.txt	/*Vital.Vim.Search-contents@en*
+Vital.Vim.Search-functions	vital.vim/doc/vital-vim-search.txt	/*Vital.Vim.Search-functions@en*
+Vital.Vim.Search-interface	vital.vim/doc/vital-vim-search.txt	/*Vital.Vim.Search-interface@en*
+Vital.Vim.Search-introduction	vital.vim/doc/vital-vim-search.txt	/*Vital.Vim.Search-introduction@en*
+Vital.Vim.Search-usage	vital.vim/doc/vital-vim-search.txt	/*Vital.Vim.Search-usage@en*
+Vital.Vim.Search.finddef()	vital.vim/doc/vital-vim-search.txt	/*Vital.Vim.Search.finddef()@en*
 Vital.Web.HTML	vital.vim/doc/vital-web-html.txt	/*Vital.Web.HTML@en*
 Vital.Web.HTML-contents	vital.vim/doc/vital-web-html.txt	/*Vital.Web.HTML-contents@en*
 Vital.Web.HTML-functions	vital.vim/doc/vital-web-html.txt	/*Vital.Web.HTML-functions@en*
@@ -11230,15 +11309,16 @@ vital-bitwise.txt	vital.vim/doc/vital-bitwise.txt	/*vital-bitwise.txt@en*
 vital-data-base64.txt	vital.vim/doc/vital-data-base64.txt	/*vital-data-base64.txt@en*
 vital-data-closure.txt	vital.vim/doc/vital-data-closure.txt	/*vital-data-closure.txt@en*
 vital-data-collection.txt	vital.vim/doc/vital-data-collection.txt	/*vital-data-collection.txt@en*
+vital-data-dict.txt	vital.vim/doc/vital-data-dict.txt	/*vital-data-dict.txt@en*
+vital-data-lazylist.txt	vital.vim/doc/vital-data-lazylist.txt	/*vital-data-lazylist.txt@en*
 vital-data-list.txt	vital.vim/doc/vital-data-list.txt	/*vital-data-list.txt@en*
 vital-data-ordered_set.txt	vital.vim/doc/vital-data-ordered_set.txt	/*vital-data-ordered_set.txt@en*
 vital-data-string.txt	vital.vim/doc/vital-data-string.txt	/*vital-data-string.txt@en*
 vital-data-tree.txt	vital.vim/doc/vital-data-tree.txt	/*vital-data-tree.txt@en*
-vital-database-string.txt	vital.vim/doc/vital-database-sqlite.txt	/*vital-database-string.txt@en*
+vital-database-sqlite.txt	vital.vim/doc/vital-database-sqlite.txt	/*vital-database-sqlite.txt@en*
 vital-date-time.txt	vital.vim/doc/vital-date_time.txt	/*vital-date-time.txt@en*
 vital-experimental-functor.txt	vital.vim/doc/vital-experimental-functor.txt	/*vital-experimental-functor.txt@en*
 vital-interpreter-brainf__k.txt	vital.vim/doc/vital-interpreter-brainf__k.txt	/*vital-interpreter-brainf__k.txt@en*
-vital-lazy_list.txt	vital.vim/doc/vital-data-lazylist.txt	/*vital-lazy_list.txt@en*
 vital-locale-message.txt	vital.vim/doc/vital-locale-message.txt	/*vital-locale-message.txt@en*
 vital-lua-prelude.txt	vital.vim/doc/vital-lua-prelude.txt	/*vital-lua-prelude.txt@en*
 vital-mapping.txt	vital.vim/doc/vital-mapping.txt	/*vital-mapping.txt@en*
@@ -11254,14 +11334,17 @@ vital-system-cache.txt	vital.vim/doc/vital-system-cache.txt	/*vital-system-cache
 vital-system-file.txt	vital.vim/doc/vital-system-file.txt	/*vital-system-file.txt@en*
 vital-system-filepath.txt	vital.vim/doc/vital-system-filepath.txt	/*vital-system-filepath.txt@en*
 vital-text-csv.txt	vital.vim/doc/vital-text-csv.txt	/*vital-text-csv.txt@en*
+vital-text-ini.txt	vital.vim/doc/vital-text-ini.txt	/*vital-text-ini.txt@en*
 vital-text-lexer.txt	vital.vim/doc/vital-text-lexer.txt	/*vital-text-lexer.txt@en*
 vital-text-ltsv.txt	vital.vim/doc/vital-text-ltsv.txt	/*vital-text-ltsv.txt@en*
 vital-text-parser.txt	vital.vim/doc/vital-text-parser.txt	/*vital-text-parser.txt@en*
 vital-text-table.txt	vital.vim/doc/vital-text-table.txt	/*vital-text-table.txt@en*
+vital-text-toml.txt	vital.vim/doc/vital-text-toml.txt	/*vital-text-toml.txt@en*
 vital-vim-buffer.txt	vital.vim/doc/vital-vim-buffer.txt	/*vital-vim-buffer.txt@en*
 vital-vim-buffer_manager.txt	vital.vim/doc/vital-vim-buffer_manager.txt	/*vital-vim-buffer_manager.txt@en*
 vital-vim-compat.txt	vital.vim/doc/vital-vim-compat.txt	/*vital-vim-compat.txt@en*
 vital-vim-message.txt	vital.vim/doc/vital-vim-message.txt	/*vital-vim-message.txt@en*
+vital-vim-search.txt	vital.vim/doc/vital-vim-search.txt	/*vital-vim-search.txt@en*
 vital-web-html.txt	vital.vim/doc/vital-web-html.txt	/*vital-web-html.txt@en*
 vital-web-http.txt	vital.vim/doc/vital-web-http.txt	/*vital-web-http.txt@en*
 vital-web-json.txt	vital.vim/doc/vital-web-json.txt	/*vital-web-json.txt@en*

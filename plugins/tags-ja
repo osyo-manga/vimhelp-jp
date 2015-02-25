@@ -2534,6 +2534,8 @@ $VIMRUNTIME	vimdoc-ja/doc/starting.jax	/*$VIMRUNTIME@ja*
 :ha	vimdoc-ja/doc/print.jax	/*:ha@ja*
 :hardcopy	vimdoc-ja/doc/print.jax	/*:hardcopy@ja*
 :help	vimdoc-ja/doc/helphelp.jax	/*:help@ja*
+:helpc	vimdoc-ja/doc/helphelp.jax	/*:helpc@ja*
+:helpclose	vimdoc-ja/doc/helphelp.jax	/*:helpclose@ja*
 :helpf	vimdoc-ja/doc/helphelp.jax	/*:helpf@ja*
 :helpfind	vimdoc-ja/doc/helphelp.jax	/*:helpfind@ja*
 :helpg	vimdoc-ja/doc/helphelp.jax	/*:helpg@ja*
@@ -3007,7 +3009,7 @@ $VIMRUNTIME	vimdoc-ja/doc/starting.jax	/*$VIMRUNTIME@ja*
 :sbr	vimdoc-ja/doc/windows.jax	/*:sbr@ja*
 :sbrewind	vimdoc-ja/doc/windows.jax	/*:sbrewind@ja*
 :sbuffer	vimdoc-ja/doc/windows.jax	/*:sbuffer@ja*
-:scrip	vimdoc-ja/doc/repeat.jax	/*:scrip@ja*
+:scr	vimdoc-ja/doc/repeat.jax	/*:scr@ja*
 :scripte	vimdoc-ja/doc/repeat.jax	/*:scripte@ja*
 :scriptencoding	vimdoc-ja/doc/repeat.jax	/*:scriptencoding@ja*
 :scriptnames	vimdoc-ja/doc/repeat.jax	/*:scriptnames@ja*
@@ -3042,7 +3044,6 @@ $VIMRUNTIME	vimdoc-ja/doc/starting.jax	/*$VIMRUNTIME@ja*
 :sfirst	vimdoc-ja/doc/windows.jax	/*:sfirst@ja*
 :sh	vimdoc-ja/doc/various.jax	/*:sh@ja*
 :shell	vimdoc-ja/doc/various.jax	/*:shell@ja*
-:si	vimdoc-ja/doc/gui_w32.jax	/*:si@ja*
 :sig	vimdoc-ja/doc/sign.jax	/*:sig@ja*
 :sign	vimdoc-ja/doc/sign.jax	/*:sign@ja*
 :sign-define	vimdoc-ja/doc/sign.jax	/*:sign-define@ja*
@@ -3055,6 +3056,7 @@ $VIMRUNTIME	vimdoc-ja/doc/starting.jax	/*$VIMRUNTIME@ja*
 :sign-unplace	vimdoc-ja/doc/sign.jax	/*:sign-unplace@ja*
 :sil	vimdoc-ja/doc/various.jax	/*:sil@ja*
 :silent	vimdoc-ja/doc/various.jax	/*:silent@ja*
+:sim	vimdoc-ja/doc/gui_w32.jax	/*:sim@ja*
 :simalt	vimdoc-ja/doc/gui_w32.jax	/*:simalt@ja*
 :sl	vimdoc-ja/doc/various.jax	/*:sl@ja*
 :sla	vimdoc-ja/doc/windows.jax	/*:sla@ja*
@@ -5697,6 +5699,7 @@ edit-dialogs	vimdoc-ja/doc/editing.jax	/*edit-dialogs@ja*
 edit-files	vimdoc-ja/doc/editing.jax	/*edit-files@ja*
 edit-intro	vimdoc-ja/doc/editing.jax	/*edit-intro@ja*
 edit-no-break	vimdoc-ja/doc/usr_25.jax	/*edit-no-break@ja*
+edit-paragraph-join	vimdoc-ja/doc/usr_25.jax	/*edit-paragraph-join@ja*
 editing.txt	vimdoc-ja/doc/editing.jax	/*editing.txt@ja*
 efm-%>	vimdoc-ja/doc/quickfix.jax	/*efm-%>@ja*
 efm-entries	vimdoc-ja/doc/quickfix.jax	/*efm-entries@ja*
@@ -7534,6 +7537,7 @@ printf()	vimdoc-ja/doc/eval.jax	/*printf()@ja*
 printf-%	vimdoc-ja/doc/eval.jax	/*printf-%@ja*
 printf-E	vimdoc-ja/doc/eval.jax	/*printf-E@ja*
 printf-G	vimdoc-ja/doc/eval.jax	/*printf-G@ja*
+printf-S	vimdoc-ja/doc/eval.jax	/*printf-S@ja*
 printf-X	vimdoc-ja/doc/eval.jax	/*printf-X@ja*
 printf-c	vimdoc-ja/doc/eval.jax	/*printf-c@ja*
 printf-d	vimdoc-ja/doc/eval.jax	/*printf-d@ja*
@@ -8839,6 +8843,7 @@ window-variable	vimdoc-ja/doc/eval.jax	/*window-variable@ja*
 windowid-variable	vimdoc-ja/doc/eval.jax	/*windowid-variable@ja*
 windows	vimdoc-ja/doc/windows.jax	/*windows@ja*
 windows-3.1	vimdoc-ja/doc/os_win32.jax	/*windows-3.1@ja*
+windows-icon	vimdoc-ja/doc/os_win32.jax	/*windows-icon@ja*
 windows-intro	vimdoc-ja/doc/windows.jax	/*windows-intro@ja*
 windows-starting	vimdoc-ja/doc/windows.jax	/*windows-starting@ja*
 windows.txt	vimdoc-ja/doc/windows.jax	/*windows.txt@ja*
