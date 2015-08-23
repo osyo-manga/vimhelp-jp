@@ -46,3 +46,12 @@
 [submodule "plugins/vimproc.vim"]
 	path = plugins/vimproc.vim
 	url = https://github.com/Shougo/vimproc.vim
+[submodule "plugins/vital-VCS-Git"]
+	path = plugins/vital-VCS-Git
+	url = https://github.com/lambdalisue/vital-VCS-Git
+[submodule "plugins/vital-ArgumentParser"]
+	path = plugins/vital-ArgumentParser
+	url = https://github.com/lambdalisue/vital-ArgumentParser
+[submodule "plugins/vital-over"]
+	path = plugins/vital-over
+	url = https://github.com/osyo-manga/vital-over
