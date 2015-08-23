@@ -23,6 +23,9 @@ Vim のドキュメント以外には、いくつかの Vim プラグインの�
 * __[kana/vim-operator-user](https://github.com/kana/vim-operator-user)__
 * __[kana/vim-operator-replace](https://github.com/kana/vim-operator-replace)__
 * __[thinca/vim-ref](https://github.com/thinca/vim-ref)__
+* __[lambdalisue/vital-VCS-Git](https://github.com/lambdalisue/vital-VCS-Git)__
+* __[lambdalisue/vital-ArgumentParser](https://github.com/lambdalisue/vital-ArgumentParser)__
+* __[osyo-manga/vital-over](https://github.com/osyo-manga/vital-over)__
 
 ## 不具合報告
 
