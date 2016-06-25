@@ -1,6 +1,21 @@
 " $ git submodule foreach git pull origin master
 " $ git add plugins/*
 let s:root = expand("<sfile>:h")
+echo s:root
+
+
+let s:F = vital#of("vital").import("System.File")
+let s:vimdoc = "/usr/local/share/vim/vim74/doc"
+
+function! s:copy_vimdoc(from, to)
+	let docs = split(globpath(a:from, "*.txt"), "\n")
+	for doc in docs
+		let src  = doc
+		let dest = a:to . "/" . fnamemodify(src, ":t")
+		call s:F.copy(src, dest)
+	endfor
+endfunction
+
 
 
 function! s:replace_path(text,plugin)
@@ -37,6 +52,8 @@ function! s:make_tags(root, plugin)
 endfunction
 
 function! s:main()
+	call s:copy_vimdoc(s:vimdoc, s:root . "/vim/doc")
+
 	let plugins = map(split(globpath(s:root, "**/doc/"), "\n"), 'fnamemodify(v:val, ":h:h:t")')
 	let tags = []
 	let tags_ja = []
