@@ -1,4 +1,4 @@
-*eval.txt*	For Vim version 7.4.  Last change: 2016 May 25
+*eval.txt*	For Vim version 7.4.  Last change: 2016 Jul 04
 
 
 		  VIM REFERENCE MANUAL	  by Bram Moolenaar
@@ -40,6 +40,8 @@ done, the features in this document are not available.	See |+eval| and
 There are nine types of variables:
 
 Number		A 32 or 64 bit signed number.  |expr-number| *Number*
+		64-bit Number is available only when compiled with the
+		|+num64| feature.
 		Examples:  -123  0x10  0177
 
 Float		A floating point number. |floating-point-format| *Float*
@@ -794,13 +796,16 @@ equal" and "is" can be used.  This compares the key/values of the |Dictionary|
 recursively.  Ignoring case means case is ignored when comparing item values.
 
 							*E694*
-A |Funcref| can only be compared with a |Funcref| and only "equal" and "not
-equal" can be used.  Case is never ignored.  Whether arguments or a Dictionary
-are bound (with a partial) is ignored.  This is so that when a function is
-made a member of a Dictionary it is still considered to be the same function.
-To compare partials to see if they bind the same argument and Dictionary
-values use string(): >
-	echo string(Partial1) == string(Partial2)
+A |Funcref| can only be compared with a |Funcref| and only "equal", "not
+equal", "is" and "isnot" can be used.  Case is never ignored.  Whether
+arguments or a Dictionary are bound (with a partial) matters.  The
+Dictionaries must also be equal (or the same, in case of "is") and the
+arguments must be equal (or the same).
+
+To compare Funcrefs to see if they refer to the same function, ignoring bound
+Dictionary and arguments, use |get()| to get the function name: >
+	if get(Part1, 'name') == get(Part2, 'name')
+	   " Part1 and Part2 refer to the same function
 
 When using "is" or "isnot" with a |List| or a |Dictionary| this checks if the
 expressions are referring to the same |List| or |Dictionary| instance.  A copy
@@ -887,6 +892,11 @@ When dividing a Number by zero the result depends on the value:
 	 >0 / 0  =  0x7fffffff	(like positive infinity)
 	 <0 / 0  = -0x7fffffff	(like negative infinity)
 	(before Vim 7.2 it was always 0x7fffffff)
+
+When 64-bit Number support is enabled:
+	  0 / 0  = -0x8000000000000000	(like NaN for Float)
+	 >0 / 0  =  0x7fffffffffffffff	(like positive infinity)
+	 <0 / 0  = -0x7fffffffffffffff	(like negative infinity)
 
 When the righthand side of '%' is zero, the result is 0.
 
@@ -1358,6 +1368,10 @@ v:beval_winnr	The number of the window, over which the mouse pointer is. Only
 		window has number zero (unlike most other places where a
 		window gets a number).
 
+					*v:beval_winid* *beval_winid-variable*
+v:beval_winid	The window ID of the window, over which the mouse pointer is.
+		Otherwise like v:beval_winnr.
+
 					*v:char* *char-variable*
 v:char		Argument for evaluating 'formatexpr' and used for the typed
 		character when using <expr> in an abbreviation |:map-<expr>|.
@@ -1464,9 +1478,11 @@ v:exception	The value of the exception most recently caught and not
 					*v:false* *false-variable*
 v:false		A Number with value zero. Used to put "false" in JSON.  See
 		|json_encode()|.
-		When used as a string this evaluates to "false". >
+		When used as a string this evaluates to "v:false". >
 			echo v:false
-<			false ~
+<			v:false ~
+		That is so that eval() can parse the string back to the same
+		value.
 
 					*v:fcs_reason* *fcs_reason-variable*
 v:fcs_reason	The reason why the |FileChangedShell| event was triggered.
@@ -1591,6 +1607,10 @@ v:mouse_win	Window number for a mouse click obtained with |getchar()|.
 		First window has number 1, like with |winnr()|.  The value is
 		zero when there was no mouse button click.
 
+					*v:mouse_winid* *mouse_winid-variable*
+v:mouse_winid	Window ID for a mouse click obtained with |getchar()|.
+		The value is zero when there was no mouse button click.
+
 					*v:mouse_lnum* *mouse_lnum-variable*
 v:mouse_lnum	Line number for a mouse click obtained with |getchar()|.
 		This is the text line number, not the screen line number.  The
@@ -1605,17 +1625,21 @@ v:mouse_col	Column number for a mouse click obtained with |getchar()|.
 v:none		An empty String. Used to put an empty item in JSON.  See
 		|json_encode()|.
 		When used as a number this evaluates to zero.
-		When used as a string this evaluates to "none". >
+		When used as a string this evaluates to "v:none". >
 			echo v:none
-<			none ~
+<			v:none ~
+		That is so that eval() can parse the string back to the same
+		value.
 
 					*v:null* *null-variable*
 v:null		An empty String. Used to put "null" in JSON.  See
 		|json_encode()|.
 		When used as a number this evaluates to zero.
-		When used as a string this evaluates to "null". >
+		When used as a string this evaluates to "v:null". >
 			echo v:null
-<			null ~
+<			v:null ~
+		That is so that eval() can parse the string back to the same
+		value.
 
 					*v:oldfiles* *oldfiles-variable*
 v:oldfiles	List of file names that is loaded from the |viminfo| file on
@@ -1788,9 +1812,11 @@ v:throwpoint	The point where the exception most recently caught and not
 						*v:true* *true-variable*
 v:true		A Number with value one. Used to put "true" in JSON.  See
 		|json_encode()|.
-		When used as a string this evaluates to "true". >
+		When used as a string this evaluates to "v:true". >
 			echo v:true
-<			true ~
+<			v:true ~
+		That is so that eval() can parse the string back to the same
+		value.
 						*v:val* *val-variable*
 v:val		Value of the current item of a |List| or |Dictionary|.	Only
 		valid while evaluating the expression used with |map()| and
@@ -1821,7 +1847,7 @@ v:windowid	When any X11 based GUI is running or when running in a
 		When an MS-Windows GUI is running this will be set to the
 		window handle.
 		Otherwise the value is zero.
-		Note: for windows inside Vim use |winnr()|.
+		Note: for windows inside Vim use |winnr()| or |win_getid()|.
 
 ==============================================================================
 4. Builtin Functions					*functions*
@@ -1862,6 +1888,7 @@ buflisted({expr})		Number	TRUE if buffer {expr} is listed
 bufloaded({expr})		Number	TRUE if buffer {expr} is loaded
 bufname({expr})			String	Name of the buffer {expr}
 bufnr({expr} [, {create}])	Number	Number of the buffer {expr}
+bufwinid({expr})		Number	window ID of buffer {expr}
 bufwinnr({expr})		Number	window number of buffer {expr}
 byte2line({byte})		Number	line number at byte count {byte}
 byteidx({expr}, {nr})		Number	byte index of {nr}'th char in {expr}
@@ -2041,7 +2068,7 @@ json_encode({expr})		String	encode JSON
 keys({dict})			List	keys in {dict}
 len({expr})			Number	the length of {expr}
 libcall({lib}, {func}, {arg})	String	call {func} in library {lib} with {arg}
-libcallnr({lib}, {func}, {arg})  Number  idem, but return a Number
+libcallnr({lib}, {func}, {arg})	Number  idem, but return a Number
 line({expr})			Number	line nr of cursor, last line or mark
 line2byte({lnum})		Number	byte count of line {lnum}
 lispindent({lnum})		Number	Lisp indent for line {lnum}
@@ -2103,7 +2130,7 @@ remote_peek({serverid} [, {retvar}])
 remote_read({serverid})		String	read reply string
 remote_send({server}, {string} [, {idvar}])
 				String	send key sequence
-remove({list}, {idx} [, {end}])  any	remove items {idx}-{end} from {list}
+remove({list}, {idx} [, {end}])	any	remove items {idx}-{end} from {list}
 remove({dict}, {key})		any	remove entry {key} from {dict}
 rename({from}, {to})		Number	rename (move) file from {from} to {to}
 repeat({expr}, {count})		String	repeat {expr} {count} times
@@ -2191,7 +2218,7 @@ synconcealed({lnum}, {col})	List    info about concealing
 synstack({lnum}, {col})		List	stack of syntax IDs at {lnum} and {col}
 system({expr} [, {input}])	String	output of shell command/filter {expr}
 systemlist({expr} [, {input}])	List	output of shell command/filter {expr}
-tabpagebuflist([{arg}])	List	list of buffer numbers in tab page
+tabpagebuflist([{arg}])		List	list of buffer numbers in tab page
 tabpagenr([{arg}])		Number	number of current or last tab page
 tabpagewinnr({tabarg}[, {arg}]) Number	number of current window in tab page
 taglist({expr})			List	list of tags matching {expr}
@@ -2209,6 +2236,7 @@ test_null_job()			Job	null value for testing
 test_null_list()		List	null value for testing
 test_null_partial()		Funcref	null value for testing
 test_null_string()		String	null value for testing
+test_settime({expr})		none	set current time for testing
 timer_start({time}, {callback} [, {options}])
 				Number	create a timer
 timer_stop({timer})		none	stop a timer
@@ -2321,6 +2349,7 @@ arglistid([{winnr} [, {tabnr}]])
 		With {winnr} only use this window in the current tab page.
 		With {winnr} and {tabnr} use the window in the specified tab
 		page.
+		{winnr} can be the window number or the window ID.
 
 							*argv()*
 argv([{nr}])	The result is the {nr}th file in the argument list of the
@@ -2556,6 +2585,16 @@ bufnr({expr} [, {create}])
 		Obsolete name: buffer_number().
 							*last_buffer_nr()*
 		Obsolete name for bufnr("$"): last_buffer_nr().
+
+bufwinid({expr})					*bufwinid()*
+		The result is a Number, which is the window ID of the first
+		window associated with buffer {expr}.  For the use of {expr},
+		see |bufname()| above.	If buffer {expr} doesn't exist or
+		there is no such window, -1 is returned.  Example: >
+
+	echo "A window containing buffer 1 is " . (bufwinid(1))
+<
+		Only deals with the current tab page.
 
 bufwinnr({expr})					*bufwinnr()*
 		The result is a Number, which is the number of the first
@@ -3482,31 +3521,46 @@ filewritable({file})					*filewritable()*
 		directory, and we can write to it, the result is 2.
 
 
-filter({expr}, {string})					*filter()*
-		{expr} must be a |List| or a |Dictionary|.
-		For each item in {expr} evaluate {string} and when the result
+filter({expr1}, {expr2})				*filter()*
+		{expr1} must be a |List| or a |Dictionary|.
+		For each item in {expr1} evaluate {expr2} and when the result
 		is zero remove the item from the |List| or |Dictionary|.
-		Inside {string} |v:val| has the value of the current item.
-		For a |Dictionary| |v:key| has the key of the current item.
+		{expr2} must be a |string| or |Funcref|.
+		
+		if {expr2} is a |string|, inside {expr2} |v:val| has the value
+		of the current item.  For a |Dictionary| |v:key| has the key
+		of the current item.
 		Examples: >
-			:call filter(mylist, 'v:val !~ "OLD"')
+			call filter(mylist, 'v:val !~ "OLD"')
 <		Removes the items where "OLD" appears. >
-			:call filter(mydict, 'v:key >= 8')
+			call filter(mydict, 'v:key >= 8')
 <		Removes the items with a key below 8. >
-			:call filter(var, 0)
+			call filter(var, 0)
 <		Removes all the items, thus clears the |List| or |Dictionary|.
 
-		Note that {string} is the result of expression and is then
+		Note that {expr2} is the result of expression and is then
 		used as an expression again.  Often it is good to use a
 		|literal-string| to avoid having to double backslashes.
 
+		If {expr2} is a |Funcref| it must take two arguments:
+			1. the key or the index of the current item.
+			2. the value of the current item.
+		The function must return TRUE if the item should be kept.
+		Example that keeps the odd items of a list: >
+			func Odd(idx, val)
+			  return a:idx % 2 == 1
+			endfunc
+			call filter(mylist, function('Odd'))
+<
 		The operation is done in-place.  If you want a |List| or
 		|Dictionary| to remain unmodified make a copy first: >
 			:let l = filter(copy(mylist), 'v:val =~ "KEEP"')
 
-<		Returns {expr}, the |List| or |Dictionary| that was filtered.
-		When an error is encountered while evaluating {string} no
-		further items in {expr} are processed.
+<		Returns {expr1}, the |List| or |Dictionary| that was filtered.
+		When an error is encountered while evaluating {expr2} no
+		further items in {expr1} are processed.  When {expr2} is a
+		Funcref errors inside a function are ignored, unless it was
+		defined with the "abort" flag.
 
 
 finddir({name}[, {path}[, {count}]])				*finddir()*
@@ -3537,17 +3591,19 @@ float2nr({expr})					*float2nr()*
 		decimal point.
 		{expr} must evaluate to a |Float| or a Number.
 		When the value of {expr} is out of range for a |Number| the
-		result is truncated to 0x7fffffff or -0x7fffffff.  NaN results
-		in -0x80000000.
+		result is truncated to 0x7fffffff or -0x7fffffff (or when
+		64-bit Number support is enabled, 0x7fffffffffffffff or
+		-0x7fffffffffffffff.  NaN results in -0x80000000 (or when
+		64-bit Number support is enabled, -0x8000000000000000).
 		Examples: >
 			echo float2nr(3.95)
 <			3  >
 			echo float2nr(-23.45)
 <			-23  >
 			echo float2nr(1.0e100)
-<			2147483647  >
+<			2147483647  (or 9223372036854775807) >
 			echo float2nr(-1.0e150)
-<			-2147483647  >
+<			-2147483647 (or -9223372036854775807) >
 			echo float2nr(1.0e-100)
 <			0
 		{only available when compiled with the |+float| feature}
@@ -3835,8 +3891,8 @@ getchar([expr])						*getchar()*
 
 		When the user clicks a mouse button, the mouse event will be
 		returned.  The position can then be found in |v:mouse_col|,
-		|v:mouse_lnum| and |v:mouse_win|.  This example positions the
-		mouse as it would normally happen: >
+		|v:mouse_lnum|, |v:mouse_winid| and |v:mouse_win|.  This
+		example positions the mouse as it would normally happen: >
 			let c = getchar()
 			if c == "\<LeftMouse>" && v:mouse_win > 0
 			  exe v:mouse_win . "wincmd w"
@@ -3968,6 +4024,7 @@ getcwd([{winnr} [, {tabnr}]])
 		in the current tab page.
 		With {winnr} and {tabnr} return the local current directory of
 		the window in the specified tab page.
+		{winnr} can be the window number or the window ID.
 		Return an empty string if the arguments are invalid.
 
 getfsize({fname})					*getfsize()*
@@ -4064,7 +4121,9 @@ getline({lnum} [, {end}])
 
 getloclist({nr})					*getloclist()*
 		Returns a list with all the entries in the location list for
-		window {nr}. When {nr} is zero the current window is used.
+		window {nr}.  {nr} can be the window number or the window ID.
+		When {nr} is zero the current window is used.
+
 		For a location list window, the displayed location list is
 		returned.  For an invalid window number {nr}, an empty list is
 		returned. Otherwise, same as |getqflist()|.
@@ -4198,6 +4257,7 @@ gettabwinvar({tabnr}, {winnr}, {varname} [, {def}])		*gettabwinvar()*
 		Note that {varname} must be the name without "w:".
 		Tabs are numbered starting with one.  For the current tabpage
 		use |getwinvar()|.
+		{winnr} can be the window number or the window ID.
 		When {winnr} is zero the current window is used.
 		This also works for a global option, buffer-local option and
 		window-local option, but it doesn't work for a global variable
@@ -4322,6 +4382,7 @@ haslocaldir([{winnr} [, {tabnr}]])			*haslocaldir()*
 		With {winnr} use this window in the current tab page.
 		With {winnr} and {tabnr} use the window in the specified tab
 		page.
+		{winnr} can be the window number or the window ID.
 		Return 0 if the arguments are invalid.
 
 hasmapto({what} [, {mode} [, {abbr}]])			*hasmapto()*
@@ -4713,6 +4774,10 @@ job_status({job})					*job_status()* *E916*
 			"fail"	job failed to start
 			"dead"	job died or was stopped after running
 		
+		On Unix a non-existing command results in "dead" instead of
+		"fail", because a fork happens before the failure can be
+		detected.
+
 		If an exit callback was set with the "exit_cb" option and the
 		job is now detected to be "dead" the callback will be invoked.
 
@@ -4986,29 +5051,43 @@ luaeval({expr}[, {expr}])					*luaeval()*
 		See |lua-luaeval| for more details.
 		{only available when compiled with the |+lua| feature}
 
-map({expr}, {string})					*map()*
-		{expr} must be a |List| or a |Dictionary|.
-		Replace each item in {expr} with the result of evaluating
-		{string}.
-		Inside {string} |v:val| has the value of the current item.
-		For a |Dictionary| |v:key| has the key of the current item
-		and for a |List| |v:key| has the index of the current item.
+map({expr1}, {expr2})					*map()*
+		{expr1} must be a |List| or a |Dictionary|.
+		Replace each item in {expr1} with the result of evaluating
+		{expr2}.  {expr2} must be a |string| or |Funcref|.
+		
+		If {expr2} is a |string|, inside {expr2} |v:val| has the value
+		of the current item.  For a |Dictionary| |v:key| has the key
+		of the current item and for a |List| |v:key| has the index of
+		the current item.
 		Example: >
 			:call map(mylist, '"> " . v:val . " <"')
 <		This puts "> " before and " <" after each item in "mylist".
 
-		Note that {string} is the result of an expression and is then
+		Note that {expr2} is the result of an expression and is then
 		used as an expression again.  Often it is good to use a
 		|literal-string| to avoid having to double backslashes.  You
 		still have to double ' quotes
 
+		If {expr2} is a |Funcref| it is called with two arguments:
+			1. The key or the index of the current item.
+			2. the value of the current item.
+		The function must return the new value of the item. Example
+		that changes each value by "key-value": >
+			func KeyValue(key, val)
+			  return a:key . '-' . a:val
+			endfunc
+			call map(myDict, function('KeyValue'))
+<
 		The operation is done in-place.  If you want a |List| or
 		|Dictionary| to remain unmodified make a copy first: >
 			:let tlist = map(copy(mylist), ' v:val . "\t"')
 
-<		Returns {expr}, the |List| or |Dictionary| that was filtered.
-		When an error is encountered while evaluating {string} no
-		further items in {expr} are processed.
+<		Returns {expr1}, the |List| or |Dictionary| that was filtered.
+		When an error is encountered while evaluating {expr2} no
+		further items in {expr1} are processed.  When {expr2} is a
+		Funcref errors inside a function are ignored, unless it was
+		defined with the "abort" flag.
 
 
 maparg({name}[, {mode} [, {abbr} [, {dict}]]])			*maparg()*
@@ -6264,9 +6343,11 @@ setline({lnum}, {text})					*setline()*
 
 setloclist({nr}, {list} [, {action}])			*setloclist()*
 		Create or replace or add to the location list for window {nr}.
-		When {nr} is zero the current window is used. For a location
-		list window, the displayed location list is modified.  For an
-		invalid window number {nr}, -1 is returned.
+		{nr} can be the window number or the window ID.
+		When {nr} is zero the current window is used.
+
+		For a location list window, the displayed location list is
+		modified.  For an invalid window number {nr}, -1 is returned.
 		Otherwise, same as |setqflist()|.
 		Also see |location-list|.
 
@@ -6358,10 +6439,15 @@ setqflist({list} [, {action}])				*setqflist()*
 							*E927*
 		If {action} is set to 'a', then the items from {list} are
 		added to the existing quickfix list. If there is no existing
-		list, then a new list is created. If {action} is set to 'r',
-		then the items from the current quickfix list are replaced
-		with the items from {list}. If {action} is not present or is
-		set to ' ', then a new list is created.
+		list, then a new list is created.
+		
+		If {action} is set to 'r', then the items from the current
+		quickfix list are replaced with the items from {list}.  This
+		can also be used to clear the list: >
+			:call setqflist([], 'r')
+<	
+		If {action} is not present or is set to ' ', then a new list
+		is created.
 
 		Returns zero for success, -1 for failure.
 
@@ -6428,6 +6514,7 @@ settabwinvar({tabnr}, {winnr}, {varname}, {val})	*settabwinvar()*
 		{val}.
 		Tabs are numbered starting with one.  For the current tabpage
 		use |setwinvar()|.
+		{winnr} can be the window number or the window ID.
 		When {winnr} is zero the current window is used.
 		This also works for a global or local buffer option, but it
 		doesn't work for a global or local buffer variable.
@@ -7238,6 +7325,11 @@ test_null_partial()					*test_null_partial()*
 test_null_string()					*test_null_string()*
 		Return a String that is null. Only useful for testing.
 
+test_settime({expr})					*test_settime()*
+		Set the time Vim uses internally.  Currently only used for
+		timestamps in the history, as they are used in viminfo.
+		{expr} must evaluate to a number.  When the value is zero the
+		normal behavior is restored.
 
 							*timer_start()*
 timer_start({time}, {callback} [, {options}])
@@ -7500,9 +7592,11 @@ win_id2win({expr})					*win_id2win()*
 
 							*winbufnr()*
 winbufnr({nr})	The result is a Number, which is the number of the buffer
-		associated with window {nr}.  When {nr} is zero, the number of
-		the buffer in the current window is returned.  When window
-		{nr} doesn't exist, -1 is returned.
+		associated with window {nr}.  {nr} can be the window number or
+		the window ID.
+		When {nr} is zero, the number of the buffer in the current
+		window is returned.
+		When window {nr} doesn't exist, -1 is returned.
 		Example: >
   :echo "The file in the current window is " . bufname(winbufnr(0))
 <
@@ -7513,6 +7607,7 @@ wincol()	The result is a Number, which is the virtual column of the
 
 winheight({nr})						*winheight()*
 		The result is a Number, which is the height of window {nr}.
+		{nr} can be the window number or the window ID.
 		When {nr} is zero, the height of the current window is
 		returned.  When window {nr} doesn't exist, -1 is returned.
 		An existing window always has a height of zero or more.
@@ -7592,6 +7687,7 @@ winsaveview()	Returns a |Dictionary| that contains information to restore
 
 winwidth({nr})						*winwidth()*
 		The result is a Number, which is the width of window {nr}.
+		{nr} can be the window number or the window ID.
 		When {nr} is zero, the width of the current window is
 		returned.  When window {nr} doesn't exist, -1 is returned.
 		An existing window always has a width of zero or more.
@@ -7600,7 +7696,10 @@ winwidth({nr})						*winwidth()*
   :if winwidth(0) <= 50
   :  exe "normal 50\<C-W>|"
   :endif
-<
+<               For getting the terminal or screen size, see the 'columns'
+               option.
+
+
 wordcount()						*wordcount()*
 		The result is a dictionary of byte/chars/word statistics for
 		the current buffer.  This is the same info as provided by
@@ -7787,6 +7886,7 @@ multi_lang		Compiled with support for multiple languages.
 mzscheme		Compiled with MzScheme interface |mzscheme|.
 netbeans_enabled	Compiled with support for |netbeans| and connected.
 netbeans_intg		Compiled with support for |netbeans|.
+num64			Compiled with 64-bit |Number| support.
 ole			Compiled with OLE automation support for Win32.
 os2			OS/2 version of Vim.
 packages		Compiled with |packages| support.

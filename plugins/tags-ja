@@ -109,7 +109,6 @@ quickrun-module-outputter/quickfix	vim-quickrun/doc/quickrun.jax	/*quickrun-modu
 quickrun-module-outputter/variable	vim-quickrun/doc/quickrun.jax	/*quickrun-module-outputter\/variable@ja*
 quickrun-module-runner	vim-quickrun/doc/quickrun.jax	/*quickrun-module-runner@ja*
 quickrun-module-runner/concurrent_process	vim-quickrun/doc/quickrun.jax	/*quickrun-module-runner\/concurrent_process@ja*
-quickrun-module-runner/process_manager	vim-quickrun/doc/quickrun.jax	/*quickrun-module-runner\/process_manager@ja*
 quickrun-module-runner/python	vim-quickrun/doc/quickrun.jax	/*quickrun-module-runner\/python@ja*
 quickrun-module-runner/remote	vim-quickrun/doc/quickrun.jax	/*quickrun-module-runner\/remote@ja*
 quickrun-module-runner/shell	vim-quickrun/doc/quickrun.jax	/*quickrun-module-runner\/shell@ja*

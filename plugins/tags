@@ -2037,6 +2037,7 @@ $VIM_POSIX	vim/doc/vi_diff.txt	/*$VIM_POSIX@en*
 +mzscheme	vim/doc/various.txt	/*+mzscheme@en*
 +mzscheme/dyn	vim/doc/various.txt	/*+mzscheme\/dyn@en*
 +netbeans_intg	vim/doc/various.txt	/*+netbeans_intg@en*
++num64	vim/doc/various.txt	/*+num64@en*
 +ole	vim/doc/various.txt	/*+ole@en*
 +packages	vim/doc/various.txt	/*+packages@en*
 +path_extra	vim/doc/various.txt	/*+path_extra@en*
@@ -2851,6 +2852,8 @@ $VIM_POSIX	vim/doc/vi_diff.txt	/*$VIM_POSIX@en*
 :cl	vim/doc/quickfix.txt	/*:cl@en*
 :cla	vim/doc/quickfix.txt	/*:cla@en*
 :clast	vim/doc/quickfix.txt	/*:clast@en*
+:cle	vim/doc/motion.txt	/*:cle@en*
+:clearjumps	vim/doc/motion.txt	/*:clearjumps@en*
 :clist	vim/doc/quickfix.txt	/*:clist@en*
 :clo	vim/doc/windows.txt	/*:clo@en*
 :close	vim/doc/windows.txt	/*:close@en*
@@ -4137,6 +4140,7 @@ $VIM_POSIX	vim/doc/vi_diff.txt	/*$VIM_POSIX@en*
 <line1>	vim/doc/map.txt	/*<line1>@en*
 <line2>	vim/doc/map.txt	/*<line2>@en*
 <lt>	vim/doc/intro.txt	/*<lt>@en*
+<mods>	vim/doc/map.txt	/*<mods>@en*
 <nomodeline>	vim/doc/autocmd.txt	/*<nomodeline>@en*
 <q-args>	vim/doc/map.txt	/*<q-args>@en*
 <reg>	vim/doc/map.txt	/*<reg>@en*
@@ -5228,6 +5232,7 @@ E925	vim/doc/quickfix.txt	/*E925@en*
 E926	vim/doc/quickfix.txt	/*E926@en*
 E927	vim/doc/eval.txt	/*E927@en*
 E928	vim/doc/eval.txt	/*E928@en*
+E929	vim/doc/starting.txt	/*E929@en*
 E93	vim/doc/windows.txt	/*E93@en*
 E94	vim/doc/windows.txt	/*E94@en*
 E95	vim/doc/message.txt	/*E95@en*
@@ -5813,6 +5818,7 @@ beval_bufnr-variable	vim/doc/eval.txt	/*beval_bufnr-variable@en*
 beval_col-variable	vim/doc/eval.txt	/*beval_col-variable@en*
 beval_lnum-variable	vim/doc/eval.txt	/*beval_lnum-variable@en*
 beval_text-variable	vim/doc/eval.txt	/*beval_text-variable@en*
+beval_winid-variable	vim/doc/eval.txt	/*beval_winid-variable@en*
 beval_winnr-variable	vim/doc/eval.txt	/*beval_winnr-variable@en*
 bitwise-function	vim/doc/usr_41.txt	/*bitwise-function@en*
 blockwise-examples	vim/doc/visual.txt	/*blockwise-examples@en*
@@ -5845,6 +5851,7 @@ buflisted()	vim/doc/eval.txt	/*buflisted()@en*
 bufloaded()	vim/doc/eval.txt	/*bufloaded()@en*
 bufname()	vim/doc/eval.txt	/*bufname()@en*
 bufnr()	vim/doc/eval.txt	/*bufnr()@en*
+bufwinid()	vim/doc/eval.txt	/*bufwinid()@en*
 bufwinnr()	vim/doc/eval.txt	/*bufwinnr()@en*
 bug-fixes-5	vim/doc/version5.txt	/*bug-fixes-5@en*
 bug-fixes-6	vim/doc/version6.txt	/*bug-fixes-6@en*
@@ -6019,6 +6026,7 @@ channel-callback	vim/doc/channel.txt	/*channel-callback@en*
 channel-close	vim/doc/channel.txt	/*channel-close@en*
 channel-commands	vim/doc/channel.txt	/*channel-commands@en*
 channel-demo	vim/doc/channel.txt	/*channel-demo@en*
+channel-functions	vim/doc/usr_41.txt	/*channel-functions@en*
 channel-mode	vim/doc/channel.txt	/*channel-mode@en*
 channel-more	vim/doc/channel.txt	/*channel-more@en*
 channel-open	vim/doc/channel.txt	/*channel-open@en*
@@ -7670,6 +7678,7 @@ job-control	vim/doc/channel.txt	/*job-control@en*
 job-err_cb	vim/doc/channel.txt	/*job-err_cb@en*
 job-err_io	vim/doc/channel.txt	/*job-err_io@en*
 job-exit_cb	vim/doc/channel.txt	/*job-exit_cb@en*
+job-functions	vim/doc/usr_41.txt	/*job-functions@en*
 job-in_io	vim/doc/channel.txt	/*job-in_io@en*
 job-options	vim/doc/channel.txt	/*job-options@en*
 job-out_cb	vim/doc/channel.txt	/*job-out_cb@en*
@@ -7963,6 +7972,7 @@ mouse-using	vim/doc/term.txt	/*mouse-using@en*
 mouse_col-variable	vim/doc/eval.txt	/*mouse_col-variable@en*
 mouse_lnum-variable	vim/doc/eval.txt	/*mouse_lnum-variable@en*
 mouse_win-variable	vim/doc/eval.txt	/*mouse_win-variable@en*
+mouse_winid-variable	vim/doc/eval.txt	/*mouse_winid-variable@en*
 movement	vim/doc/intro.txt	/*movement@en*
 ms-dos	vim/doc/os_msdos.txt	/*ms-dos@en*
 msdos	vim/doc/os_msdos.txt	/*msdos@en*
@@ -9397,6 +9407,7 @@ test_null_job()	vim/doc/eval.txt	/*test_null_job()@en*
 test_null_list()	vim/doc/eval.txt	/*test_null_list()@en*
 test_null_partial()	vim/doc/eval.txt	/*test_null_partial()@en*
 test_null_string()	vim/doc/eval.txt	/*test_null_string()@en*
+test_settime()	vim/doc/eval.txt	/*test_settime()@en*
 testing-variable	vim/doc/eval.txt	/*testing-variable@en*
 tex-cchar	vim/doc/syntax.txt	/*tex-cchar@en*
 tex-cole	vim/doc/syntax.txt	/*tex-cole@en*
@@ -9427,6 +9438,7 @@ throw-from-catch	vim/doc/eval.txt	/*throw-from-catch@en*
 throw-variables	vim/doc/eval.txt	/*throw-variables@en*
 throwpoint-variable	vim/doc/eval.txt	/*throwpoint-variable@en*
 time-functions	vim/doc/usr_41.txt	/*time-functions@en*
+timer-functions	vim/doc/usr_41.txt	/*timer-functions@en*
 timer_start()	vim/doc/eval.txt	/*timer_start()@en*
 timer_stop()	vim/doc/eval.txt	/*timer_stop()@en*
 timestamp	vim/doc/editing.txt	/*timestamp@en*
@@ -9539,6 +9551,7 @@ v:beval_bufnr	vim/doc/eval.txt	/*v:beval_bufnr@en*
 v:beval_col	vim/doc/eval.txt	/*v:beval_col@en*
 v:beval_lnum	vim/doc/eval.txt	/*v:beval_lnum@en*
 v:beval_text	vim/doc/eval.txt	/*v:beval_text@en*
+v:beval_winid	vim/doc/eval.txt	/*v:beval_winid@en*
 v:beval_winnr	vim/doc/eval.txt	/*v:beval_winnr@en*
 v:char	vim/doc/eval.txt	/*v:char@en*
 v:charconvert_from	vim/doc/eval.txt	/*v:charconvert_from@en*
@@ -9573,6 +9586,7 @@ v:lnum	vim/doc/eval.txt	/*v:lnum@en*
 v:mouse_col	vim/doc/eval.txt	/*v:mouse_col@en*
 v:mouse_lnum	vim/doc/eval.txt	/*v:mouse_lnum@en*
 v:mouse_win	vim/doc/eval.txt	/*v:mouse_win@en*
+v:mouse_winid	vim/doc/eval.txt	/*v:mouse_winid@en*
 v:none	vim/doc/eval.txt	/*v:none@en*
 v:null	vim/doc/eval.txt	/*v:null@en*
 v:oldfiles	vim/doc/eval.txt	/*v:oldfiles@en*
@@ -10248,7 +10262,6 @@ quickrun-module-outputter/quickfix	vim-quickrun/doc/quickrun.txt	/*quickrun-modu
 quickrun-module-outputter/variable	vim-quickrun/doc/quickrun.txt	/*quickrun-module-outputter\/variable@en*
 quickrun-module-runner	vim-quickrun/doc/quickrun.txt	/*quickrun-module-runner@en*
 quickrun-module-runner/concurrent_process	vim-quickrun/doc/quickrun.txt	/*quickrun-module-runner\/concurrent_process@en*
-quickrun-module-runner/process_manager	vim-quickrun/doc/quickrun.txt	/*quickrun-module-runner\/process_manager@en*
 quickrun-module-runner/python	vim-quickrun/doc/quickrun.txt	/*quickrun-module-runner\/python@en*
 quickrun-module-runner/remote	vim-quickrun/doc/quickrun.txt	/*quickrun-module-runner\/remote@en*
 quickrun-module-runner/shell	vim-quickrun/doc/quickrun.txt	/*quickrun-module-runner\/shell@en*
