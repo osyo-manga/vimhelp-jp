@@ -7,6 +7,7 @@ GEM
       http_parser.rb (~> 0.6.0)
     eventmachine (1.2.7)
     ffi (1.15.0)
+    foreman (0.87.2)
     formatador (0.2.5)
     guard (2.16.2)
       formatador (>= 0.2.4)
@@ -71,6 +72,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  foreman
   guard
   guard-livereload
   haml
